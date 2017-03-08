@@ -110,9 +110,9 @@ $(document).on("click",function(e) {
 function initEqualize() {
 	var windowSize = $(window).width();
 	$('[data-equalize]').each(function() {
-		console.log("Init Triggered!");
+		// console.log("Init Triggered!");
 		if ($(this).data('breakpoint') !== undefined) {
-			console.log("This data-breakpoint is: " + $(this).data('breakpoint'));
+			// console.log("This data-breakpoint is: " + $(this).data('breakpoint'));
 			var myQualifier = $(this).data('breakpoint').match(/[\<\=\>]*/);
 			myQualifier = myQualifier.toString();
 			var myBreakpoint = $(this).data('breakpoint').replace(/[<=>]*/, '');
@@ -158,7 +158,7 @@ function equalize() {
 		}
 		var augment;
 		$('[data-equal-height]', this).each(function() {
-			console.log("The Height is: " + $(this).height());
+			// console.log("The Height is: " + $(this).height());
 			augment = 0;
 			$(this).attr('style', '');
 			if ($(this).data('equal-height') !== '') {
@@ -181,40 +181,40 @@ var windowSize;
 // Update on window resize
 $(window).resize(function() {
 	windowSize = $(window).width();
-	console.log('Window size is: ' + windowSize);
+	// console.log('Window size is: ' + windowSize);
 	$('[data-equalize]').each(function() {
 		if ($(this).data('breakpoint')) {
 			var myQualifier = $(this).data('breakpoint').match(/[<=>]*/);
 			myQualifier = myQualifier.toString();
-			console.log("My qualifier is: " + myQualifier);
+			// console.log("My qualifier is: " + myQualifier);
 			var myBreakpoint = $(this).data('breakpoint').replace(/[<=>]*/, '');
 			myBreakpoint = parseInt(myBreakpoint);
-			console.log("My Breakpoint is: " + myBreakpoint);
+			// console.log("My Breakpoint is: " + myBreakpoint);
 			if (myQualifier === '<') {
 				if (windowSize < myBreakpoint) {
 					$('[data-equal-height]', this).css('height', '');
-					console.log("less than");
+					// console.log("less than");
 				}
 				else {equalize()}
 			}
 			else if (myQualifier === '<=') {
 				if (windowSize <= myBreakpoint) {
 					$('[data-equal-height]', this).removeAttr('style');
-					console.log("less than or equal to");
+					// console.log("less than or equal to");
 				}
 				else {equalize()}
 			}
 			else if (myQualifier === '>') {
 				if (windowSize > myBreakpoint) {
 					$('[data-equal-height]', this).css('height', '');
-					console.log("greater than");
+					// console.log("greater than");
 				}
 				else {equalize()}
 			}
 			else if (myQualifier === '>=') {
 				if (windowSize >= myBreakpoint) {
 					$('[data-equal-height]', this).css('height', '');
-					console.log("Yep");
+					// console.log("Yep");
 				}
 				else {equalize()}
 			}
