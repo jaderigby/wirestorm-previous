@@ -14,6 +14,8 @@ block content
 		h4 Sections
 		ul
 			li: a(href="#layout", data-move-to="200") Layout
+			li: a(href="#dynamic-elements") Dynamic Elements
+			li: a(href="#loops") Loops
 			li: a(href="#media") Media
 			li: a(href="#forms") Forms
 		h3#layout.demo-heading(data-move-to="150") Layout
@@ -107,86 +109,6 @@ block content
 						h3 Demo
 						p
 							+blockletter(30)
-		
-		section.thirds
-			aside
-				h4.ft-hd.modal.trigger(data-target="loop") +loop(arg1)
-				div#loop.modal.window
-					p
-						strong Description: 
-						| Makes a copy of the content for the number of times passed in as "arg1".
-					ul
-						li
-							strong arg1 
-							br
-							| [ 
-							em integer 
-							| ] &ndash; number of times to loop.
-					div.clear-wrap
-						h4 Code
-						pre
-							| <code class="language-jade">
-							| +panel('light')
-							| 	- var i = 0
-							| 	+loop(3)
-							| 		article.border-wrap
-							|			h3= titles[i++] + ' Title'
-							|			p
-							|				+blockletter(35)
-							| </code>
-			article
-				+demo('transparent')
-					+panel()
-						- var i = 0
-						+loop(3)
-							article.border-wrap.light
-								h3= titles[i++] + ' Title'
-								p
-									+blockletter(35)
-
-		section.thirds
-			aside
-				h4.ft-hd.modal.trigger(data-target="columnLoop") +column-loop(arg1, arg2)
-				div#columnLoop.modal.window
-					p
-						strong Description: 
-						| Makes a copy of the content for the number of times passed in as "arg1", as columns.  The copied column must be contained within an "article" tag.
-					ul
-						li
-							strong arg1 
-							br
-							| [ 
-							em integer 
-							| ] &ndash; number of columns to create.
-						li
-							strong arg2 
-							br
-							| [ 
-							em string 
-							| ] &ndash; pass in the string "equalize", if you would like each column to be equal in height.  Then, add "data-equalize" to each wrapper that acts as the column's height (See code below.)
-					div.clear-wrap
-						h4 Code
-						pre
-							| <code class="language-jade">
-							| +panel('dark')
-							| 	+column-loop(4,'equalize')
-							| 		article
-							| 			div.wrap(data-equal-height)
-							| 				p
-							| 					+porthole(150, 'center')
-							| 				p
-							| 					+blockletter(15)
-							| </code>
-			article
-				+demo('dark')
-					+panel('dark')
-						+column-loop(4,'equalize')
-							article
-								div.wrap(data-equal-height)
-									p
-										+porthole(150, 'center')
-									p
-										+blockletter(15)
 
 		section.thirds
 			aside
@@ -286,6 +208,165 @@ block content
 								p
 									+blockletter(50)
 
+		h3#dynamic-elements.demo-heading Dynamic Elements
+		section.thirds
+			aside
+				h4.ft-hd.modal.trigger(data-target="modal") +modal(arg1, arg2)
+				div#modal.modal.window
+					p
+						strong Description: 
+						| Creates a button linking to a modal window.  Content of modal is anything indented underneath the modal element (see below). Content of the modal can be any html (content, images, etc)
+					ul
+						li
+							strong arg1 
+							br
+							| [ 
+							em string 
+							| ] &ndash; button text
+						li
+							strong arg2 
+							br
+							| [ 
+							em string (optional) 
+							| ] &ndash; position of button ("left", "center", or "right")
+					div.clear-wrap
+						h4 Code
+						pre
+							| <code class="language-jade">
+							| +modal("Learn More")
+							|     p Content of the modal     
+							| 
+							| // or . . . 
+							| 
+							| +modal("Learn More", "center")
+							|     p Content of the modal including an image
+							|    +image(100)
+							| </code>
+			article
+				+demo()
+					+panel('light')
+						+modal('Learn More', 'center')
+							h3 Special Modal
+							p Here lies my very special modal!
+		section.thirds
+			aside
+				h4.ft-hd.modal.trigger(data-target="tabs") +tabs(arg1)
+				div#tabs.modal.window
+					p
+						strong Description: 
+						| Creates a section of tabs.  The +tabs() element is used in conjunction with the +tab() element (singular).  Each tab can be defined under a +tab() element. Refer to the code example below.
+					ul
+						li
+							strong arg1 
+							br
+							| [ 
+							em array 
+							| ] &ndash; title of each tab, as a list of strings.
+					div.clear-wrap
+						h4 Code
+						pre
+							| <code class="language-jade">
+							| +tabs(['Tab 1', 'Tab 2', 'Tab 3'])
+							|     +tab()
+							|         p This content will be contained within the first tab.
+							|     +tab()
+							|         p This is the content for the second tab.
+							|     +tab()
+							|         p And finally, the content for the third tab.
+							| 
+							| </code>
+			article
+				+demo()
+					+panel('light')
+						+tabs(['Tab 1', 'Tab 2', 'Tab 3'])
+							+tab()
+								p This content will be contained within the first tab.
+							+tab()
+								p This is the content for the second tab.
+							+tab()
+								p And finally, the content for the third tab.
+
+		h3#loops.demo-heading Loops
+		section.thirds
+			aside
+				h4.ft-hd.modal.trigger(data-target="loop") +loop(arg1)
+				div#loop.modal.window
+					p
+						strong Description: 
+						| Makes a copy of the content for the number of times passed in as "arg1".
+					ul
+						li
+							strong arg1 
+							br
+							| [ 
+							em integer 
+							| ] &ndash; number of times to loop.
+					div.clear-wrap
+						h4 Code
+						pre
+							| <code class="language-jade">
+							| +panel('light')
+							| 	- var i = 0
+							| 	+loop(3)
+							| 		article.border-wrap
+							|			h3= titles[i++] + ' Title'
+							|			p
+							|				+blockletter(35)
+							| </code>
+			article
+				+demo('transparent')
+					+panel()
+						- var i = 0
+						+loop(3)
+							article.border-wrap.light
+								h3= titles[i++] + ' Title'
+								p
+									+blockletter(35)
+
+		section.thirds
+			aside
+				h4.ft-hd.modal.trigger(data-target="columnLoop") +column-loop(arg1, arg2)
+				div#columnLoop.modal.window
+					p
+						strong Description: 
+						| Makes a copy of the content for the number of times passed in as "arg1", as columns.  The copied column must be contained within an "article" tag.
+					ul
+						li
+							strong arg1 
+							br
+							| [ 
+							em integer 
+							| ] &ndash; number of columns to create.
+						li
+							strong arg2 
+							br
+							| [ 
+							em string 
+							| ] &ndash; pass in the string "equalize", if you would like each column to be equal in height.  Then, add "data-equalize" to each wrapper that acts as the column's height (See code below.)
+					div.clear-wrap
+						h4 Code
+						pre
+							| <code class="language-jade">
+							| +panel('dark')
+							| 	+column-loop(4,'equalize')
+							| 		article
+							| 			div.wrap(data-equal-height)
+							| 				p
+							| 					+porthole(150, 'center')
+							| 				p
+							| 					+blockletter(15)
+							| </code>
+			article
+				+demo('dark')
+					+panel('dark')
+						+column-loop(4,'equalize')
+							article
+								div.wrap(data-equal-height)
+									p
+										+porthole(150, 'center')
+									p
+										+blockletter(15)
+
 		h3#media.demo-heading Media
 		section.thirds
 			aside
@@ -299,19 +380,19 @@ block content
 							strong arg1 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; width of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg2 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; height of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg3
 							br
 							| [ 
-							em string
+							em string 
 							| ] &ndash; position of element; can pass in the strings "left", "center", or "right"
 					div.clear-wrap
 						h4 Code
@@ -340,19 +421,19 @@ block content
 							strong arg1 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; width of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg2 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; height of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg3
 							br
 							| [ 
-							em string
+							em string 
 							| ] &ndash; position of element; can pass in the strings "left", "center", or "right"
 					div.clear-wrap
 						h4 Code
@@ -381,13 +462,13 @@ block content
 							strong arg1 
 							br
 							| [ 
-							em integer
+							em integer 
 							| ] &ndash; dimensions of element (width and height)
 						li
 							strong arg2
 							br
 							| [ 
-							em string
+							em string 
 							| ] &ndash; position of element; can pass in the strings "left", "center", or "right"
 					div.clear-wrap
 						h4 Code
@@ -417,19 +498,19 @@ block content
 							strong arg1 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; width of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg2 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; height of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg3
 							br
 							| [ 
-							em string
+							em string 
 							| ] &ndash; position of element; can pass in the strings "left", "center", or "right"
 					div.clear-wrap
 						h4 Code
@@ -459,13 +540,13 @@ block content
 							strong arg1 
 							br
 							| [ 
-							em integer
+							em integer 
 							| ] &ndash; dimensions of element (width and height)
 						li
 							strong arg2
 							br
 							| [ 
-							em string
+							em string 
 							| ] &ndash; position of element; can pass in the strings "left", "center", or "right"
 					div.clear-wrap
 						h4 Code
@@ -495,19 +576,19 @@ block content
 							strong arg1 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; width of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg2 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; height of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg3
 							br
 							| [ 
-							em string
+							em string 
 							| ] &ndash; position of element; can pass in the strings "left", "center", or "right"
 					div.clear-wrap
 						h4 Code
@@ -536,19 +617,19 @@ block content
 							strong arg1 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; width of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg2 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; height of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg3
 							br
 							| [ 
-							em string
+							em string 
 							| ] &ndash; position of element; can pass in the strings "left", "center", or "right"
 					div.clear-wrap
 						h4 Code
@@ -577,19 +658,19 @@ block content
 							strong arg1 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; width of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg2 
 							br
 							| [ 
-							em integer, string
+							em integer, string 
 							| ] &ndash; height of element. Note: you can pass in a string for percentages, such as "100%".
 						li
 							strong arg3
 							br
 							| [ 
-							em string
+							em string 
 							| ] &ndash; position of element; can pass in the strings "left", "center", or "right"
 					div.clear-wrap
 						h4 Code
