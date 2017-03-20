@@ -7,48 +7,65 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <nav class="menu-drawer">
-      <div class="use-native-click">
-        <ul>
-          <li><a href="/" class="logo">TheSite</a></li>
-          <li><a href="/">Home</a>
-          </li>
-          <li><a href="page2.html">Page 2</a>
-          </li>
-          <li><a href="usage.html">Usage</a>
-          </li>
-          <li class="right">
-            <div data-target="search-results.html" class="search-widget">
-              <div class="searchfield">
-                <div class="icon-search"></div>
-                <input type="text">
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div id="siteWrapper">
-      <div id="open">
-        <header>
-          <div data-target="#siteWrapper" class="icon-menu toggle use-native-click"></div>
-        </header>
-        <nav class="desktop-nav dark">
+    <div id="drawer" class="use-native-click">
+      <nav class="menu-drawer">
+        <div>
           <ul>
-            <li><a href="/" class="logo">TheSite</a></li>
+            <li>
+              <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </li>
             <li><a href="/">Home</a>
             </li>
             <li><a href="page2.html">Page 2</a>
             </li>
+            <li><a href="mobile.html">Mobile</a>
+            </li>
             <li><a href="usage.html">Usage</a>
             </li>
             <li class="right">
-                        <div data-target="search-results.html" class="search-widget">
-                          <div class="searchfield">
-                            <div class="icon-search"></div>
-                            <input type="text">
-                          </div>
-                        </div>
+              <div data-target="search-results.html" class="search-widget">
+                <div class="searchfield">
+                  <div class="icon-search"></div>
+                  <input type="text">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div id="siteWrapper">
+      <div id="open">
+        <header>
+          <section class="rack">
+            <div data-target="body, #siteWrapper, #drawer" class="icon-menu toggle use-native-click"></div>
+            <div class="mobile-rack-space">
+              <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </div>
+          </section>
+        </header>
+        <nav class="desktop-nav dark">
+          <ul>
+            <li>
+                        <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </li>
+            <li><a href="/">Home</a>
+            </li>
+            <li><a href="page2.html">Page 2</a>
+            </li>
+            <li><a href="mobile.html">Mobile</a>
+            </li>
+            <li><a href="usage.html">Usage</a>
+            </li>
+            <li class="right">
+                        <article class="rack cf">
+                                    <div data-target="search-results.html" class="search-widget">
+                                      <div class="searchfield">
+                                        <div class="icon-search"></div>
+                                        <input type="text">
+                                      </div>
+                                    </div>
+                        </article>
             </li>
           </ul>
         </nav>
@@ -104,7 +121,7 @@
                                         <div class="panel-wrap">
                                           <section class="panel">
                                             <h3>Demo</h3>
-                                            <p><span class="blockletter">Sed convallis magna eu sem etiam dictum tincidunt diam sed elit dui pellentesque a faucibus vel interdum nec diam nulla quis diam duis sapien nunc commodo et interdum suscipit sollicitudin </span>
+                                            <p><span class="blockletter">Maecenas libero donec iaculis gravida nulla curabitur sagittis hendrerit ante curabitur vitae diam non enim vestibulum interdum nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit </span>
                                             </p>
                                           </section>
                                         </div>
@@ -138,7 +155,7 @@
                                         <div class="panel-wrap whiteout">
                                           <section class="panel">
                                             <h3>Demo</h3>
-                                            <p><span class="blockletter">Maecenas fermentum sem in pharetra pellentesque velit turpis volutpat ante in pharetra metus odio a lectus vestibulum fermentum tortor id mi nunc posuere in vulputate urna eu arcu mauris dolor </span>
+                                            <p><span class="blockletter">Aliquam ornare wisi eu metus praesent vitae arcu tempor neque lacinia pretium nulla non lectus sed nisl molestie malesuada cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus </span>
                                             </p>
                                           </section>
                                         </div>
@@ -172,7 +189,7 @@
                                         <div class="panel-wrap fill">
                                           <section class="panel">
                                             <h3>Demo</h3>
-                                            <p><span class="blockletter">Etiam posuere quam ac quam cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus ut tempus purus at lorem praesent in mauris eu tortor porttitor accumsan sed </span>
+                                            <p><span class="blockletter">Fusce nibh duis pulvinar integer lacinia donec quis nibh at felis congue commodo praesent id justo in neque elementum ultrices in vulputate urna eu arcu mauris dolor felis sagittis at </span>
                                             </p>
                                           </section>
                                         </div>
@@ -210,15 +227,15 @@ section.thirds
                                           <section class="panel">
                                             <section class="thirds">
                                               <aside>
-                                                <div style="width: 100%; height: 200px">
-                                                  <div class="image-widget">
-                                                    <div class="image-border"></div>
-                                                  </div>
-                                                </div>
+                                                          <div style="width: 100%; height: 200px">
+                                                            <div class="image-widget">
+                                                              <div class="image-border"></div>
+                                                            </div>
+                                                          </div>
                                               </aside>
                                               <article>
                                                 <h3>Content Title</h3>
-                                                <p><span class="blockletter">Curabitur sagittis hendrerit ante morbi scelerisque luctus velit praesent id justo in neque elementum ultrices donec odio urna tempus molestie porttitor ut iaculis quis sem nunc posuere morbi a metus quisque porta in nisl fusce nibh phasellus enim erat vestibulum vel aliquam a posuere eu velit mauris elementum mauris vitae </span>
+                                                <p><span class="blockletter">Nulla non lectus sed nisl molestie malesuada quisque tincidunt scelerisque libero nulla non lectus sed nisl molestie malesuada sed convallis magna eu sem suspendisse potenti nam sed tellus id magna elementum tincidunt quisque tincidunt scelerisque libero in dapibus augue non sapien nam sed tellus id magna elementum tincidunt curabitur vitae </span>
                                                 </p>
                                               </article>
                                             </section>
@@ -258,15 +275,15 @@ section.fourths
                                           <section class="panel">
                                             <section class="fourths">
                                               <aside>
-                                                <div style="width: 100%; height: 200px">
-                                                  <div class="image-widget">
-                                                    <div class="image-border"></div>
-                                                  </div>
-                                                </div>
+                                                          <div style="width: 100%; height: 200px">
+                                                            <div class="image-widget">
+                                                              <div class="image-border"></div>
+                                                            </div>
+                                                          </div>
                                               </aside>
                                               <article>
                                                 <h3>Content Title</h3>
-                                                <p><span class="blockletter">Sed ac dolor sit amet purus malesuada congue in sem justo commodo ut suscipit at pharetra vitae orci cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus donec quis nibh </span>
+                                                <p><span class="blockletter">In rutrum praesent vitae arcu tempor neque lacinia pretium mauris dictum facilisis augue aliquam in lorem sit amet leo accumsan lacinia in nisl duis sapien nunc commodo et interdum suscipit sollicitudin et dolor suspendisse nisl donec vitae arcu nam sed tellus id magna elementum tincidunt suspendisse potenti curabitur ligula sapien </span>
                                                 </p>
                                               </article>
                                             </section>
@@ -307,15 +324,15 @@ section.fourths
                                           <section class="panel">
                                             <section class="fifths">
                                               <aside>
-                                                <div style="width: 100%; height: 200px">
-                                                  <div class="image-widget">
-                                                    <div class="image-border"></div>
-                                                  </div>
-                                                </div>
+                                                          <div style="width: 100%; height: 200px">
+                                                            <div class="image-widget">
+                                                              <div class="image-border"></div>
+                                                            </div>
+                                                          </div>
                                               </aside>
                                               <article>
                                                 <h3>Content Title</h3>
-                                                <p><span class="blockletter">Proin in tellus sit amet nibh dignissim sagittis morbi mattis felis at nunc duis pulvinar nam quis nulla etiam commodo dui eget wisi sed vel lectus sed convallis magna eu sem pellentesque sapien vestibulum facilisis auctor urna aenean id metus id velit ullamcorper pulvinar maecenas lorem maecenas sollicitudin proin pede </span>
+                                                <p><span class="blockletter">Etiam bibendum elit eget erat curabitur bibendum justo non orci etiam ligula pede sagittis quis interdum ultricies scelerisque eu urna aliquam id dolor fusce eget urna etiam posuere quam ac quam in rutrum cras elementum fusce eget urna fusce wisi suspendisse potenti nulla non arcu lacinia neque faucibus fringilla nullam </span>
                                                 </p>
                                               </article>
                                             </section>
@@ -453,17 +470,17 @@ section.fourths
                                           <section class="panel">
                                                       <article class="border-wrap light">
                                                         <h3>First Title</h3>
-                                                        <p><span class="blockletter">Proin pede metus vulputate nec fermentum fringilla vehicula vitae justo etiam bibendum elit eget erat etiam neque aliquam in lorem sit amet leo accumsan lacinia fusce nibh phasellus faucibus molestie nisl cras pede libero dapibus </span>
+                                                        <p><span class="blockletter">Mauris dolor felis sagittis at luctus sed aliquam non tellus donec iaculis gravida nulla integer in sapien class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos curabitur sagittis hendrerit ante cras </span>
                                                         </p>
                                                       </article>
                                                       <article class="border-wrap light">
                                                         <h3>Second Title</h3>
-                                                        <p><span class="blockletter">Fusce tellus odio dapibus id fermentum quis suscipit id erat etiam sapien elit consequat eget tristique non venenatis quis ante aliquam erat volutpat praesent dapibus praesent dapibus aenean placerat aliquam erat volutpat aliquam erat volutpat </span>
+                                                        <p><span class="blockletter">Praesent dapibus vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat vivamus ac urna vel leo pretium faucibus morbi scelerisque luctus velit suspendisse potenti vestibulum facilisis auctor urna vivamus porttitor turpis ac leo suspendisse </span>
                                                         </p>
                                                       </article>
                                                       <article class="border-wrap light">
                                                         <h3>Third Title</h3>
-                                                        <p><span class="blockletter">Etiam ligula pede sagittis quis interdum ultricies scelerisque eu urna phasellus et lorem id felis nonummy placerat duis condimentum augue id magna semper rutrum aenean id metus id velit ullamcorper pulvinar fusce eget urna nullam </span>
+                                                        <p><span class="blockletter">Duis risus pellentesque ipsum duis risus fusce aliquam vestibulum ipsum mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus in convallis pellentesque habitant morbi tristique senectus et </span>
                                                         </p>
                                                       </article>
                                           </section>
@@ -506,44 +523,44 @@ section.fourths
                                                         <article>
                                                           <div data-equal-height class="wrap">
                                                             <p>
-                                                              <div style="width: 150px; height: 150px; margin: 0 auto" class="porthole">
-                                                                <div class="image-widget"></div>
-                                                              </div>
+                                                                        <div style="width: 150px; height: 150px; margin: 0 auto" class="porthole">
+                                                                          <div class="image-widget"></div>
+                                                                        </div>
                                                             </p>
-                                                            <p><span class="blockletter">Nullam eget nisl nullam dapibus fermentum ipsum cum sociis natoque penatibus et magnis dis parturient </span>
-                                                            </p>
-                                                          </div>
-                                                        </article>
-                                                        <article>
-                                                          <div data-equal-height class="wrap">
-                                                            <p>
-                                                              <div style="width: 150px; height: 150px; margin: 0 auto" class="porthole">
-                                                                <div class="image-widget"></div>
-                                                              </div>
-                                                            </p>
-                                                            <p><span class="blockletter">Nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit diam nulla </span>
+                                                            <p><span class="blockletter">Etiam bibendum elit eget erat aliquam in lorem sit amet leo accumsan lacinia nullam dapibus </span>
                                                             </p>
                                                           </div>
                                                         </article>
                                                         <article>
                                                           <div data-equal-height class="wrap">
                                                             <p>
-                                                              <div style="width: 150px; height: 150px; margin: 0 auto" class="porthole">
-                                                                <div class="image-widget"></div>
-                                                              </div>
+                                                                        <div style="width: 150px; height: 150px; margin: 0 auto" class="porthole">
+                                                                          <div class="image-widget"></div>
+                                                                        </div>
                                                             </p>
-                                                            <p><span class="blockletter">Maecenas libero donec ipsum massa ullamcorper in auctor et scelerisque sed est fusce nibh in </span>
+                                                            <p><span class="blockletter">Curabitur vitae diam non enim vestibulum interdum pellentesque sapien integer lacinia nullam at arcu a </span>
                                                             </p>
                                                           </div>
                                                         </article>
                                                         <article>
                                                           <div data-equal-height class="wrap">
                                                             <p>
-                                                              <div style="width: 150px; height: 150px; margin: 0 auto" class="porthole">
-                                                                <div class="image-widget"></div>
-                                                              </div>
+                                                                        <div style="width: 150px; height: 150px; margin: 0 auto" class="porthole">
+                                                                          <div class="image-widget"></div>
+                                                                        </div>
                                                             </p>
-                                                            <p><span class="blockletter">Etiam posuere lacus quis dolor nunc tincidunt ante vitae massa pellentesque ipsum lorem ipsum dolor </span>
+                                                            <p><span class="blockletter">Proin in tellus sit amet nibh dignissim sagittis cum sociis natoque penatibus et magnis dis </span>
+                                                            </p>
+                                                          </div>
+                                                        </article>
+                                                        <article>
+                                                          <div data-equal-height class="wrap">
+                                                            <p>
+                                                                        <div style="width: 150px; height: 150px; margin: 0 auto" class="porthole">
+                                                                          <div class="image-widget"></div>
+                                                                        </div>
+                                                            </p>
+                                                            <p><span class="blockletter">Etiam egestas wisi a erat duis sapien nunc commodo et interdum suscipit sollicitudin et dolor </span>
                                                             </p>
                                                           </div>
                                                         </article>
@@ -582,11 +599,11 @@ article
                         <article>
                           <div class="demo">
                             <div class="web-wrap">
-                              <div style="width: 450px; height: 250px">
-                                <div class="image-widget">
-                                  <div class="image-border"></div>
-                                </div>
-                              </div>
+                                        <div style="width: 450px; height: 250px">
+                                          <div class="image-widget">
+                                            <div class="image-border"></div>
+                                          </div>
+                                        </div>
                             </div>
                             <div class="demo-height"></div>
                           </div>
@@ -618,11 +635,11 @@ article
                         <article>
                           <div class="demo">
                             <div class="web-wrap">
-                              <div style="width: 450px; height: 250px">
-                                <div class="dimage image-widget">
-                                  <div class="image-border"></div>
-                                </div>
-                              </div>
+                                        <div style="width: 450px; height: 250px">
+                                          <div class="dimage image-widget">
+                                            <div class="image-border"></div>
+                                          </div>
+                                        </div>
                             </div>
                             <div class="demo-height"></div>
                           </div>
@@ -654,9 +671,9 @@ article
                           <div class="demo">
                             <div class="web-wrap checkered">
                               <article style="width: 450px">
-                                <div style="width: 200px; height: 200px; margin: 0 auto" class="porthole">
-                                  <div class="image-widget"></div>
-                                </div>
+                                          <div style="width: 200px; height: 200px; margin: 0 auto" class="porthole">
+                                            <div class="image-widget"></div>
+                                          </div>
                               </article>
                             </div>
                             <div class="demo-height"></div>
@@ -690,11 +707,11 @@ article
                           <div class="demo">
                             <div class="web-wrap checkered">
                               <article style="width: 450px">
-                                <div style="width: 200px; height: 200px; margin: 0 auto">
-                                  <div class="profile image-widget">
-                                    <div class="image-border"></div>
-                                  </div>
-                                </div>
+                                          <div style="width: 200px; height: 200px; margin: 0 auto">
+                                            <div class="profile image-widget">
+                                              <div class="image-border"></div>
+                                            </div>
+                                          </div>
                               </article>
                             </div>
                             <div class="demo-height"></div>
@@ -727,9 +744,9 @@ article
                           <div class="demo">
                             <div class="web-wrap checkered">
                               <article style="width: 450px">
-                                <div style="width: 200px; height: 200px; margin: 0 auto" class="porthole">
-                                  <div class="profile image-widget"></div>
-                                </div>
+                                          <div style="width: 200px; height: 200px; margin: 0 auto" class="porthole">
+                                            <div class="profile image-widget"></div>
+                                          </div>
                               </article>
                             </div>
                             <div class="demo-height"></div>
@@ -762,11 +779,11 @@ article
                         <article>
                           <div class="demo">
                             <div class="web-wrap">
-                              <div style="width: 450px; height: 250px">
-                                <div class="video-widget">
-                                  <div class="image-border"></div>
-                                </div>
-                              </div>
+                                        <div style="width: 450px; height: 250px">
+                                          <div class="video-widget">
+                                            <div class="image-border"></div>
+                                          </div>
+                                        </div>
                             </div>
                             <div class="demo-height"></div>
                           </div>
@@ -798,17 +815,17 @@ article
                         <article>
                           <div class="demo">
                             <div class="web-wrap">
-                              <div style="width: 450px; height: 250px">
-                                <div class="slideshow-widget">
-                                  <div class="image-widget">
-                                    <div class="image-border">
-                                      <div class="icon-arrow-left"></div>
-                                      <div class="icon-arrow-right"></div>
-                                      <div class="icon-progress"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                        <div style="width: 450px; height: 250px">
+                                          <div class="slideshow-widget">
+                                            <div class="image-widget">
+                                              <div class="image-border">
+                                                <div class="icon-arrow-left"></div>
+                                                <div class="icon-arrow-right"></div>
+                                                <div class="icon-progress"></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
                             </div>
                             <div class="demo-height"></div>
                           </div>
@@ -840,17 +857,17 @@ article
                         <article>
                           <div class="demo">
                             <div class="web-wrap">
-                              <div style="width: 450px; height: 250px">
-                                <div class="slideshow-widget">
-                                  <div class="dimage image-widget">
-                                    <div class="image-border">
-                                      <div class="icon-arrow-left"></div>
-                                      <div class="icon-arrow-right"></div>
-                                      <div class="icon-progress"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                        <div style="width: 450px; height: 250px">
+                                          <div class="slideshow-widget">
+                                            <div class="dimage image-widget">
+                                              <div class="image-border">
+                                                <div class="icon-arrow-left"></div>
+                                                <div class="icon-arrow-right"></div>
+                                                <div class="icon-progress"></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
                             </div>
                             <div class="demo-height"></div>
                           </div>
@@ -865,9 +882,9 @@ article
                           <div class="demo">
                             <div class="web-wrap">
                               <article class="extend">
-                                <p>
-                                  <input type="text" placeholder="First Name"/>
-                                </p>
+                                          <p>
+                                            <input type="text" placeholder="First Name">
+                                          </p>
                               </article>
                             </div>
                             <div class="demo-height"></div>
@@ -882,9 +899,9 @@ article
                           <div class="demo">
                             <div class="web-wrap">
                               <article class="extend">
-                                <p>
-                                  <input type="email" placeholder="Email Address"/>
-                                </p>
+                                          <p>
+                                            <input type="email" placeholder="Email Address" data-validate="email">
+                                          </p>
                               </article>
                             </div>
                             <div class="demo-height"></div>
@@ -899,9 +916,9 @@ article
                           <div class="demo">
                             <div class="web-wrap">
                               <article class="extend">
-                                <p>
-                                  <input type="password" placeholder="New Password"/>
-                                </p>
+                                          <p>
+                                            <input type="password" placeholder="New Password">
+                                          </p>
                               </article>
                             </div>
                             <div class="demo-height"></div>
@@ -915,31 +932,28 @@ article
                         <article>
                           <div class="demo">
                             <div class="web-wrap">
-                              <div class="switch-widget">
-                                <ul>
-                                  <li class="switch-item">
-                                    <div class="switch-object">
-                                      <div class="switch"></div>
-                                      <div class="on"></div>
-                                    </div>
-                                    <label>Item 1</label>
-                                  </li>
-                                  <li class="switch-item">
-                                    <div class="switch-object">
-                                      <div class="switch"></div>
-                                      <div class="on"></div>
-                                    </div>
-                                    <label>Item 2</label>
-                                  </li>
-                                  <li class="switch-item">
-                                    <div class="switch-object">
-                                      <div class="switch"></div>
-                                      <div class="on"></div>
-                                    </div>
-                                    <label>Item 3</label>
-                                  </li>
-                                </ul>
-                              </div>
+                                        <div class="form-switch-widget">
+                                          <ul>
+                                            <li>
+                                              <div class="switch-item">
+                                                <input type="checkbox" name="switches" value="item 1" id="item 11">
+                                                <label for="item 11">Item 1</label>
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div class="switch-item">
+                                                <input type="checkbox" name="switches" value="item 2" id="item 22">
+                                                <label for="item 22">Item 2</label>
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div class="switch-item">
+                                                <input type="checkbox" name="switches" value="item 3" id="item 33">
+                                                <label for="item 33">Item 3</label>
+                                              </div>
+                                            </li>
+                                          </ul>
+                                        </div>
                             </div>
                             <div class="demo-height"></div>
                           </div>
@@ -956,36 +970,42 @@ article
                                 <div class="wrap">
                                   <article>
                                     <h4>Default:</h4>
-                                    <div class="checkbox-widget">
-                                      <p><span class="checkbox">
-                                          <input type="checkbox" name="checkboxes" value="item 1" id="yc8bv45y6p0owkejc3di1"/>
-                                          <label for="yc8bv45y6p0owkejc3di1">Item 1</label></span><span class="checkbox">
-                                          <input type="checkbox" name="checkboxes" value="item 2" id="yc8bv45y6p0owkejc3di2"/>
-                                          <label for="yc8bv45y6p0owkejc3di2">Item 2</label></span><span class="checkbox">
-                                          <input type="checkbox" name="checkboxes" value="item 3" id="yc8bv45y6p0owkejc3di3"/>
-                                          <label for="yc8bv45y6p0owkejc3di3">Item 3</label></span>
-                                      </p>
-                                    </div>
+                                              <div class="checkbox-widget">
+                                                <ul>
+                                                  <li class="checkbox">
+                                                    <input type="checkbox" name="checkboxes" value="item 1" id="test1">
+                                                    <label for="test1">Item 1</label>
+                                                  </li>
+                                                  <li class="checkbox">
+                                                    <input type="checkbox" name="checkboxes" value="item 2" id="test2">
+                                                    <label for="test2">Item 2</label>
+                                                  </li>
+                                                  <li class="checkbox">
+                                                    <input type="checkbox" name="checkboxes" value="item 3" id="test3">
+                                                    <label for="test3">Item 3</label>
+                                                  </li>
+                                                </ul>
+                                              </div>
                                     <hr>
                                   </article>
                                   <article>
                                     <h4>As A List:</h4>
-                                    <div class="checkbox-widget">
-                                      <ul>
-                                        <li class="checkbox">
-                                          <input type="checkbox" name="checkboxes" value="item 1" id="test1"/>
-                                          <label for="test1">Item 1</label>
-                                        </li>
-                                        <li class="checkbox">
-                                          <input type="checkbox" name="checkboxes" value="item 2" id="test2"/>
-                                          <label for="test2">Item 2</label>
-                                        </li>
-                                        <li class="checkbox">
-                                          <input type="checkbox" name="checkboxes" value="item 3" id="test3"/>
-                                          <label for="test3">Item 3</label>
-                                        </li>
-                                      </ul>
-                                    </div>
+                                              <div class="checkbox-widget">
+                                                <ul>
+                                                  <li class="checkbox">
+                                                    <input type="checkbox" name="checkboxes" value="item 1" id="test1">
+                                                    <label for="test1">Item 1</label>
+                                                  </li>
+                                                  <li class="checkbox">
+                                                    <input type="checkbox" name="checkboxes" value="item 2" id="test2">
+                                                    <label for="test2">Item 2</label>
+                                                  </li>
+                                                  <li class="checkbox">
+                                                    <input type="checkbox" name="checkboxes" value="item 3" id="test3">
+                                                    <label for="test3">Item 3</label>
+                                                  </li>
+                                                </ul>
+                                              </div>
                                   </article>
                                 </div>
                               </article>
@@ -1002,16 +1022,16 @@ article
                           <div class="demo">
                             <div class="web-wrap">
                               <article>
-                                <div class="radio-widget">
-                                  <p><span class="radio">
-                                      <input type="radio" name="radios" value="item 1" id="susbrh2sn5aky6g06bt91"/>
-                                      <label for="susbrh2sn5aky6g06bt91">Item 1</label></span><span class="radio">
-                                      <input type="radio" name="radios" value="item 2" id="susbrh2sn5aky6g06bt92"/>
-                                      <label for="susbrh2sn5aky6g06bt92">Item 2</label></span><span class="radio">
-                                      <input type="radio" name="radios" value="item 3" id="susbrh2sn5aky6g06bt93"/>
-                                      <label for="susbrh2sn5aky6g06bt93">Item 3</label></span>
-                                  </p>
-                                </div>
+                                          <div class="radio-widget">
+                                            <p><span class="radio">
+                                                <input type="radio" name="radios" value="item 1" id="vjqcrufjvdlc5ofrms4i1">
+                                                <label for="vjqcrufjvdlc5ofrms4i1">Item 1</label></span><span class="radio">
+                                                <input type="radio" name="radios" value="item 2" id="vjqcrufjvdlc5ofrms4i2">
+                                                <label for="vjqcrufjvdlc5ofrms4i2">Item 2</label></span><span class="radio">
+                                                <input type="radio" name="radios" value="item 3" id="vjqcrufjvdlc5ofrms4i3">
+                                                <label for="vjqcrufjvdlc5ofrms4i3">Item 3</label></span>
+                                            </p>
+                                          </div>
                               </article>
                             </div>
                             <div class="demo-height"></div>
@@ -1026,11 +1046,11 @@ article
                           <div class="demo">
                             <div class="web-wrap">
                               <article class="extend">
-                                <select>
-                                  <option>Item 1</option>
-                                  <option>Item 2</option>
-                                  <option>Item 3</option>
-                                </select>
+                                          <select>
+                                            <option>Item 1</option>
+                                            <option>Item 2</option>
+                                            <option>Item 3</option>
+                                          </select>
                               </article>
                             </div>
                             <div class="demo-height"></div>
@@ -1046,9 +1066,9 @@ article
                             <div class="web-wrap">
                               <article class="extend">
                                 <div class="wrap">
-                                  <p class="center-justify">
-                                    <input type="submit" name="Submit"/>
-                                  </p>
+                                            <p class="center-justify">
+                                              <input type="submit" value="Submit">
+                                            </p>
                                 </div>
                               </article>
                             </div>
@@ -1066,6 +1086,7 @@ article
 <script src="/js/jquery-1.11.1.min.js"></script>
 <script src="/js/TweenMax.min.js"></script>
 <script src="/js/main.lib.js"></script>
+<script src="/js/magicVial-0.6.2.js"></script>
 <script>
   $('.web-wrap').each(function() {
   	var myHeight = $(this).outerHeight();

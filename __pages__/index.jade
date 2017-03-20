@@ -11,13 +11,13 @@ block content
 						h3 Learn More
 						p
 							+blockletter(50)
-						form.wrap
-							section.columns-2
+						form#moreInfo.wrap
+							+col(2)
 								article
-									+input('First Name')
+									+input('First Name', 'required')
 								article
 									+input('Last Name')
-							+input('Email')
+							+email('Email', 'required')
 							+textarea('Message')
 							+submit('Submit','right')
 			aside
@@ -59,3 +59,9 @@ block content
 						+image('100%',100)
 						p
 							+rating(3, 5)
+block script
+	script.
+		$('form').each(function() {
+			console.log($(this).attr('id'));
+			magicVial('form#' + $(this).attr('id'), "Sorry, please fix the errors below.");
+		});

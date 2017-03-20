@@ -7,101 +7,199 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <nav class="menu-drawer">
-      <div class="use-native-click">
-        <ul>
-          <li><a href="/" class="logo">TheSite</a></li>
-          <li><a href="/">Home</a>
-          </li>
-          <li><a href="page2.html">Page 2</a>
-          </li>
-          <li><a href="usage.html">Usage</a>
-          </li>
-          <li class="right">
-            <div data-target="search-results.html" class="search-widget">
-              <div class="searchfield">
-                <div class="icon-search"></div>
-                <input type="text">
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div id="siteWrapper">
-      <div id="open">
-        <header>
-          <div data-target="#siteWrapper" class="icon-menu toggle use-native-click"></div>
-        </header>
-        <nav class="desktop-nav dark">
+    <div id="drawer" class="use-native-click">
+      <nav class="menu-drawer">
+        <div>
           <ul>
-            <li><a href="/" class="logo">TheSite</a></li>
+            <li>
+              <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </li>
             <li><a href="/">Home</a>
             </li>
             <li><a href="page2.html">Page 2</a>
             </li>
+            <li><a href="mobile.html">Mobile</a>
+            </li>
             <li><a href="usage.html">Usage</a>
             </li>
             <li class="right">
-                        <div data-target="search-results.html" class="search-widget">
-                          <div class="searchfield">
-                            <div class="icon-search"></div>
-                            <input type="text">
-                          </div>
-                        </div>
+              <div data-target="search-results.html" class="search-widget">
+                <div class="searchfield">
+                  <div class="icon-search"></div>
+                  <input type="text">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div id="siteWrapper">
+      <div id="open">
+        <header>
+          <section class="rack">
+            <div data-target="body, #siteWrapper, #drawer" class="icon-menu toggle use-native-click"></div>
+            <div class="mobile-rack-space">
+              <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </div>
+          </section>
+        </header>
+        <nav class="desktop-nav dark">
+          <ul>
+            <li>
+                        <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </li>
+            <li><a href="/">Home</a>
+            </li>
+            <li><a href="page2.html">Page 2</a>
+            </li>
+            <li><a href="mobile.html">Mobile</a>
+            </li>
+            <li><a href="usage.html">Usage</a>
+            </li>
+            <li class="right">
+                        <article class="rack cf">
+                                    <div data-target="search-results.html" class="search-widget">
+                                      <div class="searchfield">
+                                        <div class="icon-search"></div>
+                                        <input type="text">
+                                      </div>
+                                    </div>
+                        </article>
             </li>
           </ul>
         </nav>
                   <div class="panel-wrap whiteout">
                     <section class="panel">
+                      <div data-target="settingsDrawer" class="collapsible trigger icon-cog trigger-icon"></div>
+                      <section id="settingsDrawer" class="collapsible drawer">
+                        <form class="wrap">
+                          <h4>Settings</h4>
+                          <hr>
+                                    <section class="columns-4">
+                                      <article>
+                                                  <div class="form-switch-widget">
+                                                    <ul>
+                                                      <li>
+                                                        <div class="switch-item">
+                                                          <input type="checkbox" name="settingsToggle" value="first feature" id="first feature1">
+                                                          <label for="first feature1">First Feature</label>
+                                                        </div>
+                                                      </li>
+                                                      <li>
+                                                        <div class="switch-item">
+                                                          <input type="checkbox" name="settingsToggle" value="second feature" id="second feature2">
+                                                          <label for="second feature2">Second Feature</label>
+                                                        </div>
+                                                      </li>
+                                                      <li>
+                                                        <div class="switch-item">
+                                                          <input type="checkbox" name="settingsToggle" value="third feature" id="third feature3">
+                                                          <label for="third feature3">Third Feature</label>
+                                                        </div>
+                                                      </li>
+                                                    </ul>
+                                                  </div>
+                                      </article>
+                                      <article>
+                                        <div class="border-wrap">
+                                          <div>
+                                                      <select>
+                                                        <option>Light</option>
+                                                        <option>Dark</option>
+                                                        <option>Neutral</option>
+                                                      </select>
+                                          </div>
+                                          <p>
+                                                      <div class="radio-widget">
+                                                        <p><span class="radio">
+                                                            <input type="radio" name="settingsRadio" value="setting a" id="vnk3atatqdodo4ijxlxr1">
+                                                            <label for="vnk3atatqdodo4ijxlxr1">Setting A</label></span><span class="radio">
+                                                            <input type="radio" name="settingsRadio" value="setting b" id="vnk3atatqdodo4ijxlxr2">
+                                                            <label for="vnk3atatqdodo4ijxlxr2">Setting B</label></span>
+                                                        </p>
+                                                      </div>
+                                          </p>
+                                          <div class="center-justify">
+                                                      <div class="form-switch-widget">
+                                                        <div class="switch-item">
+                                                          <input type="checkbox" name="Use" value="use" id="use">
+                                                          <label for="use">Use</label>
+                                                        </div>
+                                                      </div>
+                                          </div>
+                                        </div>
+                                      </article>
+                                      <article>
+                                                  <div class="checkbox-widget">
+                                                    <ul>
+                                                      <li class="checkbox">
+                                                        <input type="checkbox" name="add" value="add item 1" id="test1">
+                                                        <label for="test1">Add Item 1</label>
+                                                      </li>
+                                                      <li class="checkbox">
+                                                        <input type="checkbox" name="add" value="add item 2" id="test2">
+                                                        <label for="test2">Add Item 2</label>
+                                                      </li>
+                                                      <li class="checkbox">
+                                                        <input type="checkbox" name="add" value="add item 3" id="test3">
+                                                        <label for="test3">Add Item 3</label>
+                                                      </li>
+                                                    </ul>
+                                                  </div>
+                                      </article>
+                                      <article>
+                                                  <div class="switch-widget">
+                                                    <div class="switch"></div>
+                                                    <div class="on"></div>
+                                                  </div>
+                                        <p><span class="blockletter">Suspendisse sagittis ultrices augue duis viverra diam non justo suspendisse potenti sed ac dolor sit amet purus malesuada congue cras pede libero dapibus nec pretium sit amet tempor quis urna </span>
+                                        </p>
+                                      </article>
+                                    </section>
+                          <hr>
+                        </form>
+                      </section>
                                 <section class="thirds wrap">
                                   <aside>
-                                    <div style="width: 100%; height: 200px">
-                                      <div class="dimage image-widget">
-                                        <div class="image-border"></div>
-                                      </div>
-                                    </div>
-                                    <p class="right-justify"><span class="blockletter">Curabitur ligula sapien pulvinar </span>
+                                              <div style="width: 100%; height: 200px">
+                                                <div class="dimage image-widget">
+                                                  <div class="image-border"></div>
+                                                </div>
+                                              </div>
+                                    <p class="right-justify"><span class="blockletter">Aenean vel massa quis </span>
                                     </p>
-                                    <p class="right-justify"><span class="blockletter">Cum sociis </span>
+                                    <p class="right-justify"><span class="blockletter">Praesent in </span>
                                     </p>
                                   </aside>
                                   <article>
                                     <h3>First Blog Title</h3>
-                                    <p><span class="blockletter">In vulputate urna eu arcu vivamus luctus egestas leo morbi scelerisque luctus velit etiam posuere quam ac quam nunc auctor aliquam erat volutpat integer vulputate sem a nibh rutrum consequat </span>
+                                    <p><span class="blockletter">Integer tempor suspendisse potenti nullam justo enim consectetuer nec ullamcorper ac vestibulum in elit fusce eget urna nulla est cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus </span>
                                     </p>
                                     <section class="thirds">
                                       <aside>
-                                        <section class="columns-4">
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                        </section>
+                                                  <article class="rack cf">
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                  </article>
                                       </aside>
                                       <article>
                                         <p class="right">
@@ -113,52 +211,44 @@
                                 </section>
                                 <section class="thirds wrap">
                                   <aside>
-                                    <div style="width: 100%; height: 200px">
-                                      <div class="dimage image-widget">
-                                        <div class="image-border"></div>
-                                      </div>
-                                    </div>
-                                    <p class="right-justify"><span class="blockletter">Etiam egestas wisi a </span>
+                                              <div style="width: 100%; height: 200px">
+                                                <div class="dimage image-widget">
+                                                  <div class="image-border"></div>
+                                                </div>
+                                              </div>
+                                    <p class="right-justify"><span class="blockletter">Pellentesque habitant morbi tristique </span>
                                     </p>
-                                    <p class="right-justify"><span class="blockletter">Suspendisse sagittis </span>
+                                    <p class="right-justify"><span class="blockletter">Integer in </span>
                                     </p>
                                   </aside>
                                   <article>
                                     <h3>Second Blog Title</h3>
-                                    <p><span class="blockletter">In laoreet magna id viverra tincidunt sem odio bibendum justo vel imperdiet sapien wisi sed libero in nisl nulla non lectus sed nisl molestie malesuada in in enim a arcu </span>
+                                    <p><span class="blockletter">Quisque tincidunt scelerisque libero mauris metus nam quis nulla aenean fermentum risus id tortor curabitur ligula sapien pulvinar a vestibulum quis facilisis vel sapien integer in sapien etiam bibendum elit </span>
                                     </p>
                                     <section class="thirds">
                                       <aside>
-                                        <section class="columns-4">
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                        </section>
+                                                  <article class="rack cf">
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                  </article>
                                       </aside>
                                       <article>
                                         <p class="right">
@@ -170,52 +260,44 @@
                                 </section>
                                 <section class="thirds wrap">
                                   <aside>
-                                    <div style="width: 100%; height: 200px">
-                                      <div class="dimage image-widget">
-                                        <div class="image-border"></div>
-                                      </div>
-                                    </div>
-                                    <p class="right-justify"><span class="blockletter">Maecenas lorem praesent id </span>
+                                              <div style="width: 100%; height: 200px">
+                                                <div class="dimage image-widget">
+                                                  <div class="image-border"></div>
+                                                </div>
+                                              </div>
+                                    <p class="right-justify"><span class="blockletter">Fusce nibh quisque tincidunt </span>
                                     </p>
-                                    <p class="right-justify"><span class="blockletter">Pellentesque sapien </span>
+                                    <p class="right-justify"><span class="blockletter">Donec iaculis </span>
                                     </p>
                                   </aside>
                                   <article>
                                     <h3>Third Blog Title</h3>
-                                    <p><span class="blockletter">Aliquam erat volutpat pellentesque arcu praesent dapibus maecenas sollicitudin etiam commodo dui eget wisi integer vulputate sem a nibh rutrum consequat aenean vel massa quis mauris vehicula lacinia duis ante </span>
+                                    <p><span class="blockletter">Sed ac dolor sit amet purus malesuada congue pellentesque sapien nullam sapien sem ornare ac nonummy non lobortis a enim duis viverra diam non justo aenean vel massa quis mauris </span>
                                     </p>
                                     <section class="thirds">
                                       <aside>
-                                        <section class="columns-4">
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                        </section>
+                                                  <article class="rack cf">
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                  </article>
                                       </aside>
                                       <article>
                                         <p class="right">
@@ -227,52 +309,44 @@
                                 </section>
                                 <section class="thirds wrap">
                                   <aside>
-                                    <div style="width: 100%; height: 200px">
-                                      <div class="dimage image-widget">
-                                        <div class="image-border"></div>
-                                      </div>
-                                    </div>
-                                    <p class="right-justify"><span class="blockletter">Proin pede metus vulputate </span>
+                                              <div style="width: 100%; height: 200px">
+                                                <div class="dimage image-widget">
+                                                  <div class="image-border"></div>
+                                                </div>
+                                              </div>
+                                    <p class="right-justify"><span class="blockletter">Aliquam ante etiam bibendum </span>
                                     </p>
-                                    <p class="right-justify"><span class="blockletter">In convallis </span>
+                                    <p class="right-justify"><span class="blockletter">Integer malesuada </span>
                                     </p>
                                   </aside>
                                   <article>
                                     <h3>Fourth Blog Title</h3>
-                                    <p><span class="blockletter">Aliquam erat volutpat vestibulum facilisis auctor urna aenean placerat nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit diam nulla vel leo etiam bibendum elit eget </span>
+                                    <p><span class="blockletter">Aliquam erat volutpat nulla quis diam etiam sapien elit consequat eget tristique non venenatis quis ante duis risus vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat proin pede </span>
                                     </p>
                                     <section class="thirds">
                                       <aside>
-                                        <section class="columns-4">
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                        </section>
+                                                  <article class="rack cf">
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                  </article>
                                       </aside>
                                       <article>
                                         <p class="right">
@@ -284,52 +358,44 @@
                                 </section>
                                 <section class="thirds wrap">
                                   <aside>
-                                    <div style="width: 100%; height: 200px">
-                                      <div class="dimage image-widget">
-                                        <div class="image-border"></div>
-                                      </div>
-                                    </div>
-                                    <p class="right-justify"><span class="blockletter">Aliquam erat volutpat aenean </span>
+                                              <div style="width: 100%; height: 200px">
+                                                <div class="dimage image-widget">
+                                                  <div class="image-border"></div>
+                                                </div>
+                                              </div>
+                                    <p class="right-justify"><span class="blockletter">Ut tempus purus at </span>
                                     </p>
-                                    <p class="right-justify"><span class="blockletter">Fusce tellus </span>
+                                    <p class="right-justify"><span class="blockletter">Duis sapien </span>
                                     </p>
                                   </aside>
                                   <article>
                                     <h3>Fifth Blog Title</h3>
-                                    <p><span class="blockletter">Praesent id justo in neque elementum ultrices proin pede metus vulputate nec fermentum fringilla vehicula vitae justo nam sed tellus id magna elementum tincidunt in dapibus augue non sapien aliquam </span>
+                                    <p><span class="blockletter">Ut tempus purus at lorem suspendisse sagittis ultrices augue cras pede libero dapibus nec pretium sit amet tempor quis urna sed elit dui pellentesque a faucibus vel interdum nec diam </span>
                                     </p>
                                     <section class="thirds">
                                       <aside>
-                                        <section class="columns-4">
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                                    <article>
-                                                      <div style="width: 40px; height: 40px">
-                                                        <div class="image-widget">
-                                                          <div class="image-border"></div>
-                                                        </div>
-                                                      </div>
-                                                    </article>
-                                        </section>
+                                                  <article class="rack cf">
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div style="width: 40px; height: 40px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                  </article>
                                       </aside>
                                       <article>
                                         <p class="right">
@@ -362,3 +428,4 @@
 <script src="/js/jquery-1.11.1.min.js"></script>
 <script src="/js/TweenMax.min.js"></script>
 <script src="/js/main.lib.js"></script>
+<script src="/js/magicVial-0.6.2.js"></script>

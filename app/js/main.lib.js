@@ -85,7 +85,7 @@ $('[data-move-to]').click(function() {
 // Behavior for Mobile Menu drawer
 $(document).on("click",function(e) {
 	if (!($(e.target).parents(".use-native-click").length || $(e.target).hasClass("use-native-click"))) {
-		$("#siteWrapper").removeClass("active");
+		$("body, #siteWrapper, #drawer").removeClass("active");
 	}
 });
 
@@ -268,11 +268,12 @@ $('.tabs-wrapper').each(function() {
 function initModals() {
 	$('.modal.window').hide();
 	if ($('.modal.window').length > 0) {
+		$('body').prepend('<div id="modalViewport" style="display: none; position: fixed; width: 100%; height: 100%; z-index: 9999"></div>');
 		$('body').prepend('<div id="overlay" style="display: none; position: fixed; width: 100%; height: 100%; background-color: rgba(0,0,0,0.45); opacity: 0; z-index: 9998"></div>');
 		$('.modal.window').prepend('<div class="close-modal"><span class="icon-close"></span></div>');
 		$('.modal.window').css({
 			position: 'absolute',
-			top: '100px',
+			top: 0,
 			left: 0,
 			right: 0,
 			margin: 'auto',
@@ -281,37 +282,38 @@ function initModals() {
 			maxWidth: '650px',
 			backgroundColor: '#FFF',
 			'transform': 'scale(0.6)',
-			opacity: 0,
-			zIndex: 9999
+			opacity: 0
 		});
+		$('.modal.window').each(function() {
+			var fullHeight = $(this).outerHeight();
+			$(this).css({
+				height: fullHeight,
+				bottom: 0
+			})
+		})
 		var thisModal = $('.modal.window').detach();
-		$('body').prepend(thisModal);
+		$('#modalViewport').prepend(thisModal);
 	}
 }
 
 function resetModal() {
 	$('.modal.window').hide();
-	$('.modal.window').css('top','100px');
+	$('#modalViewport').hide();
 }
 
 initModals();
 
 $('.modal.trigger').parent().delegate('.modal.trigger', 'click', function() {
-	var myModal = $(this).data('target');
+	var myModal = '#' + ($(this).data('target'));
 	var scrollTop = $(window).scrollTop();
-	$('#'+ myModal).css({
-		top: topPos
-	});
 	$('#overlay').show();
+	$('#modalViewport').show();
 	$('#overlay').animate({
 		top: 0,
 		opacity: 1
 	}, 280);
-	$('#'+ myModal).show();
-	var scrollTop = $(window).scrollTop();
-	var topPos = scrollTop + 100 + 'px';
-	TweenMax.to('#'+ myModal, 0.3, {
-		top: topPos,
+	$(myModal).show();
+	TweenMax.to(myModal, 0.3, {
 		opacity: 1,
 		scale: 1,
 		ease: Power2.easeOut
@@ -333,15 +335,15 @@ $('.modal.window').delegate('.close-modal', 'click', function() {
 	});
 });
 
-$('#overlay').click(function() {
-	$(this).animate({
+$('#modalViewport').click(function(e) {
+	if(e.target != this) return;
+	$('#overlay').animate({
 		opacity: 0
 	}, 280, function() {
 		$(this).hide();
 	});
 	TweenMax.to('.modal.window', 0.22, {
 		opacity: 0,
-		top: '100px',
 		scale: 0.6,
 		ease: Power1.easeIn,
 		onComplete: resetModal

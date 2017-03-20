@@ -1,25 +1,59 @@
-mixin input(description)
-	- if (description) {
+mixin input(description, required, features)
+	- var capsule = false, capsulized = ""
+	- if (features && features.hasOwnProperty('capsule')) {
+	-		capsule = features.capsule
+	- 		capsulized = 'capsulized'
+	- } 
+	- if (arguments.length === 2 && arguments[1].hasOwnProperty('capsule')) {
+	-		capsule = arguments[1].capsule
+	-		capsulized = 'capsulized'
+	- }
+	- if (required) {
 		p
-			input(type="text", placeholder=description)
+			- if (capsule) {
+				span(class=capsule)
+			- }
+			input(class=capsulized, type="text", placeholder=description, data-required='')
+	- }
+	- else if (description) {
+		p
+			- if (capsule) {
+				span(class=capsule)
+			- }
+			input(class=capsulized, type="text", placeholder=description)
 	- }
 	- else {
 		p
-			input(type="text")
+			- if (capsule) {
+				span(class=capsule)
+			- }
+			input(class=capsulized, type="text")
 	- }
 
-mixin email(description)
-	- if (description) {
+mixin email(description, required)
+	- if (required) {
 		p
-			input(type="email", placeholder=description)
+			input(type="email", placeholder=description, data-validate="email", data-required='')
+	- }
+	- else if (description) {
+		p
+			input(type="email", placeholder=description, data-validate="email")
 	- }
 	- else {
 		p
-			input(type="email")
+			input(type="email", data-validate="email")
 	- }
 
-mixin password(description)
-	- if (description) {
+mixin password(description, required, matchName, features)
+	- if (matchName) {
+		p
+			input(type="password", placeholder=description, data-required='', data-match=matchName)
+	- }
+	- else if (required) {
+		p
+			input(type="password", placeholder=description, data-required='')
+	- }
+	- else if (description) {
 		p
 			input(type="password", placeholder=description)
 	- }
@@ -36,18 +70,22 @@ mixin select(items)
 mixin submit(description, pos)
 	- if (pos === 'center') {
 		p.center-justify
-			input(type="submit", name=description)
+			input(type="submit", value=description)
 	- }
 	- else if (pos === 'right') {
 		p.right-justify
-			input(type="submit", name=description)
+			input(type="submit", value=description)
+	- }
+	- else if (pos === 'extend') {
+		p
+			input.extend(type="submit", value=description)
 	- }
 	- else {
 		p
-			input(type="submit", name=description)
+			input(type="submit", value=description)
 	- }
 
-mixin switch(name, items)
+mixin switch-old(name, items)
 	- if (items) {
 		.switch-widget
 			ul
@@ -61,9 +99,10 @@ mixin switch(name, items)
 	- }
 	- else if (name) {
 		.switch-widget
-			div.switch
-			div.on
-		label= name
+			.switch-object
+				div.switch
+				div.on
+			label= name
 	- }
 	- else {
 		.switch-widget
@@ -71,8 +110,34 @@ mixin switch(name, items)
 			div.on
 	- }
 
-mixin checkbox(name, items, orientation)
-	- if (orientation === 'list') {
+mixin switch(name, items)
+	- if (items) {
+		.form-switch-widget
+			ul
+				- var iterCheck = 1
+				- each item in items
+					- var value = item.toLowerCase(item.replace(' ','-'))
+						li
+							.switch-item
+								input(type="checkbox",name=name,value=value,id=value+iterCheck)
+								label(for=value+iterCheck)= item
+								- iterCheck++
+	- }
+	- else if (name) {
+		.form-switch-widget
+			.switch-item
+				- var value = name.toLowerCase(name.replace(' ','-'))
+				input(type="checkbox",name=name,value=value,id=value)
+				label(for=value)= name
+	- }
+	- else {
+		.switch-widget
+			div.switch
+			div.on
+	- }
+
+mixin checkbox(name, items)
+	- if (typeof items === 'object') {
 		.checkbox-widget
 			ul
 				- var iterCheck = 1
@@ -84,16 +149,15 @@ mixin checkbox(name, items, orientation)
 						- iterCheck++
 	- }
 	- else {
+		- var item = items
 		.checkbox-widget
 			- var iterBox = 1
 			- var check = (Math.random() + 1).toString(36).substring(7)
 			p
-				- each item in items
-					- var value = item.toLowerCase(item.replace(' ','-'))
-					span.checkbox
-						input(type="checkbox",name=name,value=value,id=check+iterBox)
-						label(for=check+iterBox)= item
-						- iterBox++
+				- var value = item.toLowerCase(item.replace(' ','-'))
+				span.checkbox
+					input(type="checkbox",name=name,value=value,id=check+iterBox)
+					label(for=check+iterBox)= item
 	- }
 
 mixin radio(name, items)

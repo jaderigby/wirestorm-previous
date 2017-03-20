@@ -10,11 +10,12 @@ html(lang="en")
 		link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
 	body
 		+menu-drawer()
-			include nav
+			include mobile-nav
 		#siteWrapper
 			#open
 				header
-					+menu-trigger()
+					+mobile-header()
+						+logo("TheSite")
 				nav.desktop-nav.dark
-					include nav
+					include desktop-nav
 				block content

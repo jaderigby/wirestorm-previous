@@ -7,48 +7,65 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <nav class="menu-drawer">
-      <div class="use-native-click">
-        <ul>
-          <li><a href="/" class="logo">TheSite</a></li>
-          <li><a href="/">Home</a>
-          </li>
-          <li><a href="page2.html">Page 2</a>
-          </li>
-          <li><a href="usage.html">Usage</a>
-          </li>
-          <li class="right">
-            <div data-target="search-results.html" class="search-widget">
-              <div class="searchfield">
-                <div class="icon-search"></div>
-                <input type="text">
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div id="siteWrapper">
-      <div id="open">
-        <header>
-          <div data-target="#siteWrapper" class="icon-menu toggle use-native-click"></div>
-        </header>
-        <nav class="desktop-nav dark">
+    <div id="drawer" class="use-native-click">
+      <nav class="menu-drawer">
+        <div>
           <ul>
-            <li><a href="/" class="logo">TheSite</a></li>
+            <li>
+              <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </li>
             <li><a href="/">Home</a>
             </li>
             <li><a href="page2.html">Page 2</a>
             </li>
+            <li><a href="mobile.html">Mobile</a>
+            </li>
             <li><a href="usage.html">Usage</a>
             </li>
             <li class="right">
-                        <div data-target="search-results.html" class="search-widget">
-                          <div class="searchfield">
-                            <div class="icon-search"></div>
-                            <input type="text">
-                          </div>
-                        </div>
+              <div data-target="search-results.html" class="search-widget">
+                <div class="searchfield">
+                  <div class="icon-search"></div>
+                  <input type="text">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div id="siteWrapper">
+      <div id="open">
+        <header>
+          <section class="rack">
+            <div data-target="body, #siteWrapper, #drawer" class="icon-menu toggle use-native-click"></div>
+            <div class="mobile-rack-space">
+              <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </div>
+          </section>
+        </header>
+        <nav class="desktop-nav dark">
+          <ul>
+            <li>
+                        <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </li>
+            <li><a href="/">Home</a>
+            </li>
+            <li><a href="page2.html">Page 2</a>
+            </li>
+            <li><a href="mobile.html">Mobile</a>
+            </li>
+            <li><a href="usage.html">Usage</a>
+            </li>
+            <li class="right">
+                        <article class="rack cf">
+                                    <div data-target="search-results.html" class="search-widget">
+                                      <div class="searchfield">
+                                        <div class="icon-search"></div>
+                                        <input type="text">
+                                      </div>
+                                    </div>
+                        </article>
             </li>
           </ul>
         </nav>
@@ -56,25 +73,25 @@
                     <section class="panel">
                       <h2><strong>Search Results For:</strong><span class="search-string"></span></h2>
                                 <h3>First Result</h3>
-                                <p class="blockletter">Nullam dapibus fermentum ipsum praesent dapibus phasellus et lorem id felis nonummy placerat aliquam ante etiam neque in nisl donec odio urna tempus molestie porttitor ut iaculis quis sem praesent dapibus etiam quis quam mauris dictum facilisis augue aliquam erat 
+                                <p class="blockletter">Aliquam erat volutpat duis bibendum lectus ut viverra rhoncus dolor nunc faucibus libero eget facilisis enim ipsum id lacus mauris tincidunt sem sed arcu donec odio urna tempus molestie porttitor ut iaculis quis sem duis condimentum augue id magna semper 
                                 </p>
                                 <h3>Second Result</h3>
-                                <p class="blockletter">Aenean id metus id velit ullamcorper pulvinar duis ante orci molestie vitae vehicula venenatis tincidunt ac pede fusce suscipit libero eget elit nunc dapibus tortor vel mi dapibus sollicitudin aenean vel massa quis mauris vehicula lacinia morbi imperdiet mauris ac 
+                                <p class="blockletter">Suspendisse potenti proin in tellus sit amet nibh dignissim sagittis suspendisse potenti donec odio urna tempus molestie porttitor ut iaculis quis sem vestibulum fermentum tortor id mi nullam feugiat turpis at pulvinar vulputate erat libero tristique tellus nec bibendum odio 
                                 </p>
                                 <h3>Third Result</h3>
-                                <p class="blockletter">Cras elementum mauris elementum mauris vitae tortor integer tempor aliquam id dolor proin pede metus vulputate nec fermentum fringilla vehicula vitae justo nunc auctor sed convallis magna eu sem nullam sit amet magna in magna gravida vehicula in vulputate urna 
+                                <p class="blockletter">Integer in sapien fusce nibh duis risus praesent dapibus proin pede metus vulputate nec fermentum fringilla vehicula vitae justo maecenas sollicitudin nulla turpis magna cursus sit amet suscipit a interdum id felis etiam egestas wisi a erat praesent vitae arcu 
                                 </p>
                                 <h3>Fourth Result</h3>
-                                <p class="blockletter">Nulla est nulla quis diam morbi gravida libero nec velit suspendisse sagittis ultrices augue etiam bibendum elit eget erat morbi mattis felis at nunc integer pellentesque quam vel velit in vulputate urna eu arcu nullam at arcu a est sollicitudin 
+                                <p class="blockletter">Etiam quis quam duis sapien nunc commodo et interdum suscipit sollicitudin et dolor donec ipsum massa ullamcorper in auctor et scelerisque sed est duis risus in sem justo commodo ut suscipit at pharetra vitae orci fusce wisi in convallis nulla 
                                 </p>
                                 <h3>Fifth Result</h3>
-                                <p class="blockletter">Vivamus ac urna vel leo pretium faucibus fusce dui leo imperdiet in aliquam sit amet feugiat eu orci nunc tincidunt ante vitae massa aenean fermentum risus id tortor cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus 
+                                <p class="blockletter">Phasellus enim erat vestibulum vel aliquam a posuere eu velit duis condimentum augue id magna semper rutrum vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat duis condimentum augue id magna semper rutrum nunc dapibus tortor vel mi dapibus 
                                 </p>
                                 <h3>Sixth Result</h3>
-                                <p class="blockletter">Mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus nulla non arcu lacinia neque faucibus fringilla aenean vel massa quis mauris vehicula lacinia nullam sapien sem ornare ac nonummy non lobortis a 
+                                <p class="blockletter">Vivamus porttitor turpis ac leo duis viverra diam non justo donec vitae arcu proin in tellus sit amet nibh dignissim sagittis morbi scelerisque luctus velit in dapibus augue non sapien sed ac dolor sit amet purus malesuada congue praesent dapibus 
                                 </p>
                                 <h3>Seventh Result</h3>
-                                <p class="blockletter">Aenean id metus id velit ullamcorper pulvinar nunc posuere nullam sit amet magna in magna gravida vehicula donec iaculis gravida nulla nullam dapibus fermentum ipsum vivamus ac urna vel leo pretium faucibus aenean placerat proin in tellus sit amet nibh 
+                                <p class="blockletter">Etiam dui sem fermentum vitae sagittis id malesuada in quam aliquam in lorem sit amet leo accumsan lacinia maecenas fermentum sem in pharetra pellentesque velit turpis volutpat ante in pharetra metus odio a lectus duis pulvinar etiam commodo dui eget 
                                 </p>
                     </section>
                   </div>
@@ -86,3 +103,4 @@
 <script src="/js/jquery-1.11.1.min.js"></script>
 <script src="/js/TweenMax.min.js"></script>
 <script src="/js/main.lib.js"></script>
+<script src="/js/magicVial-0.6.2.js"></script>

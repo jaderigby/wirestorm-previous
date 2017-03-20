@@ -25,6 +25,7 @@ module.exports = function(grunt) {
 		stylus: {
 			compile: {
 				options: {
+					compress: false,
 					use: [
 						require('jeet'),
 						require('nib'),

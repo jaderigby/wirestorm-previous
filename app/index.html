@@ -7,135 +7,152 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <nav class="menu-drawer">
-      <div class="use-native-click">
-        <ul>
-          <li><a href="/" class="logo">TheSite</a></li>
-          <li><a href="/">Home</a>
-          </li>
-          <li><a href="page2.html">Page 2</a>
-          </li>
-          <li><a href="usage.html">Usage</a>
-          </li>
-          <li class="right">
-            <div data-target="search-results.html" class="search-widget">
-              <div class="searchfield">
-                <div class="icon-search"></div>
-                <input type="text">
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div id="siteWrapper">
-      <div id="open">
-        <header>
-          <div data-target="#siteWrapper" class="icon-menu toggle use-native-click"></div>
-        </header>
-        <nav class="desktop-nav dark">
+    <div id="drawer" class="use-native-click">
+      <nav class="menu-drawer">
+        <div>
           <ul>
-            <li><a href="/" class="logo">TheSite</a></li>
+            <li>
+              <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </li>
             <li><a href="/">Home</a>
             </li>
             <li><a href="page2.html">Page 2</a>
             </li>
+            <li><a href="mobile.html">Mobile</a>
+            </li>
             <li><a href="usage.html">Usage</a>
             </li>
             <li class="right">
-                        <div data-target="search-results.html" class="search-widget">
-                          <div class="searchfield">
-                            <div class="icon-search"></div>
-                            <input type="text">
-                          </div>
-                        </div>
+              <div data-target="search-results.html" class="search-widget">
+                <div class="searchfield">
+                  <div class="icon-search"></div>
+                  <input type="text">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div id="siteWrapper">
+      <div id="open">
+        <header>
+          <section class="rack">
+            <div data-target="body, #siteWrapper, #drawer" class="icon-menu toggle use-native-click"></div>
+            <div class="mobile-rack-space">
+              <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </div>
+          </section>
+        </header>
+        <nav class="desktop-nav dark">
+          <ul>
+            <li>
+                        <div class="logo-wrapper"><a href="/" class="logo">TheSite</a></div>
+            </li>
+            <li><a href="/">Home</a>
+            </li>
+            <li><a href="page2.html">Page 2</a>
+            </li>
+            <li><a href="mobile.html">Mobile</a>
+            </li>
+            <li><a href="usage.html">Usage</a>
+            </li>
+            <li class="right">
+                        <article class="rack cf">
+                                    <div data-target="search-results.html" class="search-widget">
+                                      <div class="searchfield">
+                                        <div class="icon-search"></div>
+                                        <input type="text">
+                                      </div>
+                                    </div>
+                        </article>
             </li>
           </ul>
         </nav>
                   <div class="panel-wrap whiteout">
                     <section class="panel">
-                      <section class="lg-fifths md-half sm-stack break">
-                        <article>
-                          <h1>First One</h1>
-                          <p><span class="blockletter">Mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus vivamus luctus egestas leo integer pellentesque quam vel velit curabitur ligula </span>
-                          </p>
-                          <p>
-                                      <button data-target="modal1" class="modal trigger">Learn More</button>
-                                      <div id="modal1" class="modal window">
-                                        <h3>Learn More</h3>
-                                        <p><span class="blockletter">Etiam sapien elit consequat eget tristique non venenatis quis ante morbi gravida libero nec velit donec ipsum massa ullamcorper in auctor et scelerisque sed est cras pede libero dapibus nec pretium sit amet tempor quis urna in sem justo commodo ut suscipit at pharetra vitae orci vivamus luctus egestas leo </span>
-                                        </p>
-                                        <form class="wrap">
-                                          <section class="columns-2">
-                                            <article>
-                                              <p>
-                                                <input type="text" placeholder="First Name"/>
-                                              </p>
-                                            </article>
-                                            <article>
-                                              <p>
-                                                <input type="text" placeholder="Last Name"/>
-                                              </p>
-                                            </article>
-                                          </section>
-                                          <p>
-                                            <input type="text" placeholder="Email"/>
-                                          </p>
-                                          <p>
-                                            <textarea placeholder="Message"></textarea>
-                                          </p>
-                                          <p class="right-justify">
-                                            <input type="submit" name="Submit"/>
-                                          </p>
-                                        </form>
-                                      </div>
-                          </p>
-                        </article>
-                        <aside>
-                          <div style="width: 380px; height: 235px">
-                            <div class="slideshow-widget">
-                              <div class="image-widget">
-                                <div class="image-border">
-                                  <div class="icon-arrow-left"></div>
-                                  <div class="icon-arrow-right"></div>
-                                  <div class="icon-progress"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </aside>
-                      </section>
+                                <section class="lg-fifths md-half sm-stack break">
+                                  <article>
+                                    <h1>First One</h1>
+                                    <p><span class="blockletter">Fusce consectetuer risus a nunc vestibulum facilisis auctor urna nam quis nulla nunc tincidunt ante vitae massa proin in tellus sit amet nibh dignissim sagittis nunc posuere mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus integer </span>
+                                    </p>
+                                    <p>
+                                                <button data-target="modal1" class="modal trigger">Learn More</button>
+                                                <div id="modal1" class="modal window">
+                                                  <h3>Learn More</h3>
+                                                  <p><span class="blockletter">Duis sapien nunc commodo et interdum suscipit sollicitudin et dolor maecenas aliquet accumsan leo curabitur vitae diam non enim vestibulum interdum vivamus ac urna vel leo pretium faucibus nullam dapibus fermentum ipsum etiam neque praesent id justo in neque elementum ultrices donec quis nibh at felis congue commodo etiam bibendum </span>
+                                                  </p>
+                                                  <form id="moreInfo" class="wrap">
+                                                              <section class="columns-2">
+                                                                <article>
+                                                                            <p>
+                                                                              <input type="text" placeholder="First Name" data-required="">
+                                                                            </p>
+                                                                </article>
+                                                                <article>
+                                                                            <p>
+                                                                              <input type="text" placeholder="Last Name">
+                                                                            </p>
+                                                                </article>
+                                                              </section>
+                                                              <p>
+                                                                <input type="email" placeholder="Email" data-validate="email" data-required="">
+                                                              </p>
+                                                              <p>
+                                                                <textarea placeholder="Message"></textarea>
+                                                              </p>
+                                                              <p class="right-justify">
+                                                                <input type="submit" value="Submit">
+                                                              </p>
+                                                  </form>
+                                                </div>
+                                    </p>
+                                  </article>
+                                  <aside>
+                                              <div style="width: 380px; height: 235px">
+                                                <div class="slideshow-widget">
+                                                  <div class="image-widget">
+                                                    <div class="image-border">
+                                                      <div class="icon-arrow-left"></div>
+                                                      <div class="icon-arrow-right"></div>
+                                                      <div class="icon-progress"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                  </aside>
+                                </section>
                     </section>
                   </div>
                   <div class="panel-wrap fill">
                     <section class="panel">
                                 <section class="columns-4 columnizer">
                                   <article>
-                                    <div style="width: 120px; height: 120px; margin: 0 auto" class="porthole">
-                                      <div class="image-widget"></div>
-                                    </div>
-                                    <p class="center-align"><span class="blockletter">Morbi gravida libero nec velit fusce nibh maecenas lorem mauris elementum mauris vitae tortor nullam </span>
+                                              <div style="width: 120px; height: 120px; margin: 0 auto" class="porthole">
+                                                <div class="image-widget"></div>
+                                              </div>
+                                    <p class="center-align"><span class="blockletter">Mauris pretium quam et urna fusce aliquam vestibulum ipsum curabitur bibendum justo non orci praesent </span>
                                     </p>
                                   </article>
                                   <article>
-                                    <div style="width: 120px; height: 120px; margin: 0 auto" class="porthole">
-                                      <div class="image-widget"></div>
-                                    </div>
-                                    <p class="center-align"><span class="blockletter">Nullam sapien sem ornare ac nonummy non lobortis a enim fusce suscipit libero eget elit </span>
+                                              <div style="width: 120px; height: 120px; margin: 0 auto" class="porthole">
+                                                <div class="image-widget"></div>
+                                              </div>
+                                    <p class="center-align"><span class="blockletter">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas nullam rhoncus </span>
                                     </p>
                                   </article>
                                   <article>
-                                    <div style="width: 120px; height: 120px; margin: 0 auto" class="porthole">
-                                      <div class="image-widget"></div>
-                                    </div>
-                                    <p class="center-align"><span class="blockletter">In vulputate urna eu arcu pellentesque sapien praesent dapibus aliquam erat volutpat suspendisse potenti praesent </span>
+                                              <div style="width: 120px; height: 120px; margin: 0 auto" class="porthole">
+                                                <div class="image-widget"></div>
+                                              </div>
+                                    <p class="center-align"><span class="blockletter">Fusce wisi vivamus luctus egestas leo fusce dui leo imperdiet in aliquam sit amet feugiat </span>
                                     </p>
                                   </article>
                                   <article>
-                                    <div style="width: 120px; height: 120px; margin: 0 auto" class="porthole">
-                                      <div class="image-widget"></div>
-                                    </div>
-                                    <p class="center-align"><span class="blockletter">Donec odio urna tempus molestie porttitor ut iaculis quis sem donec iaculis gravida nulla etiam </span>
+                                              <div style="width: 120px; height: 120px; margin: 0 auto" class="porthole">
+                                                <div class="image-widget"></div>
+                                              </div>
+                                    <p class="center-align"><span class="blockletter">Etiam ligula pede sagittis quis interdum ultricies scelerisque eu urna morbi imperdiet mauris ac auctor </span>
                                     </p>
                                   </article>
                                 </section>
@@ -143,26 +160,26 @@
                   </div>
                   <div class="panel-wrap whiteout">
                     <section class="panel">
-                      <section class="lg-thirds md-half sm-stack break">
-                        <aside>
-                          <div style="width: 100%; height: 180px">
-                            <div class="dimage image-widget">
-                              <div class="image-border"></div>
-                            </div>
-                          </div>
-                        </aside>
-                        <article>
-                          <h2>Next Product</h2>
-                          <p><span class="blockletter">Nulla non arcu lacinia neque faucibus fringilla etiam commodo dui eget wisi duis pulvinar nunc tincidunt ante vitae massa nam quis nulla maecenas aliquet accumsan leo class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos nunc </span>
-                          </p>
-                                    <button data-target="modal2" class="modal trigger right">Another Modal</button>
-                                    <div id="modal2" class="modal window">
-                                      <h3>Another Modal</h3>
-                                      <p><span class="blockletter">Etiam dui sem fermentum vitae sagittis id malesuada in quam class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos duis condimentum augue id magna semper rutrum curabitur ligula sapien pulvinar a vestibulum quis facilisis vel sapien sed ac dolor sit amet purus malesuada congue cras elementum nulla non lectus sed nisl molestie malesuada integer pellentesque quam vel velit nullam sapien sem ornare ac nonummy non lobortis a enim etiam dui sem fermentum vitae sagittis id malesuada in quam integer imperdiet lectus quis justo sed vel lectus aenean placerat donec ipsum massa ullamcorper in auctor et scelerisque sed est suspendisse nisl etiam neque nullam at arcu a est sollicitudin euismod morbi a metus maecenas sollicitudin maecenas libero etiam sapien elit consequat eget tristique non venenatis quis ante ut tempus purus at lorem sed ac dolor sit amet purus malesuada congue praesent dapibus sed vel lectus praesent dapibus etiam posuere lacus quis dolor nam sed tellus id magna elementum tincidunt cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec vitae arcu mauris dictum facilisis augue maecenas libero aliquam id dolor etiam quis quam quisque porta phasellus et lorem id felis nonummy placerat praesent in mauris eu tortor porttitor accumsan pellentesque sapien vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat duis condimentum augue id magna semper rutrum morbi mattis felis at nunc cras elementum nullam sit amet magna in magna gravida vehicula duis sapien nunc commodo et interdum suscipit sollicitudin et dolor morbi imperdiet mauris ac auctor dictum nisl ligula egestas nulla et sollicitudin sem purus in lacus fusce eget urna aliquam erat volutpat in convallis curabitur vitae diam non enim vestibulum interdum nullam sapien sem ornare ac nonummy non lobortis a enim class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos nam sed tellus id magna elementum tincidunt nulla quis diam cras elementum etiam commodo dui eget wisi sed convallis magna eu sem morbi scelerisque luctus velit etiam dictum tincidunt diam pellentesque ipsum cras pede libero dapibus nec pretium sit amet tempor quis urna duis sapien nunc commodo et interdum suscipit sollicitudin et dolor etiam bibendum elit eget erat aliquam erat volutpat mauris metus sed convallis magna eu sem integer rutrum orci vestibulum ullamcorper ultricies lacus quam ultricies odio vitae placerat pede sem sit amet enim pellentesque pretium lectus id turpis nulla quis diam curabitur ligula sapien pulvinar a vestibulum quis facilisis vel sapien aliquam erat volutpat aliquam ornare wisi eu metus fusce tellus odio dapibus id fermentum quis suscipit id erat vivamus porttitor turpis ac leo morbi a metus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus duis condimentum augue id magna semper rutrum in vulputate urna eu arcu praesent in mauris eu tortor porttitor accumsan pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas pellentesque ipsum etiam bibendum elit eget erat etiam posuere quam ac quam fusce tellus odio dapibus id fermentum quis suscipit id erat aliquam ornare wisi eu metus maecenas lorem praesent vitae arcu tempor neque lacinia pretium sed ac dolor sit amet purus malesuada congue proin mattis lacinia justo aenean vel massa quis mauris vehicula lacinia etiam posuere quam ac quam sed convallis magna eu sem aenean placerat duis sapien nunc commodo et interdum suscipit sollicitudin et dolor vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat etiam dictum tincidunt diam in vulputate urna eu arcu vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat nam quis nulla aliquam id dolor sed vel lectus vestibulum facilisis auctor urna pellentesque pretium lectus id turpis mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus ut tempus purus at lorem aenean vel massa quis mauris vehicula lacinia vivamus ac urna vel leo pretium faucibus cras elementum pellentesque arcu pellentesque arcu nullam rhoncus aliquam metus mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus vivamus luctus egestas leo mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos donec ipsum massa ullamcorper in auctor et scelerisque sed est fusce aliquam vestibulum ipsum nullam eget nisl praesent id justo in neque elementum ultrices fusce suscipit libero eget elit nulla non lectus sed nisl molestie malesuada morbi gravida libero nec velit sed convallis magna eu sem nullam sit amet magna in magna gravida vehicula class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos suspendisse sagittis ultrices augue pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas phasellus enim erat vestibulum vel aliquam a posuere eu velit morbi scelerisque luctus velit nulla non lectus sed nisl </span>
-                                      </p>
-                                    </div>
-                        </article>
-                      </section>
+                                <section class="lg-thirds md-half sm-stack break">
+                                  <aside>
+                                              <div style="width: 100%; height: 180px">
+                                                <div class="dimage image-widget">
+                                                  <div class="image-border"></div>
+                                                </div>
+                                              </div>
+                                  </aside>
+                                  <article>
+                                    <h2>Next Product</h2>
+                                    <p><span class="blockletter">Quisque tincidunt scelerisque libero fusce dui leo imperdiet in aliquam sit amet feugiat eu orci nulla turpis magna cursus sit amet suscipit a interdum id felis aenean vel massa quis mauris vehicula lacinia fusce dui leo imperdiet in aliquam sit </span>
+                                    </p>
+                                              <button data-target="modal2" class="modal trigger right">Another Modal</button>
+                                              <div id="modal2" class="modal window">
+                                                <h3>Another Modal</h3>
+                                                <p><span class="blockletter">Integer vulputate sem a nibh rutrum consequat class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos aliquam in lorem sit amet leo accumsan lacinia nullam rhoncus aliquam metus aenean placerat cras pede libero dapibus nec pretium sit amet tempor quis urna cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus pellentesque sapien proin pede metus vulputate nec fermentum fringilla vehicula vitae justo curabitur vitae diam non enim vestibulum interdum in vulputate urna eu arcu mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus aliquam ante nam quis nulla integer tempor mauris elementum mauris vitae tortor aliquam in lorem sit amet leo accumsan lacinia vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat in laoreet magna id viverra tincidunt sem odio bibendum justo vel imperdiet sapien wisi sed libero morbi mattis felis at nunc pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas in convallis mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus morbi a metus duis pulvinar duis pulvinar nullam rhoncus aliquam metus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec odio urna tempus molestie porttitor ut iaculis quis sem in dapibus augue non sapien pellentesque pretium lectus id turpis duis sapien nunc commodo et interdum suscipit sollicitudin et dolor praesent vitae arcu tempor neque lacinia pretium nullam lectus justo vulputate eget mollis sed tempor sed magna phasellus rhoncus quisque tincidunt scelerisque libero etiam dui sem fermentum vitae sagittis id malesuada in quam fusce consectetuer risus a nunc suspendisse sagittis ultrices augue praesent dapibus cras elementum aenean vel massa quis mauris vehicula lacinia nullam sapien sem ornare ac nonummy non lobortis a enim aliquam erat volutpat nullam feugiat turpis at pulvinar vulputate erat libero tristique tellus nec bibendum odio risus sit amet ante nullam lectus justo vulputate eget mollis sed tempor sed magna vestibulum facilisis auctor urna sed elit dui pellentesque a faucibus vel interdum nec diam fusce consectetuer risus a nunc duis risus morbi mattis felis at nunc integer in sapien etiam sapien elit consequat eget tristique non venenatis quis ante phasellus rhoncus lorem ipsum dolor sit amet consectetuer adipiscing elit nullam at arcu a est sollicitudin euismod aenean id metus id velit ullamcorper pulvinar vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat mauris dictum facilisis augue fusce eget urna duis pulvinar sed ac dolor sit amet purus malesuada congue aenean id metus id velit ullamcorper pulvinar aliquam erat volutpat aliquam ornare wisi eu metus praesent in mauris eu tortor porttitor accumsan sed ac dolor sit amet purus malesuada congue nunc tincidunt ante vitae massa suspendisse nisl donec quis nibh at felis congue commodo maecenas libero etiam posuere lacus quis dolor fusce nibh etiam sapien elit consequat eget tristique non venenatis quis ante etiam sapien elit consequat eget tristique non venenatis quis ante maecenas fermentum sem in pharetra pellentesque velit turpis volutpat ante in pharetra metus odio a lectus pellentesque pretium lectus id turpis maecenas fermentum sem in pharetra pellentesque velit turpis volutpat ante in pharetra metus odio a lectus pellentesque ipsum aliquam erat volutpat donec odio urna tempus molestie porttitor ut iaculis quis sem morbi gravida libero nec velit phasellus enim erat vestibulum vel aliquam a posuere eu velit aenean id metus id velit ullamcorper pulvinar aliquam id dolor duis pulvinar vivamus ac urna vel leo pretium faucibus praesent dapibus integer in sapien nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit diam nulla vel leo duis pulvinar phasellus enim erat vestibulum vel aliquam a posuere eu velit class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos nullam at arcu a est sollicitudin euismod phasellus faucibus molestie nisl proin in tellus sit amet nibh dignissim sagittis fusce aliquam vestibulum ipsum nunc tincidunt ante vitae massa nullam rhoncus aliquam metus morbi a metus donec ipsum massa ullamcorper in auctor et scelerisque sed est nullam feugiat turpis at pulvinar vulputate erat libero tristique tellus nec bibendum odio risus sit amet ante aliquam erat volutpat quisque tincidunt scelerisque libero phasellus enim erat vestibulum vel aliquam a posuere eu velit curabitur bibendum justo non orci fusce nibh pellentesque sapien aliquam erat volutpat fusce eget urna suspendisse potenti cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam ligula pede sagittis quis interdum ultricies scelerisque eu urna aliquam ornare wisi eu metus aliquam erat volutpat nullam feugiat turpis at pulvinar vulputate erat libero tristique tellus nec bibendum odio risus sit amet ante sed elit dui pellentesque a faucibus vel interdum nec diam nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit diam nulla vel leo phasellus enim erat vestibulum vel aliquam a </span>
+                                                </p>
+                                              </div>
+                                  </article>
+                                </section>
                     </section>
                   </div>
                   <div class="panel-wrap dark footer">
@@ -176,7 +193,7 @@
                                   <section class="tabs-wrapper">
                                               <section class="tab-element">
                                                 <h3>First Tab</h3>
-                                                <p><span class="blockletter">Integer imperdiet lectus quis justo class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos proin pede metus vulputate nec fermentum fringilla vehicula vitae justo vivamus porttitor turpis ac leo integer tempor aenean placerat donec quis nibh at felis congue commodo pellentesque </span>
+                                                <p><span class="blockletter">Phasellus rhoncus donec vitae arcu phasellus rhoncus nam sed tellus id magna elementum tincidunt nulla non arcu lacinia neque faucibus fringilla aliquam erat volutpat duis condimentum augue id magna semper rutrum fusce dui leo imperdiet in aliquam sit amet feugiat eu orci vestibulum fermentum tortor </span>
                                                 </p>
                                               </section>
                                               <section class="tab-element">
@@ -192,57 +209,57 @@
                                                 <h3>Third Tab</h3>
                                                           <section class="columns-5 columnizer">
                                                             <article>
-                                                              <div style="width: 100%; height: 100px">
-                                                                <div class="image-widget">
-                                                                  <div class="image-border"></div>
-                                                                </div>
-                                                              </div>
+                                                                        <div style="width: 100%; height: 100px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
                                                               <p>
                                                                           <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span>
                                                                           </div>
                                                               </p>
                                                             </article>
                                                             <article>
-                                                              <div style="width: 100%; height: 100px">
-                                                                <div class="image-widget">
-                                                                  <div class="image-border"></div>
-                                                                </div>
-                                                              </div>
+                                                                        <div style="width: 100%; height: 100px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
                                                               <p>
-                                                                          <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span><span class="icon-star unmarked"></span>
+                                                                          <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span>
                                                                           </div>
                                                               </p>
                                                             </article>
                                                             <article>
-                                                              <div style="width: 100%; height: 100px">
-                                                                <div class="image-widget">
-                                                                  <div class="image-border"></div>
-                                                                </div>
-                                                              </div>
+                                                                        <div style="width: 100%; height: 100px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
+                                                              <p>
+                                                                          <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span>
+                                                                          </div>
+                                                              </p>
+                                                            </article>
+                                                            <article>
+                                                                        <div style="width: 100%; height: 100px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
                                                               <p>
                                                                           <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span>
                                                                           </div>
                                                               </p>
                                                             </article>
                                                             <article>
-                                                              <div style="width: 100%; height: 100px">
-                                                                <div class="image-widget">
-                                                                  <div class="image-border"></div>
-                                                                </div>
-                                                              </div>
+                                                                        <div style="width: 100%; height: 100px">
+                                                                          <div class="image-widget">
+                                                                            <div class="image-border"></div>
+                                                                          </div>
+                                                                        </div>
                                                               <p>
                                                                           <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span><span class="icon-star unmarked"></span>
-                                                                          </div>
-                                                              </p>
-                                                            </article>
-                                                            <article>
-                                                              <div style="width: 100%; height: 100px">
-                                                                <div class="image-widget">
-                                                                  <div class="image-border"></div>
-                                                                </div>
-                                                              </div>
-                                                              <p>
-                                                                          <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span>
                                                                           </div>
                                                               </p>
                                                             </article>
@@ -260,3 +277,10 @@
 <script src="/js/jquery-1.11.1.min.js"></script>
 <script src="/js/TweenMax.min.js"></script>
 <script src="/js/main.lib.js"></script>
+<script src="/js/magicVial-0.6.2.js"></script>
+<script>
+  $('form').each(function() {
+  	console.log($(this).attr('id'));
+  	magicVial('form#' + $(this).attr('id'), "Sorry, please fix the errors below.");
+  });
+</script>

@@ -4,13 +4,13 @@ base()
 		background-color: backgroundLight
 	h1
 		font-size: 3.3rem
-		margin: 25px 0
+		padding: 25px 0
 		line-height: 1.15
 	h2
-		margin: 20px 0
+		padding: 20px 0
 		font-size: 2.5rem
 	h3
-		margin: 15px 0
+		padding: 15px 0
 		font-size: 1.9rem
 	h4
 		font-size: 1.6rem
@@ -21,6 +21,13 @@ base()
 	h4
 	h5
 		line-height: 1.3
+	h1
+	h2
+	h3
+	h4
+	h5
+	h6
+		font-family: open-sans
 	p
 		margin: 15px 0
 		line-height: 1.2
@@ -102,16 +109,30 @@ base()
 	//
 	// Main Wrapper
 	//
+	body.active
+		overflow-x: hidden
+	.mobile-rack-space
+		padding-top: 12px
+	#drawer
 	#siteWrapper
-		position: absolute
-		width: 100%
-		height: 100%
-		overflow: auto
-		background-color: imageAccents
+		float: left
 		transition: all 0.21s ease-in-out
 		-webkit-transition: all 0.17s ease-in-out
+	#drawer
+		position: fixed
+		padding: 0
+		width: 0
+		overflow: auto
+		height: 100%
+		top: 0
+		bottom: 0
+		background-color: #4A4A4A
 		&.active
-			position: fixed
+			width: 280px
+	#siteWrapper
+		width: 100%
+		background-color: imageAccents
+		&.active
 			transform: translateX(280px)
 	//
 	// Navigation
@@ -188,19 +209,13 @@ base()
 					&:hover
 						background-color: #d2d2d2
 	nav.menu-drawer
-		position: fixed
 		overflow: auto
 		font-family: open-sans
-		top: 0
-		left: 0
-		bottom: 0
-		margin-bottom: 0
 		width: 280px
 		background-color: #4A4A4A
 		// box-shadow: 0 0 30px rgba(0,0,0,0.15)
 		// transition: all 0.15s cubic-bezier(0.8, 0.03, 0.18, 1)
 		// -webkit-transition: all 0.15s cubic-bezier(0.8, 0.03, 0.18, 1)
-		z-index: 0
 		// &.active
 		// 	transform: translate3d(0, 0, 0) scale(1, 1)
 		li
@@ -212,11 +227,16 @@ base()
 					background-color: #898989
 	.icon-menu
 		display: none
+		padding: 15px
 		font-size: 1.6rem
 		color: #00a0b5
 		cursor: pointer
 		+below(large)
 			display: inline-block
+	.mobile-rack-space
+		display: none
+		+below(large)
+			display: block
 	.menu-drawer
 		padding-top: 30px
 		ul
@@ -295,12 +315,40 @@ base()
 		a.logo
 			display: inline-block
 			position: relative
-			margin: 10px 0 20px
+			margin: 10px 15px 20px
 			color: #73E4F4
 			background-color: #6e6e6e
 			border: 1px solid #353535
 			&:hover
 				background-color: #898989
+	.rack
+		display: table
+		> section
+		> article
+		> div
+		> p
+		> ul
+		> ol
+		> dl
+			float: left
+			margin-right: 5px
+			&:last-child
+				margin-right: 0
+		> .checkbox-widget
+			span.checkbox
+				margin-top: 9px
+		> .radio-widget
+			span.radio
+				margin-top: 9px
+	form.rack
+	.rack form
+		> p
+		> div
+			float: left
+			margin-right: 10px
+			&:last-child
+				margin-right: 0
+		
 	//
 	// Buttons
 	//
@@ -516,9 +564,24 @@ forms()
 	input[type="text"]
 	input[type="email"]
 	input[type="password"]
+		&.is-required
+		&.no-match
+		&.failed
+			border: 1px solid #8e6868 /* e4b6b6, 8e6868 */
+			background-color: #583838
+	span.required-message
+	span.no-match-message
+	span.error-message
+		display: block
+		margin-top: 3px
+		color: #5d1111 /* 5d1111, 711b1b */
+		font-size: 0.8rem
+	input[type="text"]
+	input[type="email"]
+	input[type="password"]
 		display: block
 		padding: 4px 1.5%
-		width: 97%
+		width: 96.8%
 		height: 25px
 		font-size: 0.85rem
 		color: #84f1ff
@@ -816,6 +879,100 @@ widgets()
 		[type="radio"]:checked:focus + label:before
 		[type="radio"]:not(:checked):focus + label:before
 			border: 1px dotted blue
+	.form-switch-widget
+		position: relative
+		display: inline-block
+		.switch-item
+			position: relative
+			display: inline-block
+			&:before
+				content: ""
+				position: absolute
+				display: block
+				top: 3px
+				left: 3px
+				width: 25px
+				height: 18px
+				background-color: #81eaf7
+				z-index: 1
+			&:after
+				content: ""
+				display: table
+				clear: both
+		label
+			display: block
+			float: left
+			margin-left: 0
+			margin-right: 15px
+			line-height: 1.5
+		ul
+			margin-left: 0
+		li
+			list-style: none
+			margin-left: 0
+		span.checkbox
+			display: inline-block
+			margin-bottom: 10px
+		span.checkbox
+		li
+			margin-right: 15px
+			label
+				display: inline-block
+			// 	margin-left: 5px
+			// &:first-child
+			// 	label
+			// 		margin-left: 0
+			&:last-child
+				margin-right: 0
+		[type="checkbox"]:not(:checked)
+		[type="checkbox"]:checked
+			position: absolute
+			left: -9999px
+		[type="checkbox"]:not(:checked) + label
+		[type="checkbox"]:checked + label
+			position: relative
+			padding-left: 70px
+			cursor: pointer
+		[type="checkbox"]:not(:checked) + label:before
+		[type="checkbox"]:checked + label:before
+			content: ''
+			position: absolute
+			left: 0 
+			width: 60px 
+			height: 22px
+			border: 1px solid #444
+			background: #444
+		[type="checkbox"]:not(:checked) + label:after
+		[type="checkbox"]:checked + label:after
+			content: ''
+			position: absolute
+			top: 2px
+			left: 2px
+			width: 29px
+			height: 20px
+			background-color: #ccc
+			transition: all .05s linear
+			-webkit-transition: all .05s linear
+			z-index: 2
+		[type="checkbox"]:not(:checked) + label:after
+			transform: translateX(0px)
+		[type="checkbox"]:checked + label:after
+			opacity: 1
+			transform: translateX(29px)
+		[type="checkbox"]:disabled:not(:checked) + label:before,
+		[type="checkbox"]:disabled:checked + label:before
+			box-shadow: none
+			border-color: #bbb
+			background-color: textLightOnDark
+		[type="checkbox"]:disabled:checked + label:after
+			color: #999
+		[type="checkbox"]:disabled + label
+			color: #aaa
+		// accessibility
+		[type="checkbox"]:checked:focus + label:before
+		[type="checkbox"]:not(:checked):focus + label:before
+			border: 1px dotted blue
+
 	.switch-widget
 		ul
 			margin: 10px 0
@@ -828,6 +985,7 @@ widgets()
 			float: left
 			margin-top: 4px
 			margin-left: 10px
+			margin-right: 15px
 		.switch-object
 			float: left
 			width: 58px
@@ -883,10 +1041,12 @@ widgets()
 	//
 	.modal.window
 		display: none
+		max-height: 77%
+		overflow: auto
 	.close-modal
 		position: absolute
-		top: 15px
-		right: 15px
+		top: 7px
+		right: 7px
 		color: #00a0b5
 		font-size: 1.4rem
 		cursor: pointer
@@ -989,6 +1149,11 @@ widgets()
 		.logo
 			border: 1px solid #000
 			background-color: logoColor
+	#drawer
+		.logo-wrapper
+			display: block
+			text-align: center
+		
 	.logo
 		display: inline-block
 		margin-right: 10px
@@ -1007,6 +1172,17 @@ widgets()
 			&:hover
 				color: #81f0ff
 				background-color: btnHoverColor
+	.simple-logo.logo
+		width: 66px
+		height: 19px
+		padding: 8px 0px 9px 0 !important
+	.mobile-rack-space
+		.logo
+			padding: 6px 23px 5px 45px !important
+		.simple-logo.logo
+			width: 56px
+			height: 10px
+			padding: 8px 0px 9px 0 !important
 	.desktop-nav .logo
 		float: left
 	.logo a:hover
@@ -1074,7 +1250,7 @@ widgets()
 			ul.tabs
 				li
 					color: #87F1FF // AAF5FF 88F1FF 87F1FF
-					background-color: tabColor
+					background-color: #868686 /* tabColor, 8a8a8a, 868686,  */
 					&.active
 						color: #58ECFF
 						background-color: transparent
@@ -1156,7 +1332,7 @@ widgets()
 		margin: 20px 0
 		border: 0
 		height: 1px
-		backgroud-color: imageBgLight
+		background-color: imageBgLight
 	.wrap
 		hr
 			background-color: #bfbfbf
@@ -1164,72 +1340,77 @@ widgets()
 		display: inline-block
 		background-color: imageAccents
 		padding: 3px 5px
-.demo-heading
-	margin-bottom: 60px
-h3.demo-heading
-	padding-bottom: 10px
-	border-bottom: 1px solid #ddd
-.ft-hd // feature heading
-	margin-top: 40px
-	font-size: 1.4rem
-	color: #00A0B5
-	font-family: 'wireframe-iconfont'
-	speak: none
-	font-style: normal
-	font-weight: normal
-	font-variant: normal
-	text-transform: none
-	line-height: 1
-	
-	/* Enable Ligatures ================ */
-	-webkit-font-feature-settings: "liga"
-	-moz-font-feature-settings: "liga=1"
-	-moz-font-feature-settings: "liga"
-	-ms-font-feature-settings: "liga" 1
-	-o-font-feature-settings: "liga"
-	font-feature-settings: "liga"
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
-	&:before
-		content: "\e60d"
+demo()
+	.demo-heading
+		margin-bottom: 60px
+	h3.demo-heading
+		padding-bottom: 10px
+		border-bottom: 1px solid #ddd
+	.ft-hd // feature heading
+		margin-top: 40px
 		font-size: 1.2rem
-		vertical-align: -1px
-		color: #ccc
-		transition: all 0.21s ease-in-out
-		-webkit-transition: all 0.21s ease-in-out
-	&:hover
+		color: #00A0B5
+		font-family: verdana, arial, sans-serif
+		speak: none
+		font-style: normal
+		font-weight: normal
+		font-variant: normal
+		text-transform: none
+		line-height: 1
+		
+		/* Enable Ligatures ================ */
+		-webkit-font-feature-settings: "liga"
+		-moz-font-feature-settings: "liga=1"
+		-moz-font-feature-settings: "liga"
+		-ms-font-feature-settings: "liga" 1
+		-o-font-feature-settings: "liga"
+		font-feature-settings: "liga"
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased
+		-moz-osx-font-smoothing: grayscale
 		&:before
-			color: #00A0B5
-			margin-left: -5px
-			margin-right: 5px
-.demo
-	position: relative
-	margin: 30px 0
-	.demo-height
-		margin-bottom: 50px
-	.web-wrap
-		position: absolute
-		display: inline-block
-		padding: 10px
-		transform: scale(0.67)
-		transform-origin: 0 0
-		border: 1px solid #ccc
-		box-shadow: 0 0 45px rgba(0,0,0,0.13)
-		border-radius: 4px
-		&.checkered
-			background: url(../images/checker-bg.svg)
-		&.light
-			background: #fff
-		&.dark
-			background: #838383
-		section
-		article
-		div
-			max-width: 977px !important
-		.extend
-			width: 250px
+			content: "\e60d"
+			font-size: 1.2rem
+			vertical-align: -1px
+			color: #ccc
+			font-family: 'wireframe-iconfont'
+			transition: all 0.21s ease-in-out
+			-webkit-transition: all 0.21s ease-in-out
+		&:hover
+			&:before
+				color: #00A0B5
+				margin-left: -5px
+				margin-right: 5px
+	.extend
+		display: block
+		width: 100%
+	.demo
+		position: relative
+		margin: 30px 0
+		.demo-height
+			margin-bottom: 50px
+		.web-wrap
+			position: absolute
+			display: inline-block
+			padding: 10px
+			transform: scale(0.67)
+			transform-origin: 0 0
+			border: 1px solid #ccc
+			box-shadow: 0 0 45px rgba(0,0,0,0.13)
+			border-radius: 4px
+			&.checkered
+				background: url(../images/checker-bg.svg)
+			&.light
+				background: #fff
+			&.dark
+				background: #838383
+			section
+			article
+			div
+				max-width: 977px !important
+			.extend
+				width: 250px
 responsive()
 	lg = 1024px
 	md = 960px
@@ -1449,4 +1630,74 @@ responsive()
 				+below(xs)
 					> article
 						column(1/item)
-			
+	.trigger-icon
+		color: #b6b6b6
+		font-size: 2rem
+mobile()
+	.iphone-wrap
+		transform-origin: 50% 0;
+		transform: scale(0.8) translateY(39px)
+		position: relative
+		display: flex
+		flex-direction: column
+		flex: 3
+		margin: 0 auto
+		border: 10px solid #aaa
+		border-radius: 10px
+		width: 320px
+		height: 568px
+		.ios-wrapper
+			flex: 1
+			padding: 15px 15px 0px
+			overflow-y: auto
+		footer
+			height: 60px
+	.iphone-5
+		width: 320px
+		height: 568px
+	.iphone-6
+		width: 375px
+		height: 667px
+	.iphone-6-plus
+		width: 414px
+		height: 736px
+	.iphone-header
+		padding: 0 8px
+		height: 24px
+		line-height: 2.2
+		font-size: 0.7rem
+		color: white
+		.rack
+			position: relative
+			> div
+				margin-right: 3px
+		.icon-battery-indicator
+			font-size: 0.6rem
+			display: inline-block
+		i.disc
+		i.circle
+			display: inline-block
+			vertical-align: 1px
+			margin-right: 2px
+			border-radius: 100px
+		i.disc
+			width: 5px
+			height: 5px
+			background-color: white
+
+		i.circle
+			width: 3px
+			height: 3px
+			border: 1px solid white
+		div.transmit-elem
+			position: absolute
+			right: -19px
+	.ios-tray
+		.tray-icons
+			padding: 10px 15px 5px
+			color: white
+			font-size: 0.7rem
+			[class*="icon-"]
+				font-size: 2rem
+	.ios-default
+		background-color: rgba(0,0,0,0.5)

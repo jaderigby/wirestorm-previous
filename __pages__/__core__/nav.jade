@@ -1,8 +1,9 @@
 include ../../template_files/jade/widgets/elements
 ul
-	li: a.logo(href="/") TheSite
-	li: +link("/", "Home")
+	li: +logo("TheSite")
+	li: +link("Home")
 	li: +link("page2", "Page 2")
+	li: +link("mobile", "Mobile")
 	li: +link("usage", "Usage")
 	li.right
-		+search('search-results')
+		block subnav

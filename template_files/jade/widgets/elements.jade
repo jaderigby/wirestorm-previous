@@ -3,13 +3,25 @@
 - var modalIter = 0
 
 mixin menu-drawer()
-	nav.menu-drawer
-		div.use-native-click
+	div#drawer.use-native-click
+		nav.menu-drawer
+			div
+				if block
+					block
+
+mixin menu-trigger()
+	section.rack
+		div.icon-menu.toggle.use-native-click(data-target="body, #siteWrapper, #drawer")
+		div.mobile-rack-space
 			if block
 				block
 
-mixin menu-trigger()
-	div.icon-menu.toggle.use-native-click(data-target="#siteWrapper")
+mixin mobile-header()
+	section.rack
+		div.icon-menu.toggle.use-native-click(data-target="body, #siteWrapper, #drawer")
+		div.mobile-rack-space
+			if block
+				block
 
 mixin panel(type, name)
 	- if (type === 'light') {
@@ -33,7 +45,25 @@ mixin panel(type, name)
 				block
 	- }
 
+mixin logo(linkFile, descriptor)
+	- if (arguments.length === 1) {
+	-	descriptor = arguments[0]
+	-	linkFile = '/'
+	- }
+	- if (descriptor === "") {
+		div.logo-wrapper
+			a.simple-logo.logo(href=linkFile)= descriptor
+	- }
+	- else {
+		div.logo-wrapper
+			a.logo(href=linkFile)= descriptor
+	- }
+
 mixin link(linkFile, linkDescriptor)
+	- if (arguments.length === 1) {
+	-	linkDescriptor = arguments[0]
+	-	linkFile = '/'
+	- }
 	- linkFile = (linkFile === undefined || linkFile === '/') ? '/' : linkFile + '.html';
 	a(href=linkFile)= linkDescriptor
 
@@ -100,6 +130,21 @@ mixin col(col)
 		if block
 			block
 
+mixin button(url, nameValue, pos)
+	- if (arguments.length === 1) {
+	- 	nameValue = url
+		button= nameValue
+	- }
+	- if (pos === 'right')
+		a(href=url).button.right= nameValue
+	- else if (pos === 'center')
+		div.center-justify
+			a(href=url).button= nameValue
+	- else if (pos === 'extend') {
+		div
+			a(href=url).button.extend= nameValue
+	- }
+
 mixin modal(nameValue, pos)
 	- modalIter += 1
 	- if (pos === 'right')
@@ -107,6 +152,10 @@ mixin modal(nameValue, pos)
 	- else if (pos === 'center')
 		div.center-justify
 			button.modal.trigger(data-target="modal" + modalIter)= nameValue
+	- else if (pos === 'extend') {
+		div
+			button.extend.modal.trigger(data-target="modal" + modalIter)= nameValue
+	- }
 	- else
 		button.modal.trigger(data-target="modal" + modalIter)= nameValue
 	div(id="modal" + modalIter, class="modal window")
@@ -146,6 +195,15 @@ mixin tabs(tabs)
 
 mixin tab()
 	section.tab-element
+		if block
+			block
+
+mixin rack(pos)
+	- var posString = ''
+	- if (pos === 'right') {
+	- 	posString = ' ' + pos
+	- }
+	article(class='rack cf' + posString)
 		if block
 			block
 
