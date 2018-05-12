@@ -1,3 +1,5 @@
+# Wirestorm 2 #
+
 ## What is Wirestorm? ##
 
 Wirestorm is a framework built on Jade, Stylus and Jeet, that leverages these technologies in order to allow developers and designers to build dynamic and "functional" wireframes __fast__.
@@ -18,63 +20,69 @@ So, instead of describing, "Then, when you click this button, you will go here",
 
 ## Installation ##
 
-Download or clone the Wirestorm repo.
+Wirestorm uses Node and Grunt, so make sure that they are installed:
 
-__Note:__ Wirestorm requires the following dependencies:
+__Node__
 
-- jade
-- for CSS:
-	- stylus
-	- jeet
-	- nib
-	- rupture
+Go to the Node.JS website and download the appropriate version.  Then run the downloaded installer.
 
-Download and install NodeJS. You will use Node's NPM feature to install all of the above dependencies.  Open a terminal.  For each, type the following:
+__Grunt__
+
+Once Node is installed, you can install Grunt by opening a bash window and typing:
 
 ```
-npm install -g stylus
+npm install -g grunt-cli
 ```
 
+Next, download or clone the Wirestorm repo (__Note:__ You will need git to do this):
+
 ```
-npm install -g jeet
+git clone http://wwww.github.com/jaderigby/wirestorm2.git
 ```
 
-. . . and so forth, until you have installed them all.  If you run into any difficulties, go to their respective sites and follow the instructions for installation.
-
-
-Once you have gone through and installed all of the above dependencies, then type:
+To finish the installation, type:
 
 ```
 cd ~/path/to/wirestorm/directory
 npm install
-```
-
-Let the process run.  NPM will run through and install all of  Wirestorm's other dependencies.
-
-When it has completed, type:
-
-```
 node start
 ```
 
 This will start a server for you, open your default browser, navigate to the url, and start a "watch" service running in the background for you.  This watch service will compile the proper files for you anytime you make changes to the editable wirestorm files as is described below.
 
-You are ready to start creating.
+You are ready to start creating!
 
 When you have finished your session, go back to the terminal and hold down `ctrl c`.  This will terminate the server and watch service.
 
-Wirestorm also utilizes __livereload__.  If you are using Chrome, for example, you can add the _livereload_ extension and everytime you save a change, your browser will automatically refresh with the new change.
+Wirestorm also utilizes __livereload__.  If you are using Chrome, for example, you can add the _livereload_ extension and every time you save a change, your browser will automatically refresh with the new change.
 
 ## Wirestorm Usage ##
 
-When you first open up the wirestorm folder, you will see the following subfolders:
+Here is a rundown of the Wirestorm folder structure:
 
 - `__pages__`
+  - `__core__`
 - `__styles__`
 - `app`
 - `template_files`
 
-The two underscored files are for you: One for html, and one for css.  The `__pages__` folder is where you will build your structure, the html.  The `__styles__` folder is where all of your css styles will live.  In the `__styles__` folder, you will find a file called `main.styl`.  This is where you add any custom styles of your own, beyond what wirestorm provides.
+#### `__pages__` ####
+
+__Here is where you will edit and add your custom html content.__  The `__pages__` folder contains the editable jade files.  Within `__core__` of this folder, you will find your header, footer, and default templates. These templates control the header, footer, and basic structure of your site including imported modules.  The index.jade file is what you will use to edit your first page. You can copy this page and modify it, in order to add more pages.  The pages can then be added to the navigation bar by editing the `nav.jade` file found within the `__core__` folder.
+
+#### `__styles__` ####
+
+Within the `__styles__` folder contains a file called `main.styl`.  __This is where you will add your custom css.__
+
+#### `app` ####
+
+The `app` folder is where all of your plain html and css files are compiled to.  Anything that you want to add &ndash; images, videos, etc &ndash; will live here.  Note that any changes to the html and css files will be overwritten by the jade and stylus files, however, so don't edit any `.html` or `.css` files.
+
+#### `template_files` ####
+
+DO NOT EDIT THESE FILES.  This is where the Wirestorm magic is stored.  They are the core Wirestorm files.
+
+<!-- The two underscored files are for you: One for html, and one for css.  The `__pages__` folder is where you will build your structure, the html.  The `__styles__` folder is where all of your css styles will live.  In the `__styles__` folder, you will find a file called `main.styl`.  This is where you add any custom styles of your own, beyond what wirestorm provides.
 
 The `__pages__` folder is a little more complex: In this folder, you will see another folder named `__core__`.  Within `__core__` you have the header and footer templates, and the nav file.  The header, footer and nav file are there for you to modify.  Just note that they are the main files for your entire site: make one change, and it will show up on all pages.  Going back to the root of the `__pages__` folder, we see a file called `default.jade`.  You should never need to edit this file.  It contains the blueprint for all pages.  If you decide that you do want to add a new section to all pages, something that header, footer and nav can't do, you can add or include it in this file.
 
@@ -87,9 +95,11 @@ extend default
 block content
 	+panel('light')
 		//- Your content goes here!
-```
+``` -->
 
 <!-- **For instructions on using the individual components of Wirestorm, refer to your own Wirestorm site running locally.  There, you will see a page in the navigation called `Usage`.  This page will give you examples and instructions for using all of Wirestorm's powerful and unique features.** -->
+
+# Wirestorm Elements #
 
 ## Segments Module ##
 
@@ -123,7 +133,10 @@ __stylus:__
 
 __Signature:__
 
-`+panel()`
+```
++panel()
+
+```
 
 __Usage:__
 
