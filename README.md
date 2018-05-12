@@ -98,7 +98,7 @@ block content
 The segments module gives you multiple layout tools and features.  It includes:
 
 1. __Panels__
-2.  __Percentage segments__ (columns running in thirds, fifths and sevenths.  Examples given below)
+2.  __Segments__ (columns running in thirds, fifths and sevenths.  Examples given below)
 3. __Columns__
 
 All of these components can have classes and an id attached to them, as well.
@@ -147,7 +147,7 @@ The class attached to the item determines the background color.  For example:
 
 ```
 
-#### 2. Percentage Segments ####
+#### 2. Segments ####
 
 __Signature__
 
@@ -180,7 +180,7 @@ __Usage:__
 
 ```
 
-Similar to columns, percentage layouts give you a dominate and subordinate column.  For example, let's say you want a layout with an image in the left-hand column and content on the right.  You could do the following:
+Similar to columns, segments give you a dominate and subordinate column.  For example, let's say you want a layout with an image in the left-hand column and content on the right.  You could do the following:
 
 ```
 +segment().thirds
