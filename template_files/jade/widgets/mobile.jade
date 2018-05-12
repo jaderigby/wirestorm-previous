@@ -12,7 +12,29 @@ mixin iphone-header(cls)
 						i.disc
 						i.circle
 						i.circle
-					div Verizon
+					div Horizon
+					div.transmit-elem: i.icon-transmit
+			article.center-justify
+				| 5:00 PM
+			article
+				div.right-justify
+					span.icon-battery-indicator
+
+mixin iphone-status(cls)
+	- if (!cls) {
+	- 	cls = 'ios-default'
+	- }
+	section(class='iphone-header ' + cls)
+		section.columns-3
+			article
+				div.rack
+					div
+						i.disc
+						i.disc
+						i.disc
+						i.circle
+						i.circle
+					div Horizon
 					div.transmit-elem: i.icon-transmit
 			article.center-justify
 				| 5:00 PM

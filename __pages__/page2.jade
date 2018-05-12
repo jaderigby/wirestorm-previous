@@ -7,35 +7,35 @@ block content
 				h4 Settings
 				hr
 				+col(4)
-					article
+					+cell()
 						+switch("settingsToggle", ['First Feature', 'Second Feature', 'Third Feature'])
-					article
+					+cell()
 						div.border-wrap
 							div: +select(['Light', 'Dark', 'Neutral'])
 							p: +radio("settingsRadio", ['Setting A', 'Setting B'])
 							div.center-justify: +switch('Use')
-					article
+					+cell()
 						+checkbox("add", ['Add Item 1', 'Add Item 2', 'Add Item 3'])
-					article
+					+cell()
 						+switch()
 						p: +blockletter(30)
 				hr
 		- var n = 0
 		+loop(5)
-			section.thirds.wrap
-				aside
+			+segment().thirds.wrap
+				+min()
 					+image2('100%',200)
 					p.right-justify: +blockletter(4)
 					p.right-justify: +blockletter(2)
-				article
+				+max()
 					h3= titles[n++] + " Blog Title"
 					p: +blockletter(30)
-					section.thirds
-						aside
+					+segment().thirds
+						+min()
 							+rack()
 								+loop(4)
 									+image(40,40)
-						article
+						+max()
 							p.right: button Read More
 		div.right
 			+pagination()

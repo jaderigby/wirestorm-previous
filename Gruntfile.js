@@ -1,5 +1,10 @@
 'use strict';
 
+var poststylus = function() {
+  return require('poststylus')(['lost'])
+};
+
+
 module.exports = function(grunt) {
 
 	grunt.initConfig({
@@ -27,9 +32,9 @@ module.exports = function(grunt) {
 				options: {
 					compress: false,
 					use: [
-						require('jeet'),
 						require('nib'),
-						require('rupture')
+						require('rupture'),
+						poststylus
 					]
 				},
 				files: {

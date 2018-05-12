@@ -23,28 +23,6 @@ mixin mobile-header()
 			if block
 				block
 
-mixin panel(type, name)
-	- if (type === 'light') {
-		.panel-wrap.whiteout
-			section.panel
-				block
-	- }
-	- else if (type === 'dark') {
-		.panel-wrap.fill
-			section.panel
-				block
-	- }
-	- else if (type === 'footer') {
-		.panel-wrap.dark.footer
-			section.panel
-				block
-	- }
-	- else {
-		.panel-wrap
-			section.panel
-				block
-	- }
-
 mixin logo(linkFile, descriptor)
 	- if (arguments.length === 1) {
 	-	descriptor = arguments[0]
@@ -101,34 +79,6 @@ mixin column-loop(col, equalize)
 				if block
 					block
 	- }
-
-mixin columns(col)
-	- if (col == 2) {columnCount = 'columns-2'}
-	- if (col == 3) {columnCount = 'columns-3'}
-	- if (col == 4) {columnCount = 'columns-4'}
-	- if (col == 5) {columnCount = 'columns-5'}
-	- if (col == 6) {columnCount = 'columns-6'}
-	- if (col == 7) {columnCount = 'columns-7'}
-	- if (col == 8) {columnCount = 'columns-8'}
-	- if (col == 9) {columnCount = 'columns-9'}
-	- if (col == 10) {columnCount = 'columns-10'}
-	section(class=columnCount)
-		if block
-			block
-
-mixin col(col)
-	- if (col == 2) {columnCount = 'columns-2'}
-	- if (col == 3) {columnCount = 'columns-3'}
-	- if (col == 4) {columnCount = 'columns-4'}
-	- if (col == 5) {columnCount = 'columns-5'}
-	- if (col == 6) {columnCount = 'columns-6'}
-	- if (col == 7) {columnCount = 'columns-7'}
-	- if (col == 8) {columnCount = 'columns-8'}
-	- if (col == 9) {columnCount = 'columns-9'}
-	- if (col == 10) {columnCount = 'columns-10'}
-	section(class=columnCount)
-		if block
-			block
 
 mixin button(url, nameValue, pos)
 	- if (arguments.length === 1) {

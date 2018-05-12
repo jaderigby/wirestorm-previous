@@ -1,8 +1,8 @@
 extend __core__/default
 block content
-	+panel('light')
-		+break({lg : 'fifths', md : 'half', sm : 'stack'})
-			article
+	+panel().light
+		+segment({lg : 'fifths', md : 'half', sm : 'stack'})
+			+max()
 				h1 First One
 				p
 					+blockletter(45)
@@ -13,26 +13,27 @@ block content
 							+blockletter(50)
 						form#moreInfo.wrap
 							+col(2)
-								article
+								+cell()
 									+input('First Name', 'required')
-								article
+								+cell()
 									+input('Last Name')
 							+email('Email', 'required')
 							+textarea('Message')
 							+submit('Submit','right')
-			aside
+			+min()
 				+slideshow(380,235,'right')
-	+panel('dark')
-		+column-loop(4)
-			article
-				+porthole(120,'center')
-				p.center-align
-					+blockletter(15)
-	+panel('light')
-		+break({lg : 'thirds', md : 'half', sm : 'stack'})
-			aside
+	+panel().dark
+		+col({lg : 4, md : 2, tablet : 1})
+			+loop(4)
+				+cell()
+					+porthole(120,'center')
+					p.center-align
+						+blockletter(15)
+	+panel().light
+		+segment({lg : 'thirds', md : 'half', sm : 'stack'})
+			+min()
 				+image2('100%',180)
-			article
+			+max()
 				h2 Next Product
 				p
 					+blockletter(40)
@@ -40,7 +41,7 @@ block content
 					h3 Another Modal
 					p
 						+blockletter(800)
-	+panel('footer')
+	+panel().dark.footer
 		+tabs(['First','Second','Third'])
 			+tab()
 				h3 First Tab
@@ -54,11 +55,12 @@ block content
 						li= titles[i++] + " Item"
 			+tab()
 				h3 Third Tab
-				+column-loop(5)
-					article
-						+image('100%',100)
-						p
-							+rating(3, 5)
+				+col({lg : 5, sm : 1})
+					+loop(5)
+						+cell()
+							+image('100%',100)
+							p
+								+rating(3, 5)
 block script
 	script.
 		$('form').each(function() {
