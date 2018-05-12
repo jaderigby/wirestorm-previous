@@ -123,7 +123,10 @@ __stylus:__
 
 __Signature:__
 
-`+panel()`
+```
++panel()
+
+```
 
 __Usage:__
 
