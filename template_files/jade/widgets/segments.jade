@@ -1,9 +1,9 @@
 - var breakpoints = ['lg','md','tablet','sm']
 
-mixin panel(cls)
-	- if (cls) {
-		div(class='panel-wrap' +' '+ cls, id!=attributes.id)
-			section.panel
+mixin panel(size)
+	- if (size) {
+		div.panel-wrap(class!=attributes.class, id!=attributes.id)
+			section.panel(style="padding: "+ size +"px 0")
 				block
 	- }
 	- else {
