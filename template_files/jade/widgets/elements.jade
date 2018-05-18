@@ -79,20 +79,24 @@ mixin column-loop(col, equalize)
 				if block
 					block
 	- }
-
-mixin button(url, nameValue, pos)
-	- if (arguments.length === 1) {
-	- 	nameValue = url
-		button= nameValue
+	
+mixin button(nameValue, pos)
+	- if (typeof nameValue === 'object') {
+	- 	nameValue.title = nameValue.title || "OK"
+	- 	nameValue.url = nameValue.url || "#"
+	- 	nameValue.position = nameValue.position || "left"
+		a(href=nameValue.url, class=nameValue.position + " " + arguments.class, arguments.id).button= nameValue.title
 	- }
-	- if (pos === 'right')
-		a(href=url).button.right= nameValue
-	- else if (pos === 'center')
-		div.center-justify
-			a(href=url).button= nameValue
-	- else if (pos === 'extend') {
-		div
-			a(href=url).button.extend= nameValue
+	- else {
+		- if (pos === 'right')
+			a(href=url).button.right= nameValue
+		- else if (pos === 'center')
+			div.center-justify
+				a(href=url).button= nameValue
+		- else if (pos === 'extend') {
+			div
+				a(href=url).button.extend= nameValue
+		- }
 	- }
 
 mixin modal(nameValue, pos)
