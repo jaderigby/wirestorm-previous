@@ -92,17 +92,17 @@ $(document).on("click",function(e) {
 
 //
 // EQUAL HEIGHT COLUMNS:
-// Note: To use, add "data-equalize" to the parent element, 
+// Note: To use, add "data-equalize" to the parent element,
 // then "data-equal-height" to each column.
-// For those rare occasions when you need it, you can add 
-// a value to either "data-equalize" or "data-equal-height" 
-// to offset the height by a given amount. 
-// Use the qualifiers "+" or "-" respectively.  
+// For those rare occasions when you need it, you can add
+// a value to either "data-equalize" or "data-equal-height"
+// to offset the height by a given amount.
+// Use the qualifiers "+" or "-" respectively.
 // Example: data-equal-height="+6"
 //
 // You can also add a breakpoint to the "data-equalize" element,
-// in order to include responsive behavior.  Simply add 
-// "data-breakpoint" with a number value that uses any of the 
+// in order to include responsive behavior.  Simply add
+// "data-breakpoint" with a number value that uses any of the
 // following qualifiers: <, <=, >, >=.
 // Example: data-breakpoint="<=960"
 //
@@ -121,7 +121,7 @@ function initEqualize() {
 				if (windowSize < myBreakpoint) {
 					$('[data-equal-height]', this).css('height', '');
 				}
-				else {equalize()}	
+				else {equalize()}
 			}
 			else if (myQualifier === '<=') {
 				if (windowSize <= myBreakpoint) {
@@ -378,4 +378,30 @@ $('.mobile-nav li a').click(function(e) {
 
 $('body').delegate('a.register', 'click', function() {
 	$(this).parent().append('<a href=""></a>')
+});
+
+//======================
+//	FORM PLACEHOLDERS
+//======================
+
+$('.form-element input[type="text"], .form-element input[type="email"], .form-element input[type="password"], textarea').keyup(function(e) {
+	var $parent = ($(this).closest('.form-segment').length !== 0) ? $(this).closest('.form-segment').find('.form-element') : $(this).parent();
+	if ($(this).val() !== "") {
+		$parent.addClass('has-value');
+	}
+	else if ($(this).val() === "") {
+		$parent.removeClass('has-value');
+	}
+});
+
+$('.form-element input[type="text"], .form-element input[type="email"], .form-element input[type="password"], textarea').focus(function(e) {
+	var $parent = ($(this).closest('.form-segment').length !== 0) ? $(this).closest('.form-segment').find('.form-element') : $(this).parent();
+	$parent.addClass('has-value');
+});
+
+$('.form-element input[type="text"], .form-element input[type="email"], .form-element input[type="password"], textarea').focusout(function(e) {
+	var $parent = ($(this).closest('.form-segment').length !== 0) ? $(this).closest('.form-segment').find('.form-element') : $(this).parent();
+	if ($(this).val() === "") {
+		$parent.removeClass('has-value');
+	}
 });

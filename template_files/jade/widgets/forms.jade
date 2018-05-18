@@ -1,3 +1,36 @@
+mixin form-segment(cols)
+	- if (!cols) {
+		- var cls = (attributes.class) ? "form-segment " + attributes.class : "form-segment";
+		div(class=cls, id!=attributes.id)
+			if block
+				block
+	- }
+	- else if (typeof cols === 'object') {
+		- var cls = (attributes.class) ? attributes.class + " " : "";
+		- cls += 'form-segment break'
+		- for (var i = 0; i < breakpoints.length; i++) {
+			- 	if (cols[breakpoints[i]] !== undefined) {
+				- 		itemBreak = breakpoints[i];
+				- 		cls += " "+ itemBreak + "-columns-" + cols[itemBreak]
+				- 	}
+				- }
+		div(class=cls, id!=attributes.id)
+			if block
+				block
+	- }
+	- else {
+		- var cls = (attributes.class) ? attributes.class + " " : "";
+		- cls += "form-segment break lg-columns-" + cols
+		div(class=cls, id!=attributes.id)
+			if block
+				block
+	- }
+
+mixin cell()
+	div.cell(class!=attributes.class, id!=attributes.id)
+		if block
+			block
+
 mixin input(description, required, features)
 	- var capsule = false, capsulized = ""
 	- if (features && features.hasOwnProperty('capsule')) {
@@ -9,21 +42,23 @@ mixin input(description, required, features)
 	-		capsulized = 'capsulized'
 	- }
 	- if (required) {
-		p
+		.form-element
 			- if (capsule) {
 				span(class=capsule)
 			- }
-			input(class=capsulized, type="text", placeholder=description, data-required='')
+			input(class=capsulized, type="text", data-required='')
+			label=description
 	- }
 	- else if (description) {
-		p
+		.form-element
 			- if (capsule) {
 				span(class=capsule)
 			- }
-			input(class=capsulized, type="text", placeholder=description)
+			input(class=capsulized, type="text")
+			label=description
 	- }
 	- else {
-		p
+		.form-element
 			- if (capsule) {
 				span(class=capsule)
 			- }
@@ -32,33 +67,38 @@ mixin input(description, required, features)
 
 mixin email(description, required)
 	- if (required) {
-		p
-			input(type="email", placeholder=description, data-validate="email", data-required='')
+		.form-element
+			input(type="email", data-validate="email", data-required='')
+			label=description
 	- }
 	- else if (description) {
-		p
-			input(type="email", placeholder=description, data-validate="email")
+		.form-element
+			input(type="email", data-validate="email")
+			label=description
 	- }
 	- else {
-		p
+		.form-element
 			input(type="email", data-validate="email")
 	- }
 
 mixin password(description, required, matchName, features)
 	- if (matchName) {
-		p
-			input(type="password", placeholder=description, data-required='', data-match=matchName)
+		.form-element
+			input(type="password", data-required='', data-match=matchName)
+			label=description
 	- }
 	- else if (required) {
-		p
-			input(type="password", placeholder=description, data-required='')
+		.form-element
+			input(type="password", data-required='')
+			label=description
 	- }
 	- else if (description) {
-		p
-			input(type="password", placeholder=description)
+		.form-element
+			input(type="password")
+			label=description
 	- }
 	- else {
-		p
+		.form-element
 			input(type="password")
 	- }
 
@@ -69,19 +109,19 @@ mixin select(items)
 
 mixin submit(description, pos)
 	- if (pos === 'center') {
-		p.center-justify
+		.form-element.center-justify
 			input(type="submit", value=description)
 	- }
 	- else if (pos === 'right') {
-		p.right-justify
+		.form-element.right-justify
 			input(type="submit", value=description)
 	- }
 	- else if (pos === 'extend') {
-		p
+		.form-element
 			input.extend(type="submit", value=description)
 	- }
 	- else {
-		p
+		.form-element
 			input(type="submit", value=description)
 	- }
 
@@ -153,7 +193,7 @@ mixin checkbox(name, items)
 		.checkbox-widget
 			- var iterBox = 1
 			- var check = (Math.random() + 1).toString(36).substring(7)
-			p
+			.form-element
 				- var value = item.toLowerCase(item.replace(' ','-'))
 				span.checkbox
 					input(type="checkbox",name=name,value=value,id=check+iterBox)
@@ -164,7 +204,7 @@ mixin radio(name, items)
 	.radio-widget
 		- var iterRadio = 1
 		- var rad = (Math.random() + 1).toString(36).substring(7);
-		p
+		.form-element
 			each item in items
 				- var value = item.toLowerCase(item.replace(' ','-'))
 				span.radio
@@ -172,5 +212,6 @@ mixin radio(name, items)
 					label(for=rad+iterRadio)= item
 					- iterRadio++
 mixin textarea(description)
-	p
-		textarea(placeholder=description)
+	.form-element
+		textarea
+		label=description

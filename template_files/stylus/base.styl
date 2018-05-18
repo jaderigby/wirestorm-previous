@@ -1,7 +1,13 @@
 base()
+	cf()
+		&:after
+			content:""
+			display:block
+			clear:both
+
 	header
 		// padding: 20px
-		background-color: backgroundLight
+		background-color: bseColor
 	p
 		margin: 15px 0
 		line-height: 1.2
@@ -20,6 +26,7 @@ base()
 		border-bottom: 1px solid imageBgLight
 	.fill
 	.dark
+	.darker
 		ol
 		ul
 			color: textLightOnDark
@@ -53,7 +60,7 @@ base()
 		padding: 15px 15px
 		border: 1px solid #CCC
 	.light
-		background-color: backgroundLight
+		background-color: baseColor
 	article.border-wrap
 		cf()
 	.clear-wrap
@@ -62,11 +69,11 @@ base()
 		cf()
 	.desktop
 		display: block
-		+below(large)
+		+below(lg)
 			display: none !important
 	.mobile
 		display: none !important
-		+below(large)
+		+below(lg)
 			display: block
 	.left-justify
 		text-align: left !important
@@ -159,10 +166,10 @@ base()
 				margin-left: 0
 	.desktop-nav
 		background-color: #E7E7E7
-		+below(large)
+		+below(lg)
 			display: none
 		&.dark
-			background-color: primary
+			background-color: primaryColor
 			a
 				color: textLightOnDark
 				&:hover
@@ -205,11 +212,11 @@ base()
 		font-size: 1.6rem
 		color: #00a0b5
 		cursor: pointer
-		+below(large)
+		+below(lg)
 			display: inline-block
 	.mobile-rack-space
 		display: none
-		+below(large)
+		+below(lg)
 			display: block
 	.menu-drawer
 		padding-top: 30px
@@ -344,7 +351,6 @@ base()
 		&[class^="icon-"]
 			vertical-align: top
 	button
-	input[type="submit"]
 		margin-right: 5px
 		padding: 8px 25px
 		color: buttonColor
@@ -362,6 +368,7 @@ base()
 			vertical-align: top
 	.fill
 	.dark
+	.darker
 		a.button
 		button
 		input[type="submit"]
@@ -421,99 +428,25 @@ base()
 		.category-stat
 			padding-right: 70px
 
-forms()
-	input[type="text"]
-	input[type="email"]
-	input[type="password"]
-		&.is-required
-		&.no-match
-		&.failed
-			border: 1px solid #8e6868 /* e4b6b6, 8e6868 */
-			background-color: #583838
-	span.required-message
-	span.no-match-message
-	span.error-message
-		display: block
-		margin-top: 3px
-		color: #5d1111 /* 5d1111, 711b1b */
-		font-size: 0.8rem
-	input[type="text"]
-	input[type="email"]
-	input[type="password"]
-		display: block
-		padding: 4px 1.5%
-		width: 96.8%
-		height: 25px
-		font-size: 0.85rem
-		color: #84f1ff
-		line-height: 1.3
-		background-color: #444
-		border: 1px solid #888
-	select
-		display: block
-		padding: 4px 1.5%
-		width: 100%
-		height: 35px
-		font-size: 0.85rem
-		color: #84f1ff
-		line-height: 1.3
-		background-color: #444
-		border: 1px solid #888
-	textarea
-		padding: 4px 1.5%
-		width: 97%
-		height: 100px
-		font-size: 0.85rem
-		color: #84f1ff
-		line-height: 1.3
-		background-color: #444
-		border: 1px solid #888
-	input[type="file"]
-		width: 250px
-	// Styling for form element grouping by columnization
-	section.columns-2
-		article
-			input[type="text"]
-			input[type="password"]
-			textarea
-				padding: 4px 3%
-				width: 94%
-	section.columns-3
-		article
-			input[type="text"]
-			input[type="password"]
-			textarea
-				padding: 4px 4.5%
-				width: 91%
-	section.columns-4
-		article
-			input[type="text"]
-			input[type="password"]
-			textarea
-				padding: 4px 6%
-				width: 88%
-	form
-		section[class^="columns-"]
-			p
-				margin-bottom: 0
-		.on-icon
-			.icon-checkmark:before
-				font-size: 0.85rem
-
 widgets()
 	//
 	// Panels
 	//
+	.darker
+		background-color: #545454
+		a
+			color: #98E2EB
 	.whiteout
-		background-color: backgroundLight
+		background-color: baseColor
 	.fill
-		background-color: lightness(primary, 51.5%)
+		background-color: lightness(primaryColor, 51.5%)
 	.dark
-		background-color: primary
+		background-color: primaryColor
 		a
 			color: #98E2EB
 	.fill
 	.dark
+	.darker
 		a.button
 		button
 		input[type="submit"]
@@ -526,12 +459,14 @@ widgets()
 	#container
 		.fill
 		.dark
+		.darker
 			margin-left: -20px
 			margin-right: -20px
 			padding-left: 20px
 			padding-right: 20px
 	.fill
 	.dark
+	.darker
 		h1
 		h2
 		h3
@@ -540,7 +475,7 @@ widgets()
 		h6
 			color: textLightOnDark
 		.image-widget
-			background-color: lightness(secondary, 34%) // #575757
+			background-color: lightness(secondaryColor, 34%) // #575757
 		.image-border
 			border: 1px solid #4a4a4a
 		.dimage
@@ -931,8 +866,9 @@ widgets()
 			background-color: imageBgMedium // cecece, d2d2d2
 	.fill
 	.dark
+	.darker
 		.porthole
-			background-color: lightness(secondary, 33.5%) // #555
+			background-color: lightness(secondaryColor, 33.5%) // #555
 	.slideshow-widget
 		position: relative
 		width: 100%
@@ -1023,13 +959,16 @@ widgets()
 	.desktop-nav.dark .logo a:hover
 	.desktop-nav.dark a.logo:hover
 		text-decoration: none
-		background-color: secondary
+		background-color: secondaryColor
 	//
 	// Tabs
 	//
 	div.tabs-widget
 		ul.tabs
-			cf()
+			&:after
+				content:""
+				display:block
+				clear:both
 			li
 				list-style: none
 				float: left
@@ -1070,6 +1009,7 @@ widgets()
 						background-color: transparent
 	.fill
 	.dark
+	.darker
 		div.tabs-widget
 			section.tabs-wrapper
 				border-color: #B3B3B3

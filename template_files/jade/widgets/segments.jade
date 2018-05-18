@@ -73,7 +73,7 @@ mixin col(cols)
 				block
 	- }
 	- else {
-		- var cls = (attributes.class) ? attributes.class : "";
+		- var cls = (attributes.class) ? attributes.class + " " : "";
 		- cls += "segment break lg-columns-" + cols
 		div(class=cls, id!=attributes.id)
 			if block

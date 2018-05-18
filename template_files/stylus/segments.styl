@@ -9,7 +9,7 @@ segments()
       width: 96%
       .panel
         width: 100%
-        +below(large)
+        +below(lg)
           margin: 0
           padding: 40px 2%
           width: 96%
@@ -17,8 +17,8 @@ segments()
     .panel
       margin: 0 auto
       padding: 60px 0
-      width: large
-      +below(large)
+      width: lg
+      +below(lg)
         margin: 0
         padding: 40px 2%
         width: 96%
@@ -26,8 +26,8 @@ segments()
     .panel
       margin: 0 auto
       padding: 60px 0
-      width: large
-      +below(large)
+      width: lg
+      +below(lg)
         margin: 0
         padding: 40px 2%
         width: 96%
@@ -41,7 +41,7 @@ segments()
   @lost flexbox flex
   @lost gutter 25px
 
-  .thirds, .fifths, .sevenths
+  .half, .thirds, .fifths, .sevenths
     lost-flex-container: row
 
   .thirds > .segment-min
@@ -61,6 +61,10 @@ segments()
 
   .sevenths > .segment-max
       lost-column: 4/7
+
+  .half > .segment-min
+  .half > .segment-max
+      lost-column: 1/2
 
 responsive-segments()
 	lg = 1024px

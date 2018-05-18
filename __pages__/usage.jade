@@ -3,14 +3,14 @@ include ../template_files/jade/widgets/demo
 block content
 	link(rel="stylesheet", type="text/css", href="../css/prism-okaidia.css")
 	script(src="../js/prism.js")
-	+panel('dark')
-		section.fifths
-			aside
+	+panel().darker
+		+segment().fifths
+			+min()
 				h2 Usage
-			article
+			+max()
 				div.wrap
-					p Note: Click on any element's name in order to see full details.
-	+panel('light')
+					p Note: Click on any element&squo;s name in order to see full details.
+	+panel().light
 		h4 Sections
 		ul
 			li: a(href="#layout", data-move-to="200") Layout
@@ -19,99 +19,71 @@ block content
 			li: a(href="#media") Media
 			li: a(href="#forms") Forms
 		h3#layout.demo-heading(data-move-to="150") Layout
-		section.thirds
-			aside
-				h4.ft-hd.modal.trigger(data-target="panel") +panel()
-				div#panel.modal.window
-					p
-						strong Description: 
-						| Creates a panel content wrapper including substantial whitespace above and below, as well as centering content while allowing background color to extend to the edge of the browser. Panels should be stacked one upon another and not nested.
-					ul
-						li
-							strong arg1 
-							| = [ 
-							em string 
-							| ]
-							br
-							| &ndash; recieves 'light', 'dark', or can be left blank for a clear background.
-					div.clear-wrap
-						h4 Code
-						pre
-							| <code class="language-jade">
-							| +panel()
-							|	h3 Demo
-							|	p
-							|		+blockletter(30)
-							| </code>
-			article
-				+demo('transparent')
-					+panel()
-						h3 Demo
-						p
-							+blockletter(30)
 
-		section.thirds
-			aside
-				h4.ft-hd.modal.trigger(data-target="panelLight") +panel('light')
-				div#panelLight.modal.window
-					p
-						strong Description: 
-						| Creates a panel content wrapper including substantial whitespace above and below, as well as centering content while allowing background color to extend to the edge of the browser. Panels should be stacked one upon another and not nested.
-					ul
-						li
-							strong arg1 
-							br
-							| [ 
-							em string 
-							| ] &ndash; recieves 'light', 'dark', or can be left blank for a clear background.
-					div.clear-wrap
-						h4 Code
-						pre
-							| <code class="language-jade">
-							| +panel('light')
-							|	h3 Demo
-							|	p
-							|		+blockletter(30)
-							| </code>
-			article
-				+demo()
-					+panel('light')
-						h3 Demo
-						p
-							+blockletter(30)
-
-		section.thirds
-			aside
-				h4.ft-hd.modal.trigger(data-target="panelDark") +panel('dark')
+		+segment().thirds
+			+min()
+				h4.ft-hd.modal.trigger(data-target="panelDark") +panel()
 				div#panelDark.modal.window
 					p
 						strong Description: 
-						| Creates a panel content wrapper including substantial whitespace above and below, as well as centering content while allowing background color to extend to the edge of the browser. Panels should be stacked one upon another and not nested.
+						| Creates a panel content wrapper including substantial whitespace above and below, as well as centering content while allowing background color to extend to the edge of the browser. Panels should be stacked one upon another and not nested. Background property can be controlled by attaching a class with the background-color assigned in the css.  Current options include:
+						
 					ul
-						li
-							strong arg1 
-							br
-							| [ 
-							em string 
-							| ] &ndash; recieves 'light', 'dark', or can be left blank for a clear background.
+						li .light
+						li .dark
+						li .fill
+
 					div.clear-wrap
 						h4 Code
 						pre
 							| <code class="language-jade">
-							| +panel('dark')
+							| +panel().dark
 							|	h3 Demo
 							|	p
 							|		+blockletter(30)
 							| </code>
-			article
+			+max()
 				+demo('dark')
 					+panel('dark')
 						h3 Demo
 						p
 							+blockletter(30)
+		
+		
+		+segment().thirds
+			+min()
+				h4.ft-hd.modal.trigger(data-target="half") .half
+				div#half.modal.window
+					p
+						strong Description: 
+						| Breaks content into halves.  These are defined by either "+min", "+max()", or both.
+					ul
+						li: strong Class
+					div.clear-wrap
+						h4 Code
+						pre
+							| <code class="language-jade">
+							| +segment().half
+							| 	+max()
+							| 		+image('100%', 200)
+							| 	+max()
+							|			h3 Content Title
+							| 		p
+							| 			+blockletter(40)
+							| </code>
+			+max()
+				+demo()
+					+panel('light')
+						+segment().half
+							+min()
+								+image('100%', 200)
+							+max()
+								h3 Content Title
+								p
+									+blockletter(50)
 
-		section.thirds
-			aside
+		+segment().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="thirds") .thirds
 				div#thirds.modal.window
 					p
@@ -123,59 +95,27 @@ block content
 						h4 Code
 						pre
 							| <code class="language-jade">
-							| section.thirds
-							| 	aside
+							| +seg().thirds
+							| 	+min()
 							| 		+image('100%', 200)
-							| 	article
+							| 	+max()
 							|		h3 Content Title
 							| 		p
 							| 			+blockletter(40)
 							| </code>
-			article
+			+max()
 				+demo()
 					+panel('light')
-						section.thirds
-							aside
+						+segment().thirds
+							+min()
 								+image('100%', 200)
-							article
+							+max()
 								h3 Content Title
 								p
 									+blockletter(50)
 
-		section.thirds
-			aside
-				h4.ft-hd.modal.trigger(data-target="fourths") .fourths
-				div#fourths.modal.window
-					p
-						strong Description: 
-						| Breaks content into 4ths with a dominant and subbordinate section.  These are defined by "aside" tag for the dominant (1/4) and "article" tag for subbordinate (3/4).
-					ul
-						li: strong Class
-					div.clear-wrap
-						h4 Code
-						pre
-							| <code class="language-jade">
-							| section.fourths
-							| 	aside
-							| 		+image('100%', 200)
-							| 	article
-							|		h3 Content Title
-							| 		p
-							| 			+blockletter(40)
-							| </code>
-			article
-				+demo()
-					+panel('light')
-						section.fourths
-							aside
-								+image('100%', 200)
-							article
-								h3 Content Title
-								p
-									+blockletter(50)
-		
-		section.thirds
-			aside
+		+segment().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="fifths") .fifths
 				div#fifths.modal.window
 					p
@@ -197,20 +137,52 @@ block content
 							| 				+blockletter(50)
 							| </code>
 
-			article
+			+max()
 				+demo()
 					+panel('light')
-						section.fifths
-							aside
+						+segment().fifths
+							+min()
 								+image('100%', 200)
-							article
+							+max()
 								h3 Content Title
 								p
 									+blockletter(50)
 
+		+segment().thirds
+			+min()
+				h4.ft-hd.modal.trigger(data-target="sevenths") .sevenths
+				div#sevenths.modal.window
+					p
+						strong Description: 
+						| Breaks content into 4ths with a dominant and subbordinate section.  These are defined by "aside" tag for the dominant (1/4) and "article" tag for subbordinate (3/4).
+						ul
+							li: strong Class
+					div.clear-wrap
+						h4 Code
+						pre
+							| <code class="language-jade">
+							| +segment().sevenths
+							| 	+min()
+							| 		+image('100%', 200)
+							| 	+max()
+							|		  h3 Content Title
+							| 		p
+							| 			+blockletter(40)
+							| </code>
+			+max()
+				+demo()
+					+panel().light
+						+segment().sevenths
+							+min()
+								+image('100%', 200)
+							+max()
+								h3 Content Title
+								p
+									+blockletter(50)
+			
 		h3#dynamic-elements.demo-heading Dynamic Elements
-		section.thirds
-			aside
+		+segment().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="modal") +modal(arg1, arg2)
 				div#modal.modal.window
 					p
@@ -242,14 +214,14 @@ block content
 							|     p Content of the modal including an image
 							|    +image(100)
 							| </code>
-			article
+			+max()
 				+demo()
 					+panel('light')
 						+modal('Learn More', 'center')
 							h3 Special Modal
 							p Here lies my very special modal!
-		section.thirds
-			aside
+		+segment().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="tabs") +tabs(arg1)
 				div#tabs.modal.window
 					p
@@ -275,7 +247,7 @@ block content
 							|         p And finally, the content for the third tab.
 							| 
 							| </code>
-			article
+			+max()
 				+demo()
 					+panel('light')
 						+tabs(['Tab 1', 'Tab 2', 'Tab 3'])
@@ -287,8 +259,8 @@ block content
 								p And finally, the content for the third tab.
 
 		h3#loops.demo-heading Loops
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="loop") +loop(arg1)
 				div#loop.modal.window
 					p
@@ -313,7 +285,7 @@ block content
 							|			p
 							|				+blockletter(35)
 							| </code>
-			article
+			+max()
 				+demo('transparent')
 					+panel()
 						- var i = 0
@@ -323,8 +295,8 @@ block content
 								p
 									+blockletter(35)
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="columnLoop") +column-loop(arg1, arg2)
 				div#columnLoop.modal.window
 					p
@@ -356,7 +328,7 @@ block content
 							| 				p
 							| 					+blockletter(15)
 							| </code>
-			article
+			+max()
 				+demo('dark')
 					+panel('dark')
 						+column-loop(4,'equalize')
@@ -368,8 +340,8 @@ block content
 										+blockletter(15)
 
 		h3#media.demo-heading Media
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="image") +image(arg1, arg2, arg3)
 				div#image.modal.window
 					p
@@ -405,12 +377,12 @@ block content
 							| article
 							|    +image('100%', 150, 'center')
 							| </code>
-			article
+			+max()
 				+demo()
 					+image(450, 250)
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="image2") +image2(arg1, arg2, arg3)
 				div#image2.modal.window
 					p
@@ -446,12 +418,12 @@ block content
 							| article
 							|    +image2('100%', 150, 'center')
 							| </code>
-			article
+			+max()
 				+demo()
 					+image2(450, 250)
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="porthole") +porthole(arg1, arg2)
 				div#porthole.modal.window
 					p
@@ -481,13 +453,13 @@ block content
 							| +panel('light')
 							|    +porthole(200, 'center')
 							| </code>
-			article
+			+max()
 				+demo('transparent')
 					article(style="width: 450px")
 						+porthole(200, 'center')
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="profile") +profile(arg1, arg2, arg3)
 				div#profile.modal.window
 					p
@@ -523,13 +495,13 @@ block content
 							| +panel('light')
 							|    +profile(200, 'center')
 							| </code>
-			article
+			+max()
 				+demo('transparent')
 					article(style="width: 450px")
 						+profile(200, 200, 'center')
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="profilePorthole") +profile-porthole(arg1, arg2)
 				div#profilePorthole.modal.window
 					p
@@ -559,13 +531,13 @@ block content
 							| +panel('light')
 							|    +profile-porthole(200, 'center')
 							| </code>
-			article
+			+max()
 				+demo('transparent')
 					article(style="width: 450px")
 						+profile-porthole(200, 'center')
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="video") +video(arg1, arg2, arg3)
 				div#video.modal.window
 					p
@@ -601,12 +573,12 @@ block content
 							| article
 							|    +video('100%', 150, 'center')
 							| </code>
-			article
+			+max()
 				+demo()
 					+video(450, 250)
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="slideshow") +slideshow(arg1, arg2, arg3)
 				div#slideshow.modal.window
 					p
@@ -642,12 +614,12 @@ block content
 							| article
 							|    +slideshow('100%', 150, 'center')
 							| </code>
-			article
+			+max()
 				+demo()
 					+slideshow(450, 250)
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd.modal.trigger(data-target="slideshow2") +slideshow2(arg1, arg2, arg3)
 				div#slideshow2.modal.window
 					p
@@ -683,46 +655,46 @@ block content
 							| article
 							|    +slideshow2('100%', 150, 'center')
 							| </code>
-			article
+			+max()
 				+demo()
 					+slideshow2(450, 250)
 
 		h3#forms.demo-heading Forms
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd +input(arg1)
-			article
+			+max()
 				+demo()
 					article.extend
 						+input('First Name')
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd +email(arg1)
-			article
+			+max()
 				+demo()
 					article.extend
 						+email('Email Address')
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd +password(arg1)
-			article
+			+max()
 				+demo()
 					article.extend
 						+password('New Password')
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd +switch(arg1, arg2)
-			article
+			+max()
 				+demo()
 					+switch('switches', ['Item 1', 'Item 2', 'Item 3'])
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd +checkbox(arg1, arg2, arg3)
-			article
+			+max()
 				+demo()
 					article
 						div.wrap
@@ -734,26 +706,26 @@ block content
 								h4 As A List:
 								+checkbox('checkboxes', ['Item 1', 'Item 2', 'Item 3'], 'list')
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd +radio(arg1, arg2)
-			article
+			+max()
 				+demo()
 					article
 						+radio('radios', ['Item 1', 'Item 2', 'Item 3'])
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd +select(arg1)
-			article
+			+max()
 				+demo()
 					article.extend
 						+select(['Item 1', 'Item 2', 'Item 3'])
 
-		section.thirds
-			aside
+		+seg().thirds
+			+min()
 				h4.ft-hd +submit(arg1, arg2)
-			article
+			+max()
 				+demo()
 					article.extend
 						div.wrap
