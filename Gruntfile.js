@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: '__pages__/',
 					src: '*.pug',
-					dest: 'app/',
+					dest: 'public/',
 					ext: '.html'
 				}]
 			}
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 					]
 				},
 				files: {
-					'app/css/main.css': '__styles__/*.styl'
+					'public/css/main.css': '__styles__/*.styl'
 				}
 			}
 		},
