@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		jade: {
+		pug: {
 			compile: {
 				options: {
 					pretty: true,
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: '__pages__/',
-					src: '*.jade',
+					src: '*.pug',
 					dest: 'app/',
 					ext: '.html'
 				}]
@@ -44,9 +44,9 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			jade: {
-				files: ['__pages__/*.jade', '__pages__/__core__/*.jade'],
-				tasks: 'jade',
+			pug: {
+				files: ['__pages__/*.pug', '__pages__/__core__/*.pug'],
+				tasks: 'pug',
 				options: {
 					livereload: true,
 				},
