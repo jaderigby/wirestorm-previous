@@ -176,6 +176,14 @@ mixin switch(name, items)
 			div.on
 	- }
 
+mixin trigger(family, value, reference)
+	- var chk = (Math.random() + 1).toString(36).substring(7);
+	.radio-widget.radio-trigger-widget
+		.form-element
+			span.radio
+				input(type="radio", data-target=reference name=family, value=value, id=chk)
+				label(for=chk)
+
 mixin checkbox(name, items)
 	- if (typeof items === 'object') {
 		.checkbox-widget
@@ -215,3 +223,12 @@ mixin textarea(description)
 	.form-element
 		textarea
 		label=description
+
+mixin login(urlPath)
+	div.wrap
+		h3 Login
+		form
+			+input("Username")
+			+password("Password")
+			p
+				+button({title: "Login", url: urlPath, position: "right"})
