@@ -17,7 +17,7 @@ var app = express()
 
 app.use(express.logger('dev'));
 
-app.use(express.static(path.join(__dirname, 'app')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 opn('http://localhost:3000');
 
