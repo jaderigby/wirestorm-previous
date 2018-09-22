@@ -1,0 +1,21 @@
+include ../../template_files/jade/widgets/elements
+doctype html
+html(lang="en")
+	head
+		meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+		//- responsive
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		//- main stylesheet
+		link(rel="stylesheet", type="text/css", href="/css/main.css")
+		link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
+	body
+		+menu-drawer()
+			include mobile-nav
+		#siteWrapper
+			#open
+				header
+					+mobile-header()
+						+logo("TheSite")
+				nav.desktop-nav.dark
+					include desktop-nav
+				block content
