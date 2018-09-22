@@ -141,7 +141,7 @@ mixin pagination(count)
 mixin tabs(tabs)
 	div.tabs-widget
 		ul.tabs
-			- each tab in tabs
+			each tab in tabs
 				li(data-target=tab)= tab
 		section.tabs-wrapper
 			if block
