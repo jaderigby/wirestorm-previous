@@ -227,7 +227,7 @@ mixin textarea(description)
 mixin login(urlPath)
 	div.wrap
 		h3 Login
-		form
+		form#loginForm
 			+input("Username")
 			+password("Password")
 			+button({title: "Login", url: urlPath, position: "right"})
