@@ -86,31 +86,31 @@ mixin button(nameValue, pos)
 	- 	nameValue.url = nameValue.url || ""
 	- 	nameValue.position = nameValue.position || "left"
 	- 	if (nameValue.position === 'left')
-				div.left-justify
+				div.left-justify.button-module
 					a(href=nameValue.url, class!=attributes.class, id!=attributes.id).button= nameValue.title
 	- 	else if (nameValue.position === 'right')
-				div.right-justify
+				div.right-justify.button-module
 					a(href=nameValue.url, class!=attributes.class, id!=attributes.id).button= nameValue.title
 	- 	else if (nameValue.position === 'center')
-				div.center-justify
+				div.center-justify.button-module
 					a(href=url, class!=attributes.class, id!=attributes.id).button= nameValue.title
 	- 	else if (nameValue.position === 'extend') {
-				div
+				div.button-module
 					a(href=nameValue.url, class!=attributes.class, id!=attributes.id).button.extend= nameValue.title
 	- 	}
 	- }
 	- else {
 		- if (pos === 'left')
-			div.left-justify
+			div.left-justify.button-module
 				a(href=url, class!=attributes.class, id!=attributes.id).button= nameValue
 		- else if (pos === 'right')
-			div.right-justify
+			div.right-justify.button-module
 				a(href=url, class!=attributes.class, id!=attributes.id).button= nameValue
 		- else if (pos === 'center')
-			div.center-justify
+			div.center-justify.button-module
 				a(href=url, class!=attributes.class, id!=attributes.id).button= nameValue
 		- else if (pos === 'extend') {
-			div
+			div.button-module
 				a(href=url, class!=attributes.class, id!=attributes.id).button.extend= nameValue
 		- }
 	- }
