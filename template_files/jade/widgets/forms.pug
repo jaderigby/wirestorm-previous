@@ -104,7 +104,7 @@ mixin password(description, required, matchName, features)
 
 mixin select(items)
 	select
-		- each item in items
+		each item in items
 			option= item
 
 mixin submit(description, pos)
@@ -129,7 +129,7 @@ mixin switch-old(name, items)
 	- if (items) {
 		.switch-widget
 			ul
-				- each item in items
+				each item in items
 					- var value = item.toLowerCase(item.replace(' ','-'))
 						li.switch-item
 							.switch-object
@@ -155,7 +155,7 @@ mixin switch(name, items)
 		.form-switch-widget
 			ul
 				- var iterCheck = 1
-				- each item in items
+				each item in items
 					- var value = item.toLowerCase(item.replace(' ','-'))
 						li
 							.switch-item
@@ -181,7 +181,7 @@ mixin checkbox(name, items)
 		.checkbox-widget
 			ul
 				- var iterCheck = 1
-				- each item in items
+				each item in items
 					- var value = item.toLowerCase(item.replace(' ','-'))
 					li.checkbox
 						input(type="checkbox",name=name,value=value,id="test"+iterCheck)
