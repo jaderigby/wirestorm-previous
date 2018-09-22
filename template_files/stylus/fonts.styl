@@ -1,28 +1,40 @@
-fonts(name)
+fonts(name, variants)
 	if name == montserrat
-		@css{@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);}
+		// variants: 100,100i,200,200i,300,400,400i,500,600,600i,700,700i,800,800i,900,900i
+		@import url(https://fonts.googleapis.com/css?family=Montserrat:variants)
 	if name == raleway
-		@css{@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);}
+		// variants: 400,100,200,300,500,600,700,800,900
+		@import url(http://fonts.googleapis.com/css?family=Raleway:variants)
 	if name == open-sans
-		@css {@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);}
+		// variants: 300italic,400italic,600italic,700italic,800italic,400,300,600,700,800
+		@import url('http://fonts.googleapis.com/css?family=Open+Sans':variants)
 	if name == lato
-		@css {@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);}
+		// variants: 100,300,400,700,900,100italic,300italic,400italic,700italic,900italic
+		@import url(http://fonts.googleapis.com/css?family=Lato:variants)
 	if name == roboto
-		@css{@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);}
+		// variants: 400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic
+		@import url(http://fonts.googleapis.com/css?family=Roboto:variants)
 	if name == fira-sans
-		@css{@import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);}
+		// variants: 300,400,500,700,300italic,400italic,500italic,700italic
+		@import url("http://fonts.googleapis.com/css?family=Fira+Sans":variants)
 	if name == hind
-		@css{@import url(http://fonts.googleapis.com/css?family=Hind:400,300,500,600,700);}
+		// variants: 400,300,500,600,700
+		@import url(http://fonts.googleapis.com/css?family=Hind:variants)
 	if name == hind-madurai
-		@css{@import url(https://fonts.googleapis.com/css?family=Hind+Madurai:300,400,500,600,700);}
+		// variants: 300,400,500,600,700
+		@import url("https://fonts.googleapis.com/css?family=Hind+Madurai":variants)
 	if name == source-sans-pro
-		@css{@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);}
+		// variants: 200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic
+		@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro":variants)
 	if name == pt-sans
-		@css{@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);}
+		// variants: 400,700,400italic,700italic
+		@import url("http://fonts.googleapis.com/css?family=PT+Sans":variants)
 	if name == pt-sans-narrow
-		@css{@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);}
+		// variants: 400,700
+		@import url("http://fonts.googleapis.com/css?family=PT+Sans+Narrow":variants)
 	if name == play
-		@css{@import url('http://fonts.googleapis.com/css?family=Play:400,700');}
+		// variants: 400,700
+		@import url(http://fonts.googleapis.com/css?family=Play:variants)
 	if name == blockletter
 		@css{
 			@font-face {
