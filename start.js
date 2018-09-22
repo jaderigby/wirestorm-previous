@@ -1,4 +1,5 @@
 var cp = require('child_process');
+// if you encounter a child_process error, make sure that grunt cli is installed.
 var grunt = cp.spawn('grunt', ['--force', 'default', 'watch'])
 
 grunt.stdout.on('data', function(data) {
