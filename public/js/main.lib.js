@@ -385,7 +385,7 @@ $('body').delegate('a.register', 'click', function() {
 //======================
 
 $('.form-element input[type="text"], .form-element input[type="email"], .form-element input[type="password"], textarea').keyup(function(e) {
-	var $parent = ($(this).closest('.form-segment').length !== 0) ? $(this).closest('.form-segment').find('.form-element') : $(this).parent();
+	var $parent = ($(this).closest('.cell').length !== 0) ? $(this).closest('.cell').find('.form-element') : $(this).parent();
 	if ($(this).val() !== "") {
 		$parent.addClass('has-value');
 	}
@@ -395,12 +395,12 @@ $('.form-element input[type="text"], .form-element input[type="email"], .form-el
 });
 
 $('.form-element input[type="text"], .form-element input[type="email"], .form-element input[type="password"], textarea').focus(function(e) {
-	var $parent = ($(this).closest('.form-segment').length !== 0) ? $(this).closest('.form-segment').find('.form-element') : $(this).parent();
+	var $parent = ($(this).closest('.cell').length !== 0) ? $(this).closest('.cell').find('.form-element') : $(this).parent();
 	$parent.addClass('has-value');
 });
 
 $('.form-element input[type="text"], .form-element input[type="email"], .form-element input[type="password"], textarea').focusout(function(e) {
-	var $parent = ($(this).closest('.form-segment').length !== 0) ? $(this).closest('.form-segment').find('.form-element') : $(this).parent();
+	var $parent = ($(this).closest('.cell').length !== 0) ? $(this).closest('.cell').find('.form-element') : $(this).parent();
 	if ($(this).val() === "") {
 		$parent.removeClass('has-value');
 	}

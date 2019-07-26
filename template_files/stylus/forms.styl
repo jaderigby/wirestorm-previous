@@ -1,4 +1,7 @@
 forms()
+  #loginForm
+    a.button
+      margin-bottom: 15px
   .form-segment
     margin: 15px 0
     .form-element
@@ -6,6 +9,8 @@ forms()
   .form-element
     position: relative
     margin: 15px 0
+    + .form-element
+      margin-top: 30px
   .form-element
     input[type="text"] + label
     input[type="email"] + label
@@ -40,8 +45,6 @@ forms()
         transition: all 0.2s ease-out
   .form-element
     transition: all 0.2s ease-out
-    &.has-value
-      margin-top: 25px
     input[type="text"]
     input[type="email"]
     input[type="password"]
@@ -152,33 +155,3 @@ forms()
   .right-justify
     input[type="submit"]
       margin-right: 0
-
-forms-segments()
-  .form-segment.break
-    lost-flex-container: row
-    //
-    // FORM COLUMNS
-    //
-    for item in (10..1)
-      &.lg-columns-{item}
-        > .cell
-          lost-column: 1/item item 15px flex
-        +below(lg)
-          > .cell
-            lost-column: 1/item item 15px flex
-      &.md-columns-{item}
-        +below(md)
-          > .cell
-            lost-column: 1/item item 15px flex
-      &.tablet-columns-{item}
-        +below(tablet)
-          > .cell
-            lost-column: 1/item item 15px flex
-      &.sm-columns-{item}
-        +below(sm)
-          > .cell
-            lost-column: 1/item item 15px flex
-      &.xs-columns-{item}
-        +below(xs)
-          > .cell
-            lost-column: 1/item item 15px flex

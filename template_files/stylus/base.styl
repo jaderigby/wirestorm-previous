@@ -333,8 +333,14 @@ base()
 	//
 	// Buttons
 	//
+	.form-element + .button-module
+		margin-top: 30px
+	.button-module
+		a.button
+			display: inline-block
 	a.button
-		margin-right: 5px
+		+ a.button
+			margin-left: 5px
 		padding: 8px 25px
 		color: buttonColor
 		font-size: 0.9rem

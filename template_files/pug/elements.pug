@@ -83,19 +83,35 @@ mixin column-loop(col, equalize)
 mixin button(nameValue, pos)
 	- if (typeof nameValue === 'object') {
 	- 	nameValue.title = nameValue.title || "OK"
-	- 	nameValue.url = nameValue.url || "#"
+	- 	nameValue.url = nameValue.url || ""
 	- 	nameValue.position = nameValue.position || "left"
-		a(href=nameValue.url, class=nameValue.position + " " + arguments.class, arguments.id).button= nameValue.title
+	- 	if (nameValue.position === 'left')
+				div.left-justify.button-module
+					a(href=nameValue.url, class!=attributes.class, id!=attributes.id).button= nameValue.title
+	- 	else if (nameValue.position === 'right')
+				div.right-justify.button-module
+					a(href=nameValue.url, class!=attributes.class, id!=attributes.id).button= nameValue.title
+	- 	else if (nameValue.position === 'center')
+				div.center-justify.button-module
+					a(href=url, class!=attributes.class, id!=attributes.id).button= nameValue.title
+	- 	else if (nameValue.position === 'extend') {
+				div.button-module
+					a(href=nameValue.url, class!=attributes.class, id!=attributes.id).button.extend= nameValue.title
+	- 	}
 	- }
 	- else {
-		- if (pos === 'right')
-			a(href=url).button.right= nameValue
+		- if (pos === 'left')
+			div.left-justify.button-module
+				a(href=url, class!=attributes.class, id!=attributes.id).button= nameValue
+		- else if (pos === 'right')
+			div.right-justify.button-module
+				a(href=url, class!=attributes.class, id!=attributes.id).button= nameValue
 		- else if (pos === 'center')
-			div.center-justify
-				a(href=url).button= nameValue
+			div.center-justify.button-module
+				a(href=url, class!=attributes.class, id!=attributes.id).button= nameValue
 		- else if (pos === 'extend') {
-			div
-				a(href=url).button.extend= nameValue
+			div.button-module
+				a(href=url, class!=attributes.class, id!=attributes.id).button.extend= nameValue
 		- }
 	- }
 
@@ -141,7 +157,7 @@ mixin pagination(count)
 mixin tabs(tabs)
 	div.tabs-widget
 		ul.tabs
-			- each tab in tabs
+			each tab in tabs
 				li(data-target=tab)= tab
 		section.tabs-wrapper
 			if block

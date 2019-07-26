@@ -4,7 +4,7 @@
 
 	Liscensed under MIT
 	Copyright (c) 2014-2015 - Jade C. Rigby
-	
+
 	AUTHOR: Jade C. Rigby
 	DATE: 3/12/2017
 	EMAIL: contact@jaderigby.com
@@ -20,9 +20,9 @@
 =============================================================================*/
 
 // TO USE: First, make sure to include both jQuery and "magicVial.js".
-// Then, call the function "magicVial('form')" passing in as the 
-// parameter whatever you want to validate, using a "jQuery" like descriptor, 
-// such as "form#mainForm", etc. 
+// Then, call the function "magicVial('form')" passing in as the
+// parameter whatever you want to validate, using a "jQuery" like descriptor,
+// such as "form#mainForm", etc.
 // EXAMPLE: magicVial('form#contact');
 
 
@@ -32,6 +32,10 @@ function magicVial(myArg, useRequiredMessage) {
 	// 2. data-error-message="Please enter a valid First Name" (Note: can either contain a string as an "error" message, or can be left blank)
 	// 3. data-required (Note: can either contain a string as a "required" error message, or can be left blank)
 	//
+	// initialize initial-input class
+	$(myArg+' input, '+myArg+' select, '+myArg+' [data-radio]').each(function() {
+		$(this).addClass('initial-input');
+	});
 	$(myArg+' input[type="submit"], '+myArg+' #submit').on('click', function(e) {
 		var comprehensiveRequired;
 		// Verify for inputs, selects, and radios
@@ -89,11 +93,21 @@ function magicVial(myArg, useRequiredMessage) {
 			}
 		}
 	});
-	
+
+	// initial input handling for text inputs
+	$(myArg+' input').on('focusout', function() {
+		if (validation(this) === 'failed') {
+			$(this).removeClass('initial-input');
+			validation(this);
+			errorMessage(this);
+		}
+	});
+
 	// Correction for text inputs
 	$(myArg+' input').on('change paste copy cut keyup keydown focusout', function() {
 
-		if (validation(this) === 'failed') {
+		// includes initial input check
+		if (validation(this) === 'failed' && !$(this).hasClass('initial-input')) {
 			errorMessage(this);
 		}
 		if (validation(this) === 'passed') {
@@ -319,7 +333,8 @@ function magicVial(myArg, useRequiredMessage) {
 		};
 		var status;
 		(errors === 'true') ? status = 'failed' : status = 'passed';
-		if (status === 'failed') {
+		// includes initial input check
+		if (status === 'failed' && !$(item).hasClass('initial-input')) {
 			$(item).addClass('failed');
 		}
 		if (status === 'passed') {

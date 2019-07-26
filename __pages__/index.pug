@@ -22,16 +22,6 @@ block content
 							+submit('Submit','right')
 			+min()
 				+slideshow(380,235,'right')
-		form#moreInfo.wrap
-			+form-segment(2)
-				+cell()
-					+input('First Name', 'required')
-				+cell()
-					+input('Last Name')
-			//- +email('Email', 'required')
-			+input('Middle Name', 'required', {"capsule" : "test"})
-			+textarea('Message')
-			+submit('Submit','right')
 	+panel().dark
 		+col({lg : 4, md : 2, tablet : 1})
 			+loop(4)
