@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "childprocess": "^2.0.2",
-    "express": "3.0.0alpha4",
+    "express": "3.11.0",
     "npm": "^6.1.0",
     "opn": "^4.0.2",
     "sendevent": "^1.0.4",
