@@ -232,8 +232,14 @@ $(window).resize(function() {
 function initTabs() {
 	if ($('.tabs-widget').length > 0) {
 		$('.tabs-widget').each(function() {
-			$('ul li:first-child', this).addClass('active');
-			$('.tabs-wrapper', this).children().first().addClass('active');
+			if ($('.tab-element.active', this).length !== 0) {
+				var targetIndex = $('.tab-element.active', this).index();
+				$('ul li', this).eq(targetIndex).addClass('active');
+			}
+			else {
+				$('ul li:first-child', this).addClass('active');
+				$('.tabs-wrapper', this).children().first().addClass('active');
+			}
 		});
 	}
 	// Need to initialize "equalize" after tab is set to ".active", or equalize doesn't work
