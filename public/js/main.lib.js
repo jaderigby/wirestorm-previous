@@ -276,7 +276,7 @@ function initModals() {
 	if ($('.modal.window').length > 0) {
 		$('body').prepend('<div id="modalViewport" style="display: none; position: fixed; width: 100%; height: 100%; z-index: 9999"></div>');
 		$('body').prepend('<div id="overlay" style="display: none; position: fixed; width: 100%; height: 100%; background-color: rgba(0,0,0,0.45); opacity: 0; z-index: 9998"></div>');
-		$('.modal.window').prepend('<div class="close-modal"><span class="icon-close"></span></div>');
+		$('.modal.window').prepend('<div class="close-modal close-modal-icon"><span class="icon-close"></span></div>');
 		$('.modal.window').css({
 			position: 'absolute',
 			top: 0,
