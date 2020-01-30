@@ -386,9 +386,9 @@ $('body').delegate('a.register', 'click', function() {
 	$(this).parent().append('<a href=""></a>')
 });
 
-//======================
+//=======================
 //	FORM PLACEHOLDERS
-//======================
+//=======================
 
 $('.form-element input[type="text"], .form-element input[type="email"], .form-element input[type="password"], textarea').keyup(function(e) {
 	var $parent = ($(this).closest('.cell').length !== 0) ? $(this).closest('.cell').find('.form-element') : $(this).parent();
@@ -411,6 +411,10 @@ $('.form-element input[type="text"], .form-element input[type="email"], .form-el
 		$parent.removeClass('has-value');
 	}
 });
+
+//==================================
+//	Url Params, goto, and goback
+//==================================
 
 $('[data-goto]').on('click', function(e) {
 	e.preventDefault();
