@@ -411,3 +411,22 @@ $('.form-element input[type="text"], .form-element input[type="email"], .form-el
 		$parent.removeClass('has-value');
 	}
 });
+
+$('[data-goto]').on('click', function(e) {
+	e.preventDefault();
+	var newLocation = $(this).attr('data-goto');
+	window.location.href = newLocation;
+});
+
+$('[data-goback]').on('click', function(e) {
+	e.preventDefault();
+	history.back(-1);
+});
+
+function urlParams() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+  });
+  return decodeURI(vars);
+}
