@@ -14,10 +14,11 @@ html(lang="en")
 		+menu-drawer()
 			include mobile-nav
 		#siteWrapper
-			#open
-				header
-					+mobile-header()
-						+logo("TheSite")
-				nav.desktop-nav.dark
-					include desktop-nav
-				block content
+			header
+				div.show-for-mobile
+					div.rack.compress.mobile-cleanup
+						+menu-drawer-trigger()
+						+logo('TheSite')
+			nav.desktop-nav.dark
+				include desktop-nav
+			block content
