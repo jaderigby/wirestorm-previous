@@ -95,8 +95,9 @@ base()
 	//
 	body.active
 		overflow-x: hidden
-	.mobile-rack-space
+	.mobile-cleanup
 		padding-top: 12px
+		padding-left: 15px
 	#drawer
 	#siteWrapper
 		float: left
@@ -216,10 +217,14 @@ base()
 		cursor: pointer
 		+below(lg)
 			display: inline-block
-	.mobile-rack-space
+	.show-for-mobile
 		display: none
-		+below(lg)
+		+below(tablet)
 			display: block
+	.hide-for-mobile
+		display: block
+		+below(tablet)
+			display: none
 	.menu-drawer
 		padding-top: 30px
 		ul
@@ -923,7 +928,7 @@ widgets()
 		width: 66px
 		height: 19px
 		padding: 8px 0px 9px 0 !important
-	.mobile-rack-space
+	.mobile-cleanup
 		.logo
 			padding: 6px 23px 5px 45px !important
 		.simple-logo.logo
