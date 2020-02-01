@@ -28,5 +28,13 @@ h4
 h5
 h6
 	font-family: open-sans
+.show-for-mobile
+	display: none
+	+below(tablet)
+		display: block
+.hide-for-mobile
+	display: block
+	+below(tablet)
+		display: none
 
 // Begin your custom styles here!
