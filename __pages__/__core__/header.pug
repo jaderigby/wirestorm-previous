@@ -20,5 +20,9 @@ html(lang="en")
 						+menu-drawer-trigger()
 						+logo('TheSite')
 			nav.desktop-nav.dark.hide-for-mobile
-				include desktop-nav
+				prime-segment.vertical-align
+					x-major
+						include desktop-nav
+					x-minor
+						+search('search-results')
 			block content
