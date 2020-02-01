@@ -12,7 +12,7 @@ html(lang="en")
 		link(rel="shortcut icon", href="images/favicon.ico", type="image/x-icon")
 	body
 		+menu-drawer()
-			include mobile-nav
+			include nav
 		#siteWrapper
 			header
 				div.show-for-mobile
@@ -22,7 +22,7 @@ html(lang="en")
 			nav.desktop-nav.dark.hide-for-mobile
 				prime-segment.vertical-align
 					x-major
-						include desktop-nav
+						include nav
 					x-minor
 						+search('search-results')
 			block content
