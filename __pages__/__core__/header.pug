@@ -13,6 +13,8 @@ html(lang="en")
 	body
 		+menu-drawer()
 			include nav
+			div.clear-wrap.menu-drawer-search-cleanup
+			+search('search-results')
 		#siteWrapper
 			header
 				div.show-for-mobile
