@@ -87,13 +87,18 @@ base()
 		float: left
 	.right
 		float: right
+	[data-goto]
+	[data-goback]
+		cursor:pointer
 	//
 	// Main Wrapper
 	//
 	body.active
 		overflow-x: hidden
-	.mobile-rack-space
-		padding-top: 12px
+	.mobile-cleanup
+		padding-left: 15px
+	.menu-drawer-search-cleanup
+		margin-left: 20px
 	#drawer
 	#siteWrapper
 		float: left
@@ -158,16 +163,14 @@ base()
 		li
 			.search-widget
 				padding: 8px 0
-	#open
-	#contain
+	#siteWrapper
 		.desktop-nav
+			padding: 0 20px
 			ul
-				padding: 0 20px
+				padding: 0
 				margin-left: 0
 	.desktop-nav
 		background-color: #E7E7E7
-		+below(lg)
-			display: none
 		&.dark
 			background-color: primaryColor
 			a
@@ -214,10 +217,6 @@ base()
 		cursor: pointer
 		+below(lg)
 			display: inline-block
-	.mobile-rack-space
-		display: none
-		+below(lg)
-			display: block
 	.menu-drawer
 		padding-top: 30px
 		ul
@@ -302,33 +301,6 @@ base()
 			border: 1px solid #353535
 			&:hover
 				background-color: #898989
-	.rack
-		display: table
-		> section
-		> article
-		> div
-		> p
-		> ul
-		> ol
-		> dl
-			float: left
-			margin-right: 5px
-			&:last-child
-				margin-right: 0
-		> .checkbox-widget
-			span.checkbox
-				margin-top: 9px
-		> .radio-widget
-			span.radio
-				margin-top: 9px
-	form.rack
-	.rack form
-		> p
-		> div
-			float: left
-			margin-right: 10px
-			&:last-child
-				margin-right: 0
 
 	//
 	// Buttons
@@ -814,7 +786,7 @@ widgets()
 		display: none
 		max-height: 77%
 		overflow: auto
-	.close-modal
+	.close-modal-icon
 		position: absolute
 		top: 7px
 		right: 7px
@@ -948,9 +920,9 @@ widgets()
 		width: 66px
 		height: 19px
 		padding: 8px 0px 9px 0 !important
-	.mobile-rack-space
+	.mobile-cleanup
 		.logo
-			padding: 6px 23px 5px 45px !important
+			padding: 6px 23px 6px 45px !important
 		.simple-logo.logo
 			width: 56px
 			height: 10px
@@ -1258,10 +1230,6 @@ mobile()
 		font-size: 0.7rem
 		color: white
 		opacity: 0.5
-		.rack
-			position: relative
-			> div
-				margin-right: 3px
 		.icon-battery-indicator
 			font-size: 0.6rem
 			display: inline-block

@@ -9,19 +9,8 @@ mixin menu-drawer()
 				if block
 					block
 
-mixin menu-trigger()
-	section.rack
-		div.icon-menu.toggle.use-native-click(data-target="body, #siteWrapper, #drawer")
-		div.mobile-rack-space
-			if block
-				block
-
-mixin mobile-header()
-	section.rack
-		div.icon-menu.toggle.use-native-click(data-target="body, #siteWrapper, #drawer")
-		div.mobile-rack-space
-			if block
-				block
+mixin menu-drawer-trigger()
+	div.icon-menu.toggle.use-native-click(data-target="body, #siteWrapper, #drawer")
 
 mixin logo(linkFile, descriptor)
 	- if (arguments.length === 1) {

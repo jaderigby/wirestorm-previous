@@ -276,7 +276,7 @@ function initModals() {
 	if ($('.modal.window').length > 0) {
 		$('body').prepend('<div id="modalViewport" style="display: none; position: fixed; width: 100%; height: 100%; z-index: 9999"></div>');
 		$('body').prepend('<div id="overlay" style="display: none; position: fixed; width: 100%; height: 100%; background-color: rgba(0,0,0,0.45); opacity: 0; z-index: 9998"></div>');
-		$('.modal.window').prepend('<div class="close-modal"><span class="icon-close"></span></div>');
+		$('.modal.window').prepend('<div class="close-modal close-modal-icon"><span class="icon-close"></span></div>');
 		$('.modal.window').css({
 			position: 'absolute',
 			top: 0,
@@ -386,9 +386,9 @@ $('body').delegate('a.register', 'click', function() {
 	$(this).parent().append('<a href=""></a>')
 });
 
-//======================
+//=======================
 //	FORM PLACEHOLDERS
-//======================
+//=======================
 
 $('.form-element input[type="text"], .form-element input[type="email"], .form-element input[type="password"], textarea').keyup(function(e) {
 	var $parent = ($(this).closest('.cell').length !== 0) ? $(this).closest('.cell').find('.form-element') : $(this).parent();
@@ -411,3 +411,26 @@ $('.form-element input[type="text"], .form-element input[type="email"], .form-el
 		$parent.removeClass('has-value');
 	}
 });
+
+//==================================
+//	Url Params, goto, and goback
+//==================================
+
+$('[data-goto]').on('click', function(e) {
+	e.preventDefault();
+	var newLocation = $(this).attr('data-goto');
+	window.location.href = newLocation;
+});
+
+$('[data-goback]').on('click', function(e) {
+	e.preventDefault();
+	history.back(-1);
+});
+
+function urlParams() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+  });
+  return decodeURI(vars);
+}
