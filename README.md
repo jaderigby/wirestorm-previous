@@ -2,7 +2,7 @@
 
 ## What is Wirestorm? ##
 
-Wirestorm is a framework built on Jade, Stylus and Jeet, that leverages these technologies in order to allow developers and designers to build dynamic and "functional" wireframes __fast__.
+Wirestorm is a framework built on Pug, Stylus and Segments, that leverages these technologies in order to allow developers and designers to build dynamic and "functional" wireframes __fast__.
 
 ## Why use code to wireframe? ##
 
@@ -68,7 +68,7 @@ Here is a rundown of the Wirestorm folder structure:
 
 #### `__pages__` ####
 
-__Here is where you will edit and add your custom html content.__  The `__pages__` folder contains the editable jade files.  Within `__core__` of this folder, you will find your header, footer, and default templates. These templates control the header, footer, and basic structure of your site including imported modules.  The index.jade file is what you will use to edit your first page. You can copy this page and modify it, in order to add more pages.  The pages can then be added to the navigation bar by editing the `nav.jade` file found within the `__core__` folder.
+__Here is where you will edit and add your custom html content.__  The `__pages__` folder contains the editable pug files.  Within `__core__` of this folder, you will find your header, footer, and default templates. These templates control the header, footer, and basic structure of your site including imported modules.  The index.pug file is what you will use to edit your first page. You can copy this page and modify it, in order to add more pages.  The pages can then be added to the navigation bar by editing the `nav.pug` file found within the `__core__` folder.
 
 #### `__styles__` ####
 
@@ -76,7 +76,7 @@ Within the `__styles__` folder contains a file called `main.styl`.  __This is wh
 
 #### `app` ####
 
-The `app` folder is where all of your plain html and css files are compiled to.  Anything that you want to add &ndash; images, videos, etc &ndash; will live here.  Note that any changes to the html and css files will be overwritten by the jade and stylus files, however, so don't edit any `.html` or `.css` files.
+The `app` folder is where all of your plain html and css files are compiled to.  Anything that you want to add &ndash; images, videos, etc &ndash; will live here.  Note that any changes to the html and css files will be overwritten by the pug and stylus files, however, so don't edit any `.html` or `.css` files.
 
 #### `template_files` ####
 
@@ -84,9 +84,9 @@ DO NOT EDIT THESE FILES.  This is where the Wirestorm magic is stored.  They are
 
 <!-- The two underscored files are for you: One for html, and one for css.  The `__pages__` folder is where you will build your structure, the html.  The `__styles__` folder is where all of your css styles will live.  In the `__styles__` folder, you will find a file called `main.styl`.  This is where you add any custom styles of your own, beyond what wirestorm provides.
 
-The `__pages__` folder is a little more complex: In this folder, you will see another folder named `__core__`.  Within `__core__` you have the header and footer templates, and the nav file.  The header, footer and nav file are there for you to modify.  Just note that they are the main files for your entire site: make one change, and it will show up on all pages.  Going back to the root of the `__pages__` folder, we see a file called `default.jade`.  You should never need to edit this file.  It contains the blueprint for all pages.  If you decide that you do want to add a new section to all pages, something that header, footer and nav can't do, you can add or include it in this file.
+The `__pages__` folder is a little more complex: In this folder, you will see another folder named `__core__`.  Within `__core__` you have the header and footer templates, and the nav file.  The header, footer and nav file are there for you to modify.  Just note that they are the main files for your entire site: make one change, and it will show up on all pages.  Going back to the root of the `__pages__` folder, we see a file called `default.pug`.  You should never need to edit this file.  It contains the blueprint for all pages.  If you decide that you do want to add a new section to all pages, something that header, footer and nav can't do, you can add or include it in this file.
 
-Use the `index.jade` page as a blueprint, as you create new pages.  Make sure to save new pages with the extension `jade`, such as `new-page.jade`.
+Use the `index.pug` page as a blueprint, as you create new pages.  Make sure to save new pages with the extension `pug`, such as `new-page.pug`.
 
 A typical page would look something like this:
 
@@ -117,9 +117,9 @@ All of these components can have classes and an id attached to them, as well.
 
 ### Configuration ###
 
-__jade:__
+__pug:__
 
-  - include `template_files/widgets/segments.jade`
+  - include `template_files/widgets/segments.pug`
 
 __stylus:__
 
