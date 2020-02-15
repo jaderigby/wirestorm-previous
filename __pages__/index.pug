@@ -32,7 +32,7 @@ block content
 	+panel().light
 		+segment({lg : 'thirds', md : 'half', sm : 'stack'})
 			+min()
-				+image2('100%',180)
+				+image('100%',180).dimage
 			+max()
 				h2 Next Product
 				p
@@ -58,7 +58,7 @@ block content
 				+col({lg : 5, sm : 1})
 					+loop(5)
 						+cell()
-							+image('100%',100)
+							+image('100%',100).dimage
 							p
 								+rating(3, 5)
 block script
