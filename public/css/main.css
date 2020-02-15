@@ -3,8 +3,8 @@
 
 			@font-face {
 				font-family: 'blockletter';
-				src:url('blockletter.eot?jawtuy');
-				src:url('blockletter.eot?#iefixjawtuy') format('embedded-opentype'),url('blockletter.woff?jawtuy') format('woff'),url('blockletter.ttf?jawtuy') format('truetype'),url('blockletter.svg?jawtuy#blockletter') format('svg');
+				src:url('ws-blockletter/ws-blockletter.eot?jawtuy');
+				src:url('ws-blockletter/ws-blockletter.eot?#iefixjawtuy') format('embedded-opentype'),url('ws-blockletter/WS-Blockletter.woff?jawtuy') format('woff'),url('ws-blockletter/ws-blockletter.ttf?jawtuy') format('truetype');
 				font-weight: normal;
 				font-style: normal;
 			}
@@ -345,11 +345,18 @@ article.clear-wrap:after {
 .right {
   float: right;
 }
+[data-goto],
+[data-goback] {
+  cursor: pointer;
+}
 body.active {
   overflow-x: hidden;
 }
-.mobile-rack-space {
-  padding-top: 12px;
+.mobile-cleanup {
+  padding-left: 15px;
+}
+.menu-drawer-search-cleanup {
+  margin-left: 20px;
 }
 #drawer,
 #siteWrapper {
@@ -430,18 +437,15 @@ nav a.home-widget:before {
 nav li .search-widget {
   padding: 8px 0;
 }
-#open .desktop-nav ul,
-#contain .desktop-nav ul {
+#siteWrapper .desktop-nav {
   padding: 0 20px;
+}
+#siteWrapper .desktop-nav ul {
+  padding: 0;
   margin-left: 0;
 }
 .desktop-nav {
   background-color: #e7e7e7;
-}
-@media only screen and (max-width: 1024px) {
-  .desktop-nav {
-    display: none;
-  }
 }
 .desktop-nav.dark {
   background-color: #6b6b6b;
@@ -496,14 +500,6 @@ nav.menu-drawer li a:hover {
 @media only screen and (max-width: 1024px) {
   .icon-menu {
     display: inline-block;
-  }
-}
-.mobile-rack-space {
-  display: none;
-}
-@media only screen and (max-width: 1024px) {
-  .mobile-rack-space {
-    display: block;
   }
 }
 .menu-drawer {
@@ -608,47 +604,6 @@ nav.menu-drawer li a:hover {
 }
 .menu-drawer a.logo:hover {
   background-color: #898989;
-}
-.rack {
-  display: table;
-}
-.rack > section,
-.rack > article,
-.rack > div,
-.rack > p,
-.rack > ul,
-.rack > ol,
-.rack > dl {
-  float: left;
-  margin-right: 5px;
-}
-.rack > section:last-child,
-.rack > article:last-child,
-.rack > div:last-child,
-.rack > p:last-child,
-.rack > ul:last-child,
-.rack > ol:last-child,
-.rack > dl:last-child {
-  margin-right: 0;
-}
-.rack > .checkbox-widget span.checkbox {
-  margin-top: 9px;
-}
-.rack > .radio-widget span.radio {
-  margin-top: 9px;
-}
-form.rack > p,
-.rack form > p,
-form.rack > div,
-.rack form > div {
-  float: left;
-  margin-right: 10px;
-}
-form.rack > p:last-child,
-.rack form > p:last-child,
-form.rack > div:last-child,
-.rack form > div:last-child {
-  margin-right: 0;
 }
 .form-element + .button-module {
   margin-top: 30px;
@@ -1548,7 +1503,7 @@ input[type="submit"][class^="icon-"] {
   max-height: 77%;
   overflow: auto;
 }
-.close-modal {
+.close-modal-icon {
   position: absolute;
   top: 7px;
   right: 7px;
@@ -1709,10 +1664,10 @@ nav.dark .logo {
   height: 19px;
   padding: 8px 0px 9px 0 !important;
 }
-.mobile-rack-space .logo {
-  padding: 6px 23px 5px 45px !important;
+.mobile-cleanup .logo {
+  padding: 6px 23px 6px 45px !important;
 }
-.mobile-rack-space .simple-logo.logo {
+.mobile-cleanup .simple-logo.logo {
   width: 56px;
   height: 10px;
   padding: 8px 0px 9px 0 !important;
@@ -2001,12 +1956,6 @@ hr {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
-}
-.iphone-header .rack {
-  position: relative;
-}
-.iphone-header .rack > div {
-  margin-right: 3px;
 }
 .iphone-header .icon-battery-indicator {
   font-size: 0.6rem;
@@ -5523,12 +5472,19 @@ h5,
 h6 {
   font-family: "Open Sans", Verdana, Helvetica, sans-serif;
 }
-#contain {
-  position: relative;
-  margin: 0 auto;
-  max-width: 1024px;
-  min-height: 600px;
-  background-color: #fff;
-  font-family: Play !important;
-  font-weight: normal;
+.show-for-mobile {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .show-for-mobile {
+    display: block;
+  }
+}
+.hide-for-mobile {
+  display: block;
+}
+@media only screen and (max-width: 768px) {
+  .hide-for-mobile {
+    display: none;
+  }
 }
