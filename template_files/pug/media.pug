@@ -1,69 +1,109 @@
-mixin image(w,h,alignment)
-	- var a;
-	- if (h === undefined) {
-		- h = w;
-	- }
-	- if (alignment === 'center') {
-		- a = "; margin: 0 auto";
-	- } 
-	- else if (alignment === 'left') {
-		- a = "; float: left; padding-right: 10px; padding-bottom: 5px";
-	- }
-	- else if (alignment === 'right') {
-		- a = "; float: right; padding-left: 10px; padding-bottom: 5px";
+mixin image(param1,param2,position)
+	- var width = null;
+	- var height = null;
+	- var size = null;
+	- var position = position || null;
+	- var styl = [];
+	- var cls = [];
+	- var stylString = "";
+	- var clsString = "";
+	- var pt = null;
+	- if (typeof param1 === 'object') {
+	-   param1.width = param1.width || '100%';
+	-   param1.height = param1.height || '100%';
+	-   param1.size = param1.size || null;
+	-   param1.position = param1.position || null;
+	-   param1.version = param1.version || 1;
+	-   param1.dynamic = param1.dynamic || false;
+	-   pt = "padding-top: " + (((param1.height * 1000) / (param1.width * 1000)) * 100) + "%";
+	-// Assign object values to standard values
+	-   width = param1.width;
+	-   height = param1.height;
+	-	if (param1.size) {
+	-	  width = param1.size;
+	-	  height = pram1.size;
+	-   }
+	-   if (param1.position) {
+	-	  position = param1.position;
+	-   }
+	-	if (param1.version === 2) {
+	-	  cls.push('dimage');
+	-   }
 	- }
 	- else {
-		- a = "";
+	-   if (!param2) {
+	-     size = param1;
+	-   }
+	-   else if (typeof param2 === 'string') {
+	-     if (param2 !== '100%') {
+	-       size = param1;
+	-       position = param2;	
+	-     }
+	-     else {
+	-	    width = param1;
+	-		height = param2;
+	-     }
+	-   } 
+	-   else {
+	-     width = param1;
+	-     height = param2;
+	-   }
 	- }
-	- if (w === '100%' && h) {
-		div(style="width: "+ w +"; height: "+ h +"px"+ a)
+	-// assign 'px' string to pixel values
+	- if (width !== '100%') {
+	-   width = width + 'px'
+	- }
+	- if (height !== '100%') {
+	-   height = height + 'px'
+	- }
+	- if (size) {
+	-   styl.push('width: ' + size + 'px');
+	-   styl.push('height: ' + size + 'px');
+	- }
+	- else {
+	-   styl.push('width: ' + width);
+	-   styl.push('height: ' + height);
+	- }
+	- if (position) {
+	-   cls.push(position);
+	- }
+	- if (styl.length > 0) {
+	-   styl.forEach(function(_item_, _index_) {
+	-     if (_index_ == 0) {
+	-       stylString += _item_ + ";"
+	-     }
+	-     else {
+	-       stylString += " " + _item_ + ";"
+	-     }
+	-   });
+	- }
+	- if (attributes.class) {
+	-   clsString =  attributes.class;
+	- }
+	- if (attributes.class !== undefined && cls.length > 0) {
+	-   clsString += " ";
+	- }
+	- if (cls.length > 0) {
+	-   cls.forEach(function(_item_, _index_) {
+	-     if (_index_ == 0) {
+	-       clsString += _item_
+	-     }
+	-     else {
+	-       clsString += " " + _item_
+	-     }
+	-   });
+	- }
+	- if (param1.dynamic) {
+		div.image-widget-wrapper(style="max-width: " + width, class!=clsString)
+			div.image-widget-outer(style=pt)
+				.image-widget-inner.image-widget
+					.image-border
+	- }
+	- else {
+		div(style!=stylString, class!=clsString)
+			p= attributes.class
 			div.image-widget
-				.image-border
-	- }
-	- else if (w && h === '100%') {
-		div(style="width: "+ w +"px; height: "+ h +a)
-			div.image-widget
-				.image-border
-	- }
-	- else if (w && h) {
-		div(style="width: "+ w +"px; height: "+ h +"px"+a)
-			div.image-widget
-				.image-border
-	- }
-	- else {
-		div.image-widget
-			.image-border
-	- }
-
-mixin image2(w,h,alignment)
-	- var a;
-	- if (h === undefined) {
-		- h = w;
-	- }
-	- if (alignment === 'center') {
-		- a = "; margin: 0 auto";
-	- } 
-	- else {
-		- a = "";
-	- }
-	- if (w === '100%' && h) {
-		div(style="width: "+ w +"; height: "+ h +"px"+a)
-			div.dimage.image-widget
-				.image-border
-	- }
-	- else if (w && h === '100%') {
-		div(style="width: "+ w +"px; height: "+ h +a)
-			div.dimage.image-widget
-				.image-border
-	- }
-	- else if (w && h) {
-		div(style="width: "+ w +"px; height: "+ h +"px"+a)
-			div.dimage.image-widget
-				.image-border
-	- }
-	- else {
-		div.dimage.image-widget
-			.image-border
+				div.image-border
 	- }
 
 mixin chart(w,h,alignment)
