@@ -21,7 +21,7 @@
   "dependencies": {
     "childprocess": "^2.0.2",
     "express": "3.0.0alpha4",
-    "npm": "^6.1.0",
+    "npm": "^6.14.6",
     "opn": "^4.0.2",
     "sendevent": "^1.0.4",
     "uglify-js": "^2.7.5"
