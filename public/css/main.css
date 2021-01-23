@@ -227,7 +227,7 @@ header {
 }
 p {
   margin: 15px 0;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 ol {
   list-style-type: decimal;
@@ -348,6 +348,14 @@ article.clear-wrap:after {
 [data-goto],
 [data-goback] {
   cursor: pointer;
+}
+.vertical-align {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 body.active {
   overflow-x: hidden;
@@ -1523,6 +1531,17 @@ input[type="submit"][class^="icon-"] {
   -moz-background-size: contain;
   background-size: contain;
   background-position: center;
+}
+.image-widget-outer {
+  position: relative;
+  width: 100%;
+}
+.image-widget-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .image-widget {
   position: relative;

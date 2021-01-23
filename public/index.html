@@ -3,6 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/wc-segments.lib.min.css">
+    <script src="js/segments.lib.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   </head>
@@ -12,7 +14,7 @@
         <div>
           <ul>
             <li>
-              <div class="logo-wrapper"><a class="logo" href="/">TheSite</a></div>
+              <div class="logo-wrapper"><a class="logo" href="index.html">TheSite</a></div>
             </li>
             <li><a href="/">Home</a>
             </li>
@@ -21,62 +23,67 @@
             <li><a href="usage.html">Usage</a>
             </li>
             <li class="right">
-              <div class="search-widget" data-target="search-results.html">
-                <div class="searchfield">
-                  <div class="icon-search"></div>
-                  <input type="text">
-                </div>
-              </div>
             </li>
           </ul>
+          <div class="clear-wrap menu-drawer-search-cleanup">
+            <div class="search-widget" data-target="search-results.html">
+              <div class="searchfield">
+                <div class="icon-search"></div>
+                <input type="text">
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
     <div id="siteWrapper">
-      <div id="open">
-        <header>
-          <section class="rack">
+      <header>
+        <div class="show-for-mobile">
+          <div class="rack compress mobile-cleanup vertical-align">
             <div class="icon-menu toggle use-native-click" data-target="body, #siteWrapper, #drawer"></div>
-            <div class="mobile-rack-space">
-              <div class="logo-wrapper"><a class="logo" href="/">TheSite</a></div>
-            </div>
-          </section>
-        </header>
-        <nav class="desktop-nav dark">
-          <ul>
-            <li>
-                        <div class="logo-wrapper"><a class="logo" href="/">TheSite</a></div>
-            </li>
-            <li><a href="/">Home</a>
-            </li>
-            <li><a href="page2.html">Page 2</a>
-            </li>
-            <li><a href="usage.html">Usage</a>
-            </li>
-            <li class="right">
-                        <article class="rack cf">
-                                    <div class="search-widget" data-target="search-results.html">
-                                      <div class="searchfield">
-                                        <div class="icon-search"></div>
-                                        <input type="text">
-                                      </div>
-                                    </div>
-                        </article>
-            </li>
-          </ul>
-        </nav>
-        <div class="panel-wrap light">
-          <section class="panel">
-            <div class="segment  break lg-fifths md-half sm-stack">
-              <div class="segment-max">
-                <h1>First One</h1>
-                <p><span class="blockletter">Integer vulputate sem a nibh rutrum consequat suspendisse nisl nulla turpis magna cursus sit amet suscipit a interdum id felis phasellus et lorem id felis nonummy placerat class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos duis ante orci molestie vitae </span>
-                </p>
-                <p>
+            <div class="logo-wrapper"><a class="logo" href="index.html">TheSite</a></div>
+          </div>
+        </div>
+      </header>
+      <nav class="desktop-nav dark hide-for-mobile">
+        <prime-segment class="vertical-align">
+          <x-major>
+            <ul>
+              <li>
+                            <div class="logo-wrapper"><a class="logo" href="index.html">TheSite</a></div>
+              </li>
+              <li><a href="/">Home</a>
+              </li>
+              <li><a href="page2.html">Page 2</a>
+              </li>
+              <li><a href="usage.html">Usage</a>
+              </li>
+              <li class="right">
+              </li>
+            </ul>
+          </x-major>
+          <x-minor>
+                        <div class="search-widget" data-target="search-results.html">
+                          <div class="searchfield">
+                            <div class="icon-search"></div>
+                            <input type="text">
+                          </div>
+                        </div>
+          </x-minor>
+        </prime-segment>
+      </nav>
+      <div class="panel-wrap light">
+        <section class="panel">
+          <div class="segment  break lg-fifths md-half sm-stack">
+            <div class="segment-max">
+              <h1>First One</h1>
+              <p><span class="blockletter">Fusce suscipit libero eget elit sed ac dolor sit amet purus malesuada congue mauris dolor felis sagittis at luctus sed aliquam non tellus aenean fermentum risus id tortor donec ipsum massa ullamcorper in auctor et scelerisque sed est lorem ipsum dolor sit amet consectetuer adipiscing </span>
+              </p>
+              <p>
                             <button class="modal trigger" data-target="modal1">Learn More</button>
                             <div class="modal window" id="modal1">
                               <h3>Learn More</h3>
-                              <p><span class="blockletter">Fusce tellus odio dapibus id fermentum quis suscipit id erat integer malesuada sed ac dolor sit amet purus malesuada congue etiam dictum tincidunt diam aliquam in lorem sit amet leo accumsan lacinia nunc auctor maecenas lorem vestibulum facilisis auctor urna aliquam erat volutpat integer vulputate sem a nibh rutrum consequat </span>
+                              <p><span class="blockletter">Duis bibendum lectus ut viverra rhoncus dolor nunc faucibus libero eget facilisis enim ipsum id lacus vestibulum facilisis auctor urna nullam dapibus fermentum ipsum lorem ipsum dolor sit amet consectetuer adipiscing elit etiam ligula pede sagittis quis interdum ultricies scelerisque eu urna in laoreet magna id viverra tincidunt sem odio </span>
                               </p>
                               <form class="wrap" id="moreInfo">
                                 <div class="form-segment break lg-columns-2">
@@ -106,84 +113,84 @@
                                 </div>
                               </form>
                             </div>
-                </p>
-              </div>
-              <div class="segment-min">
-                <div style="width: 380px; height: 235px">
-                  <div class="slideshow-widget">
-                    <div class="image-widget">
-                      <div class="image-border">
-                        <div class="icon-arrow-left"></div>
-                        <div class="icon-arrow-right"></div>
-                        <div class="icon-progress"></div>
-                      </div>
+              </p>
+            </div>
+            <div class="segment-min">
+              <div style="width: 380px; height: 235px">
+                <div class="slideshow-widget">
+                  <div class="image-widget">
+                    <div class="image-border">
+                      <div class="icon-arrow-left"></div>
+                      <div class="icon-arrow-right"></div>
+                      <div class="icon-progress"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-        </div>
-        <div class="panel-wrap dark">
-          <section class="panel">
-            <div class="segment break lg-columns-4 md-columns-2 tablet-columns-1">
+          </div>
+        </section>
+      </div>
+      <div class="panel-wrap dark">
+        <section class="panel">
+          <div class="segment break lg-columns-4 md-columns-2 tablet-columns-1">
                         <div class="cell">
                           <div class="porthole" style="width: 120px; height: 120px; margin: 0 auto">
                             <div class="image-widget"></div>
                           </div>
-                          <p class="center-align"><span class="blockletter">Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos aliquam in </span>
+                          <p class="center-align"><span class="blockletter">Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus phasellus et lorem </span>
                           </p>
                         </div>
                         <div class="cell">
                           <div class="porthole" style="width: 120px; height: 120px; margin: 0 auto">
                             <div class="image-widget"></div>
                           </div>
-                          <p class="center-align"><span class="blockletter">In laoreet magna id viverra tincidunt sem odio bibendum justo vel imperdiet sapien wisi sed </span>
+                          <p class="center-align"><span class="blockletter">Mauris dolor felis sagittis at luctus sed aliquam non tellus etiam commodo dui eget wisi </span>
                           </p>
                         </div>
                         <div class="cell">
                           <div class="porthole" style="width: 120px; height: 120px; margin: 0 auto">
                             <div class="image-widget"></div>
                           </div>
-                          <p class="center-align"><span class="blockletter">Suspendisse nisl etiam dictum tincidunt diam praesent dapibus vestibulum facilisis auctor urna aliquam in lorem </span>
+                          <p class="center-align"><span class="blockletter">Curabitur bibendum justo non orci nullam eget nisl maecenas aliquet accumsan leo morbi gravida libero </span>
                           </p>
                         </div>
                         <div class="cell">
                           <div class="porthole" style="width: 120px; height: 120px; margin: 0 auto">
                             <div class="image-widget"></div>
                           </div>
-                          <p class="center-align"><span class="blockletter">Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos fusce suscipit </span>
+                          <p class="center-align"><span class="blockletter">Aenean vel massa quis mauris vehicula lacinia nunc tincidunt ante vitae massa suspendisse nisl aliquam </span>
                           </p>
                         </div>
-            </div>
-          </section>
-        </div>
-        <div class="panel-wrap light">
-          <section class="panel">
-            <div class="segment  break lg-thirds md-half sm-stack">
-              <div class="segment-min">
-                <div style="width: 100%; height: 180px">
-                  <div class="dimage image-widget">
-                    <div class="image-border"></div>
-                  </div>
+          </div>
+        </section>
+      </div>
+      <div class="panel-wrap light">
+        <section class="panel">
+          <div class="segment  break lg-thirds md-half sm-stack">
+            <div class="segment-min">
+              <div class="dimage" style="width: 100%; height: 180px;">
+                <div class="image-widget">
+                  <div class="image-border"></div>
                 </div>
               </div>
-              <div class="segment-max">
-                <h2>Next Product</h2>
-                <p><span class="blockletter">Fusce aliquam vestibulum ipsum aliquam erat volutpat nullam sit amet magna in magna gravida vehicula etiam dictum tincidunt diam nulla quis diam nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit diam nulla vel leo sed </span>
-                </p>
+            </div>
+            <div class="segment-max">
+              <h2>Next Product</h2>
+              <p><span class="blockletter">Nullam at arcu a est sollicitudin euismod nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit diam nulla vel leo nunc posuere maecenas lorem integer rutrum orci vestibulum ullamcorper ultricies lacus quam ultricies odio vitae placerat </span>
+              </p>
                           <button class="modal trigger right" data-target="modal2">Another Modal</button>
                           <div class="modal window" id="modal2">
                             <h3>Another Modal</h3>
-                            <p><span class="blockletter">Fusce consectetuer risus a nunc nulla non lectus sed nisl molestie malesuada proin pede metus vulputate nec fermentum fringilla vehicula vitae justo integer lacinia nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit diam nulla vel leo suspendisse sagittis ultrices augue curabitur sagittis hendrerit ante class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos nullam rhoncus aliquam metus sed vel lectus aliquam ante duis bibendum lectus ut viverra rhoncus dolor nunc faucibus libero eget facilisis enim ipsum id lacus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris pretium quam et urna aenean placerat morbi imperdiet mauris ac auctor dictum nisl ligula egestas nulla et sollicitudin sem purus in lacus etiam sapien elit consequat eget tristique non venenatis quis ante fusce dui leo imperdiet in aliquam sit amet feugiat eu orci fusce wisi nullam sit amet magna in magna gravida vehicula etiam posuere lacus quis dolor pellentesque pretium lectus id turpis phasellus rhoncus in nisl etiam bibendum elit eget erat cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam bibendum elit eget erat morbi gravida libero nec velit mauris pretium quam et urna fusce eget urna morbi gravida libero nec velit integer rutrum orci vestibulum ullamcorper ultricies lacus quam ultricies odio vitae placerat pede sem sit amet enim morbi imperdiet mauris ac auctor dictum nisl ligula egestas nulla et sollicitudin sem purus in lacus nullam dapibus fermentum ipsum maecenas aliquet accumsan leo nulla pulvinar eleifend sem pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas nullam at arcu a est sollicitudin euismod mauris pretium quam et urna in rutrum aenean fermentum risus id tortor nunc posuere morbi gravida libero nec velit proin pede metus vulputate nec fermentum fringilla vehicula vitae justo etiam ligula pede sagittis quis interdum ultricies scelerisque eu urna fusce consectetuer risus a nunc nulla est quisque porta mauris pretium quam et urna mauris metus pellentesque arcu quisque porta praesent dapibus proin mattis lacinia justo praesent in mauris eu tortor porttitor accumsan etiam quis quam integer tempor aliquam in lorem sit amet leo accumsan lacinia integer in sapien integer in sapien etiam posuere quam ac quam in vulputate urna eu arcu class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos nulla non lectus sed nisl molestie malesuada maecenas ipsum velit consectetuer eu lobortis ut dictum at dui aliquam erat volutpat nulla est pellentesque arcu duis bibendum lectus ut viverra rhoncus dolor nunc faucibus libero eget facilisis enim ipsum id lacus proin pede metus vulputate nec fermentum fringilla vehicula vitae justo mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus maecenas sollicitudin in nisl morbi gravida libero nec velit donec ipsum massa ullamcorper in auctor et scelerisque sed est integer imperdiet lectus quis justo vestibulum facilisis auctor urna duis risus vestibulum fermentum tortor id mi proin pede metus vulputate nec fermentum fringilla vehicula vitae justo fusce suscipit libero eget elit donec ipsum massa ullamcorper in auctor et scelerisque sed est nam quis nulla nullam sit amet magna in magna gravida vehicula nullam sit amet magna in magna gravida vehicula proin pede metus vulputate nec fermentum fringilla vehicula vitae justo cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus morbi a metus nam sed tellus id magna elementum tincidunt cras pede libero dapibus nec pretium sit amet tempor quis urna vestibulum facilisis auctor urna in rutrum fusce eget urna aliquam in lorem sit amet leo accumsan lacinia nullam eget nisl praesent in mauris eu tortor porttitor accumsan fusce nibh vivamus ac urna vel leo pretium faucibus donec ipsum massa ullamcorper in auctor et scelerisque sed est mauris dolor felis sagittis at luctus sed aliquam non tellus curabitur bibendum justo non orci morbi imperdiet mauris ac auctor dictum nisl ligula egestas nulla et sollicitudin sem purus in lacus aliquam erat volutpat phasellus rhoncus phasellus enim erat vestibulum vel aliquam a posuere eu velit donec vitae arcu nullam feugiat turpis at pulvinar vulputate erat libero tristique tellus nec bibendum odio risus sit amet ante nulla non lectus sed nisl molestie malesuada donec iaculis gravida nulla aenean id metus id velit ullamcorper pulvinar sed elit dui pellentesque a faucibus vel interdum nec diam maecenas lorem fusce aliquam vestibulum ipsum pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas donec quis nibh at felis congue commodo vestibulum fermentum tortor id mi nunc dapibus tortor vel mi dapibus sollicitudin proin pede metus vulputate nec fermentum fringilla vehicula vitae justo nunc posuere phasellus et lorem id felis nonummy placerat cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus nulla non arcu lacinia neque faucibus fringilla curabitur vitae diam non enim vestibulum interdum maecenas libero </span>
+                            <p><span class="blockletter">Morbi mattis felis at nunc duis viverra diam non justo vestibulum fermentum tortor id mi nunc dapibus tortor vel mi dapibus sollicitudin nam quis nulla cras pede libero dapibus nec pretium sit amet tempor quis urna etiam dui sem fermentum vitae sagittis id malesuada in quam mauris metus morbi gravida libero nec velit quisque tincidunt scelerisque libero nullam lectus justo vulputate eget mollis sed tempor sed magna etiam egestas wisi a erat praesent in mauris eu tortor porttitor accumsan aliquam erat volutpat praesent id justo in neque elementum ultrices proin in tellus sit amet nibh dignissim sagittis morbi gravida libero nec velit etiam posuere lacus quis dolor nam quis nulla duis sapien nunc commodo et interdum suscipit sollicitudin et dolor pellentesque pretium lectus id turpis donec quis nibh at felis congue commodo suspendisse potenti vivamus luctus egestas leo aenean id metus id velit ullamcorper pulvinar morbi gravida libero nec velit maecenas lorem phasellus et lorem id felis nonummy placerat aliquam erat volutpat pellentesque sapien integer in sapien nullam sapien sem ornare ac nonummy non lobortis a enim cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam sapien elit consequat eget tristique non venenatis quis ante vivamus ac urna vel leo pretium faucibus etiam dui sem fermentum vitae sagittis id malesuada in quam donec ipsum massa ullamcorper in auctor et scelerisque sed est nullam justo enim consectetuer nec ullamcorper ac vestibulum in elit fusce eget urna in rutrum in convallis curabitur vitae diam non enim vestibulum interdum class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos hymenaeos mauris dolor felis sagittis at luctus sed aliquam non tellus maecenas aliquet accumsan leo praesent dapibus in sem justo commodo ut suscipit at pharetra vitae orci integer rutrum orci vestibulum ullamcorper ultricies lacus quam ultricies odio vitae placerat pede sem sit amet enim fusce tellus duis bibendum lectus ut viverra rhoncus dolor nunc faucibus libero eget facilisis enim ipsum id lacus aenean vel massa quis mauris vehicula lacinia in sem justo commodo ut suscipit at pharetra vitae orci vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat suspendisse sagittis ultrices augue fusce nibh fusce consectetuer risus a nunc donec iaculis gravida nulla duis risus mauris dictum facilisis augue nunc tincidunt ante vitae massa quisque tincidunt scelerisque libero mauris metus quisque tincidunt scelerisque libero proin mattis lacinia justo nunc dapibus tortor vel mi dapibus sollicitudin nam quis nulla maecenas ipsum velit consectetuer eu lobortis ut dictum at dui integer vulputate sem a nibh rutrum consequat phasellus et lorem id felis nonummy placerat phasellus enim erat vestibulum vel aliquam a posuere eu velit mauris suscipit ligula sit amet pharetra semper nibh ante cursus purus vel sagittis velit mauris vel metus duis sapien nunc commodo et interdum suscipit sollicitudin et dolor maecenas lorem morbi mattis felis at nunc vivamus porttitor turpis ac leo pellentesque arcu etiam commodo dui eget wisi etiam egestas wisi a erat nulla pulvinar eleifend sem etiam bibendum elit eget erat curabitur sagittis hendrerit ante nullam lectus justo vulputate eget mollis sed tempor sed magna in convallis vestibulum fermentum tortor id mi duis pulvinar nullam rhoncus aliquam metus duis pulvinar in in enim a arcu imperdiet malesuada etiam egestas wisi a erat praesent vitae arcu tempor neque lacinia pretium suspendisse potenti nunc auctor nullam justo enim consectetuer nec ullamcorper ac vestibulum in elit etiam dictum tincidunt diam in in enim a arcu imperdiet malesuada maecenas libero maecenas ipsum velit consectetuer eu lobortis ut dictum at dui nulla turpis magna cursus sit amet suscipit a interdum id felis aliquam erat volutpat integer malesuada aenean vel massa quis mauris vehicula lacinia pellentesque arcu etiam quis quam integer vulputate sem a nibh rutrum consequat ut tempus purus at lorem integer lacinia pellentesque pretium lectus id turpis cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus maecenas aliquet accumsan leo cras elementum donec iaculis gravida nulla nam quis nulla nulla turpis magna cursus sit amet suscipit a interdum id felis integer rutrum orci vestibulum ullamcorper ultricies lacus quam ultricies odio vitae placerat pede sem sit amet enim etiam quis quam duis sapien nunc commodo et interdum suscipit sollicitudin et dolor in rutrum mauris pretium quam et urna curabitur sagittis hendrerit ante vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat in sem justo commodo ut suscipit at pharetra vitae orci cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus suspendisse sagittis ultrices augue etiam commodo dui eget wisi duis condimentum augue id magna semper rutrum cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus aenean fermentum risus id tortor cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus fusce dui leo imperdiet in aliquam sit amet feugiat eu orci duis bibendum lectus ut viverra rhoncus dolor nunc </span>
                             </p>
                           </div>
-              </div>
             </div>
-          </section>
-        </div>
-        <div class="panel-wrap dark footer">
-          <section class="panel">
+          </div>
+        </section>
+      </div>
+      <div class="panel-wrap dark footer">
+        <section class="panel">
                       <div class="tabs-widget">
                         <ul class="tabs">
                           <li data-target="First">First</li>
@@ -192,84 +199,83 @@
                           <hr>
                         </ul>
                         <section class="tabs-wrapper">
-                                    <section class="tab-element">
-                                      <h3>First Tab</h3>
-                                      <p><span class="blockletter">Vestibulum erat nulla ullamcorper nec rutrum non nonummy ac erat aenean id metus id velit ullamcorper pulvinar nulla accumsan elit sit amet varius semper nulla mauris mollis quam tempor suscipit diam nulla vel leo maecenas aliquet accumsan leo aenean vel massa quis mauris vehicula lacinia </span>
-                                      </p>
-                                    </section>
-                                    <section class="tab-element">
-                                      <h3>Second Tab</h3>
-                                      <ol>
-                                                  <li>First Item</li>
-                                                  <li>Second Item</li>
-                                                  <li>Third Item</li>
-                                                  <li>Fourth Item</li>
-                                      </ol>
-                                    </section>
-                                    <section class="tab-element">
-                                      <h3>Third Tab</h3>
-                                      <div class="segment break lg-columns-5 sm-columns-1">
-                                                  <div class="cell">
-                                                    <div style="width: 100%; height: 100px">
-                                                      <div class="image-widget">
-                                                        <div class="image-border"></div>
+                                      <section class="tab-element">
+                                        <h3>First Tab</h3>
+                                        <p><span class="blockletter">Donec odio urna tempus molestie porttitor ut iaculis quis sem nulla non arcu lacinia neque faucibus fringilla mauris pretium quam et urna in vulputate urna eu arcu nunc dapibus tortor vel mi dapibus sollicitudin mauris dolor felis sagittis at luctus sed aliquam non tellus sed </span>
+                                        </p>
+                                      </section>
+                                      <section class="tab-element">
+                                        <h3>Second Tab</h3>
+                                        <ol>
+                                                      <li>First Item</li>
+                                                      <li>Second Item</li>
+                                                      <li>Third Item</li>
+                                                      <li>Fourth Item</li>
+                                        </ol>
+                                      </section>
+                                      <section class="tab-element">
+                                        <h3>Third Tab</h3>
+                                        <div class="segment break lg-columns-5 sm-columns-1">
+                                                      <div class="cell">
+                                                        <div class="dimage" style="width: 100%; height: 100px;">
+                                                          <div class="image-widget">
+                                                            <div class="image-border"></div>
+                                                          </div>
+                                                        </div>
+                                                        <p>
+                                                                      <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span><span class="icon-star unmarked"></span>
+                                                                      </div>
+                                                        </p>
                                                       </div>
-                                                    </div>
-                                                    <p>
-                                                                <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span>
-                                                                </div>
-                                                    </p>
-                                                  </div>
-                                                  <div class="cell">
-                                                    <div style="width: 100%; height: 100px">
-                                                      <div class="image-widget">
-                                                        <div class="image-border"></div>
+                                                      <div class="cell">
+                                                        <div class="dimage" style="width: 100%; height: 100px;">
+                                                          <div class="image-widget">
+                                                            <div class="image-border"></div>
+                                                          </div>
+                                                        </div>
+                                                        <p>
+                                                                      <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span>
+                                                                      </div>
+                                                        </p>
                                                       </div>
-                                                    </div>
-                                                    <p>
-                                                                <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span>
-                                                                </div>
-                                                    </p>
-                                                  </div>
-                                                  <div class="cell">
-                                                    <div style="width: 100%; height: 100px">
-                                                      <div class="image-widget">
-                                                        <div class="image-border"></div>
+                                                      <div class="cell">
+                                                        <div class="dimage" style="width: 100%; height: 100px;">
+                                                          <div class="image-widget">
+                                                            <div class="image-border"></div>
+                                                          </div>
+                                                        </div>
+                                                        <p>
+                                                                      <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span>
+                                                                      </div>
+                                                        </p>
                                                       </div>
-                                                    </div>
-                                                    <p>
-                                                                <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span><span class="icon-star unmarked"></span>
-                                                                </div>
-                                                    </p>
-                                                  </div>
-                                                  <div class="cell">
-                                                    <div style="width: 100%; height: 100px">
-                                                      <div class="image-widget">
-                                                        <div class="image-border"></div>
+                                                      <div class="cell">
+                                                        <div class="dimage" style="width: 100%; height: 100px;">
+                                                          <div class="image-widget">
+                                                            <div class="image-border"></div>
+                                                          </div>
+                                                        </div>
+                                                        <p>
+                                                                      <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span><span class="icon-star unmarked"></span>
+                                                                      </div>
+                                                        </p>
                                                       </div>
-                                                    </div>
-                                                    <p>
-                                                                <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span>
-                                                                </div>
-                                                    </p>
-                                                  </div>
-                                                  <div class="cell">
-                                                    <div style="width: 100%; height: 100px">
-                                                      <div class="image-widget">
-                                                        <div class="image-border"></div>
+                                                      <div class="cell">
+                                                        <div class="dimage" style="width: 100%; height: 100px;">
+                                                          <div class="image-widget">
+                                                            <div class="image-border"></div>
+                                                          </div>
+                                                        </div>
+                                                        <p>
+                                                                      <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span>
+                                                                      </div>
+                                                        </p>
                                                       </div>
-                                                    </div>
-                                                    <p>
-                                                                <div class="stars-widget"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star unmarked"></span>
-                                                                </div>
-                                                    </p>
-                                                  </div>
-                                      </div>
-                                    </section>
+                                        </div>
+                                      </section>
                         </section>
                       </div>
-          </section>
-        </div>
+        </section>
       </div>
     </div>
   </body>
