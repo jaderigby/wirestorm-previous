@@ -9,12 +9,14 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		pageContent: grunt.file.readJSON('__data__/content.json'),
 
 		pug: {
 			compile: {
 				options: {
 					pretty: true,
 					data: {
+						pageData: '<%= pageContent %>',
 						debug: false
 					}
 				},
