@@ -104,6 +104,36 @@ mixin button(nameValue, pos)
 		- }
 	- }
 
+mixin placeholder(SIZE,LABEL)
+	- let size = SIZE || [150,150];
+	- let label = LABEL || 'placeholder';
+	- let width = null;
+	- let height = null;
+	- if (SIZE instanceof Object) {
+	-	size = SIZE.size || size;
+	-	label = SIZE.label || label;
+	- }
+	- function resolveValues(VAL) {
+	-	if (Number.isInteger(VAL)) {
+	-		return VAL + 'px';
+	-	}
+	-	else {
+	-		return VAL;
+	-	}
+	- }
+	- if (size instanceof Array) {
+	-	width = resolveValues(size[0]);
+	-	height = resolveValues(size[1]);
+	- }
+	- else {
+	-	width = resolveValues(size);
+	-	height = resolveValues(size);
+	- }
+	div(style="width: " + width + "; height: " + height, class!=attributes.class, id!=attributes.class)
+		div.placeholder
+			span=label
+			.image-border
+
 mixin modal(nameValue, pos)
 	- modalIter += 1
 	- if (pos === 'right')
