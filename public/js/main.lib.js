@@ -419,7 +419,18 @@ $('.form-element input[type="text"], .form-element input[type="email"], .form-el
 $('[data-goto]').on('click', function(e) {
 	e.preventDefault();
 	var newLocation = $(this).attr('data-goto');
-	window.location.href = newLocation;
+	if ($(this).attr('data-params')) {
+		var params = JSON.parse($(this).attr('data-params'));
+		var str = '';
+		for (const [key, value] of Object.entries(params)) {
+			str += (key + '=' + value + '&');
+		}
+		str.slice(0, -1);
+		window.location.href = newLocation + '?' + str;
+	}
+	else {
+		window.location.href = newLocation
+	}
 });
 
 $('[data-goback]').on('click', function(e) {
@@ -427,13 +438,15 @@ $('[data-goback]').on('click', function(e) {
 	history.back(-1);
 });
 
-function urlParams() {
+function getParams() {
   var vars = {};
   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
       vars[key] = value;
   });
-  return decodeURI(vars);
+  window.params = decodeURI(vars);
 }
+
+getParams();
 
 // taken from Stack Overflow Question: https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid
 function uuidv4() {
